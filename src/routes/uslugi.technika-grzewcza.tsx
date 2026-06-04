@@ -52,7 +52,7 @@ const gwarancje = [
   "Nasi serwisanci nigdy nie chodzą w brudnych butach po mieszkaniu klienta",
   "Z wyprzedzeniem telefonicznie przypominamy o serwisie rocznym",
   "Dotrzymujemy umów i zawsze mamy własne narzędzia",
-  "Nie boimy się wziąć udziału w programie „Usterka…"",
+  'Nie boimy się wziąć udziału w programie „Usterka…”',
 ];
 
 function Technika() {
