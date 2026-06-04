@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
 import { Building2, Flame, Phone, Shield, Clock, CheckCircle2, ArrowRight, Wrench, Calculator } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { OptimizedImage } from "@/components/site/OptimizedImage";
