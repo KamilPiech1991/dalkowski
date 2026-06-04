@@ -110,6 +110,7 @@ function Technika() {
 
       <section className="container-page py-16 grid lg:grid-cols-2 gap-10">
         <div>
+          <OptimizedImage picture={g5} alt="Elewacja budynku po pracach instalacyjnych — Dalkowski Technika Grzewcza" className="rounded-3xl shadow-card w-full h-72 object-cover mb-8" />
           <span className="text-xs font-semibold text-primary uppercase tracking-wider">Deklaracja jakości</span>
           <h2 className="mt-3 text-3xl font-bold flex items-center gap-2"><ShieldCheck className="h-7 w-7 text-primary" /> Nasze zasady</h2>
           <ul className="mt-6 space-y-3">
