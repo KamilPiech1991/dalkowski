@@ -16,7 +16,7 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/uslugi/technika-grzewcza" },
-      { property: "og:image", content: boiler },
+      { property: "og:image", content: boiler.img.src },
       { property: "og:type", content: "article" },
     ],
     links: [{ rel: "canonical", href: "/uslugi/technika-grzewcza" }],
