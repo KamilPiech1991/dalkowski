@@ -3,6 +3,9 @@ import { AlertCircle, Calendar, ShoppingCart, ShieldCheck, Phone, CheckCircle2 }
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { OptimizedImage } from "@/components/site/OptimizedImage";
 import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
+import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
+import g6 from "@/assets/gallery-6.jpg?optimize&as=picture";
+import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 
 const TITLE = "Serwis Pieców c.o. Piaseczno — Naprawy, Przeglądy, Instalacja | Dalkowski";
 const DESC = "Autoryzowany serwis pieców De Dietrich oraz serwis wszystkich marek: Junkers, Vaillant, Bosch, Buderus, Termet. Naprawy awaryjne, przeglądy, montaż. Piaseczno i okolice.";
@@ -40,9 +43,9 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
 });
 
 const services = [
-  { icon: AlertCircle, title: "Awarie", desc: "W przypadku konieczności pilnej naprawy przyjeżdżamy tak szybko jak to możliwe. Zapewniamy części do naprawy. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
-  { icon: Calendar, title: "Przeglądy i konserwacje", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
-  { icon: ShoppingCart, title: "Sprzedaż i instalacja", desc: "Prowadzimy sprzedaż pieców marki De Dietrich — posiadamy autoryzację producenta. Instalujemy również piece innych marek zgodnie z preferencjami klienta." },
+  { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej pieca gazowego", desc: "W przypadku konieczności pilnej naprawy przyjeżdżamy tak szybko jak to możliwe. Zapewniamy części do naprawy. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
+  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd pieca centralnego ogrzewania", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
+  { icon: ShoppingCart, title: "Sprzedaż i instalacja", img: g6, alt: "Nowoczesny kocioł kondensacyjny De Dietrich", desc: "Prowadzimy sprzedaż pieców marki De Dietrich — posiadamy autoryzację producenta. Instalujemy również piece innych marek zgodnie z preferencjami klienta." },
 ];
 
 const marki = ["De Dietrich", "Junkers", "Vaillant", "Termet", "Beretta", "Bosch", "Buderus", "Duval"];
@@ -79,10 +82,13 @@ function Technika() {
 
       <section className="container-page py-16 grid md:grid-cols-3 gap-6">
         {services.map((s) => (
-          <article key={s.title} className="rounded-3xl border border-border bg-card p-7">
-            <div className="rounded-2xl bg-primary-soft p-3 w-fit"><s.icon className="h-6 w-6 text-primary" /></div>
-            <h2 className="mt-5 text-xl font-bold">{s.title}</h2>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+          <article key={s.title} className="rounded-3xl border border-border bg-card overflow-hidden flex flex-col">
+            <OptimizedImage picture={s.img} alt={s.alt} className="w-full h-48 object-cover" />
+            <div className="p-7">
+              <div className="rounded-2xl bg-primary-soft p-3 w-fit"><s.icon className="h-6 w-6 text-primary" /></div>
+              <h2 className="mt-5 text-xl font-bold">{s.title}</h2>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            </div>
           </article>
         ))}
       </section>
@@ -104,6 +110,7 @@ function Technika() {
 
       <section className="container-page py-16 grid lg:grid-cols-2 gap-10">
         <div>
+          <OptimizedImage picture={g5} alt="Elewacja budynku po pracach instalacyjnych — Dalkowski Technika Grzewcza" className="rounded-3xl shadow-card w-full h-72 object-cover mb-8" />
           <span className="text-xs font-semibold text-primary uppercase tracking-wider">Deklaracja jakości</span>
           <h2 className="mt-3 text-3xl font-bold flex items-center gap-2"><ShieldCheck className="h-7 w-7 text-primary" /> Nasze zasady</h2>
           <ul className="mt-6 space-y-3">
