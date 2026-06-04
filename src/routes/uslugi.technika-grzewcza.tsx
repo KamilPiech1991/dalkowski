@@ -73,7 +73,7 @@ function Technika() {
               <Phone className="h-4 w-4" /> Awaria? +48 732 820 870
             </a>
           </div>
-          <img src={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+          <OptimizedImage picture={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
         </div>
       </section>
 
