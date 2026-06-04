@@ -120,7 +120,7 @@ function Index() {
       <section className="bg-secondary/50 py-20">
         <div className="container-page">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <img src={boiler} alt="Profesjonalny serwis pieca gazowego — Dalkowski Technika Grzewcza" width={1400} height={1000} loading="lazy" className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+            <OptimizedImage picture={boiler} alt="Profesjonalny serwis pieca gazowego — Dalkowski Technika Grzewcza" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
             <div>
               <span className="text-xs font-semibold text-primary uppercase tracking-wider">Dlaczego my</span>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Lokalna firma rodzinna z misją</h2>
