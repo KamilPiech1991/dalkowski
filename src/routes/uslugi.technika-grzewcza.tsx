@@ -82,10 +82,13 @@ function Technika() {
 
       <section className="container-page py-16 grid md:grid-cols-3 gap-6">
         {services.map((s) => (
-          <article key={s.title} className="rounded-3xl border border-border bg-card p-7">
-            <div className="rounded-2xl bg-primary-soft p-3 w-fit"><s.icon className="h-6 w-6 text-primary" /></div>
-            <h2 className="mt-5 text-xl font-bold">{s.title}</h2>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+          <article key={s.title} className="rounded-3xl border border-border bg-card overflow-hidden flex flex-col">
+            <OptimizedImage picture={s.img} alt={s.alt} className="w-full h-48 object-cover" />
+            <div className="p-7">
+              <div className="rounded-2xl bg-primary-soft p-3 w-fit"><s.icon className="h-6 w-6 text-primary" /></div>
+              <h2 className="mt-5 text-xl font-bold">{s.title}</h2>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            </div>
           </article>
         ))}
       </section>
