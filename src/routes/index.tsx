@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Building2, Flame, Phone, Shield, Clock, CheckCircle2, ArrowRight, Wrench, Calculator } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import hero from "@/assets/hero-buildings.jpg";
-import boiler from "@/assets/heating-boiler.jpg";
+import { OptimizedImage } from "@/components/site/OptimizedImage";
+import hero from "@/assets/hero-buildings.jpg?optimize&as=picture";
+import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
 const TITLE = "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Pieców";
 const DESC = "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja pieców c.o. w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.";
