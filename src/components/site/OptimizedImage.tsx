@@ -34,9 +34,10 @@ export function OptimizedImage({ picture, alt, priority, className, width, heigh
 
   return (
     <picture>
-      {Object.entries(picture.sources).map(([type, srcSet]) => (
-        <source key={type} type={type} srcSet={srcSet} />
-      ))}
+      {Object.entries(picture.sources).map(([type, srcSet]) => {
+        const mime = type.includes("/") ? type : `image/${type}`;
+        return <source key={type} type={mime} srcSet={srcSet} />;
+      })}
       <img
         src={picture.img.src}
         width={width ?? picture.img.w}
