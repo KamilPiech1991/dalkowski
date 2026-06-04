@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AlertCircle, Calendar, ShoppingCart, ShieldCheck, Phone, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import boiler from "@/assets/heating-boiler.jpg";
+import { OptimizedImage } from "@/components/site/OptimizedImage";
+import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
 const TITLE = "Serwis Pieców c.o. Piaseczno — Naprawy, Przeglądy, Instalacja | Dalkowski";
 const DESC = "Autoryzowany serwis pieców De Dietrich oraz serwis wszystkich marek: Junkers, Vaillant, Bosch, Buderus, Termet. Naprawy awaryjne, przeglądy, montaż. Piaseczno i okolice.";
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/uslugi/technika-grzewcza" },
-      { property: "og:image", content: boiler },
+      { property: "og:image", content: boiler.img.src },
       { property: "og:type", content: "article" },
     ],
     links: [{ rel: "canonical", href: "/uslugi/technika-grzewcza" }],
@@ -72,7 +73,7 @@ function Technika() {
               <Phone className="h-4 w-4" /> Awaria? +48 732 820 870
             </a>
           </div>
-          <img src={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+          <OptimizedImage picture={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
         </div>
       </section>
 

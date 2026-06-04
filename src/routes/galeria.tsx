@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
-import hero from "@/assets/hero-buildings.jpg";
-import boiler from "@/assets/heating-boiler.jpg";
+import { OptimizedImage } from "@/components/site/OptimizedImage";
+import g1 from "@/assets/gallery-1.jpg?optimize&as=picture";
+import g2 from "@/assets/gallery-2.jpg?optimize&as=picture";
+import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
+import g4 from "@/assets/gallery-4.jpg?optimize&as=picture";
+import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
+import g6 from "@/assets/gallery-6.jpg?optimize&as=picture";
+import hero from "@/assets/hero-buildings.jpg?optimize&as=picture";
+import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji pieców c.o.";
@@ -20,7 +21,7 @@ export const Route = createFileRoute("/galeria")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/galeria" },
-      { property: "og:image", content: hero },
+      { property: "og:image", content: hero.img.src },
     ],
     links: [{ rel: "canonical", href: "/galeria" }],
   }),
@@ -55,10 +56,9 @@ function Galeria() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((it, i) => (
             <figure key={i} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-              <img
-                src={it.src}
+              <OptimizedImage
+                picture={it.src}
                 alt={it.alt}
-                loading="lazy"
                 className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <figcaption className="p-4 text-xs text-muted-foreground">{it.alt}</figcaption>

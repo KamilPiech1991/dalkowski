@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Building2, Flame, Phone, Shield, Clock, CheckCircle2, ArrowRight, Wrench, Calculator } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import hero from "@/assets/hero-buildings.jpg";
-import boiler from "@/assets/heating-boiler.jpg";
+import { OptimizedImage } from "@/components/site/OptimizedImage";
+import hero from "@/assets/hero-buildings.jpg?optimize&as=picture";
+import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
 const TITLE = "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Pieców";
 const DESC = "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja pieców c.o. w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.";
@@ -17,7 +18,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "image", href: hero.img.src, fetchpriority: "high" },
+    ],
   }),
   component: Index,
 });
@@ -54,7 +58,7 @@ function Index() {
             </div>
           </div>
           <div className="relative">
-            <img src={hero} alt="Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie" width={1600} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover aspect-[4/3]" />
+            <OptimizedImage picture={hero} alt="Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie" width={1600} height={1000} priority className="rounded-2xl shadow-soft w-full h-auto object-cover aspect-[4/3]" />
             <div className="hidden md:block absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-card p-5 border border-border max-w-xs">
               <div className="flex items-center gap-3">
                 <div className="rounded-full bg-primary-soft p-2.5"><Shield className="h-5 w-5 text-primary" /></div>
@@ -119,7 +123,7 @@ function Index() {
       <section className="bg-secondary/50 py-20">
         <div className="container-page">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <img src={boiler} alt="Profesjonalny serwis pieca gazowego — Dalkowski Technika Grzewcza" width={1400} height={1000} loading="lazy" className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+            <OptimizedImage picture={boiler} alt="Profesjonalny serwis pieca gazowego — Dalkowski Technika Grzewcza" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
             <div>
               <span className="text-xs font-semibold text-primary uppercase tracking-wider">Dlaczego my</span>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Lokalna firma rodzinna z misją</h2>
