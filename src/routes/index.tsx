@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: "/" },
-      { rel: "preload", as: "image", href: hero.sources["image/avif"]?.split(",")[0]?.trim().split(" ")[0] ?? hero.img.src, fetchpriority: "high", type: "image/avif" },
+      { rel: "preload", as: "image", href: hero.img.src, fetchpriority: "high" },
     ],
   }),
   component: Index,
