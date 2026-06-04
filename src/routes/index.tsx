@@ -28,12 +28,40 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const heroImgRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const el = heroImgRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight || 1;
+        // progress: 0 when section enters bottom, 1 when leaves top
+        const progress = 1 - (rect.top + rect.height / 2) / (vh + rect.height / 2);
+        setOffset(Math.max(-1, Math.min(1, progress)) * 60);
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <SiteLayout>
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-hero">
-        <div className="container-page grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-28">
-          <div>
+        <div className="container-page grid lg:grid-cols-12 gap-12 items-center py-20 lg:py-28">
+          <div className="lg:col-span-5">
             <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-4 py-1.5 text-xs font-semibold text-primary uppercase tracking-wider">
               <Shield className="h-3.5 w-3.5" /> Doświadczenie od 2006 roku
             </span>
@@ -58,9 +86,22 @@ function Index() {
               <div><div className="text-3xl font-bold text-primary">24/7</div><div className="text-xs text-muted-foreground mt-1">dostępność awarii</div></div>
             </div>
           </div>
-          <div className="relative">
-            <OptimizedImage picture={hero} alt="Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie" width={1600} height={1000} priority className="rounded-2xl shadow-soft w-full h-auto object-cover aspect-[4/3]" />
-            <div className="hidden md:block absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-card p-5 border border-border max-w-xs">
+          <div className="lg:col-span-7 relative">
+            <div
+              ref={heroImgRef}
+              className="relative rounded-3xl overflow-hidden shadow-soft aspect-[4/3] lg:aspect-[5/4] lg:h-[640px] lg:w-[115%] lg:-mr-[15%]"
+            >
+              <OptimizedImage
+                picture={hero}
+                alt="Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie"
+                width={1600}
+                height={1000}
+                priority
+                className="absolute inset-0 w-full h-[120%] -top-[10%] object-cover will-change-transform"
+                style={{ transform: `translate3d(0, ${offset}px, 0)` }}
+              />
+            </div>
+            <div className="hidden md:block absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-card p-5 border border-border max-w-xs z-10">
               <div className="flex items-center gap-3">
                 <div className="rounded-full bg-primary-soft p-2.5"><Shield className="h-5 w-5 text-primary" /></div>
                 <div>
@@ -72,6 +113,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
       {/* TWO PILLARS */}
       <section className="container-page py-20">
