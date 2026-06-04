@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AlertCircle, Calendar, ShoppingCart, ShieldCheck, Phone, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import boiler from "@/assets/heating-boiler.jpg";
+import { OptimizedImage } from "@/components/site/OptimizedImage";
+import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
 const TITLE = "Serwis Pieców c.o. Piaseczno — Naprawy, Przeglądy, Instalacja | Dalkowski";
 const DESC = "Autoryzowany serwis pieców De Dietrich oraz serwis wszystkich marek: Junkers, Vaillant, Bosch, Buderus, Termet. Naprawy awaryjne, przeglądy, montaż. Piaseczno i okolice.";
