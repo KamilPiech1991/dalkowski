@@ -43,9 +43,9 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
 });
 
 const services = [
-  { icon: AlertCircle, title: "Awarie", desc: "W przypadku konieczności pilnej naprawy przyjeżdżamy tak szybko jak to możliwe. Zapewniamy części do naprawy. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
-  { icon: Calendar, title: "Przeglądy i konserwacje", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
-  { icon: ShoppingCart, title: "Sprzedaż i instalacja", desc: "Prowadzimy sprzedaż pieców marki De Dietrich — posiadamy autoryzację producenta. Instalujemy również piece innych marek zgodnie z preferencjami klienta." },
+  { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej pieca gazowego", desc: "W przypadku konieczności pilnej naprawy przyjeżdżamy tak szybko jak to możliwe. Zapewniamy części do naprawy. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
+  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd pieca centralnego ogrzewania", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
+  { icon: ShoppingCart, title: "Sprzedaż i instalacja", img: g6, alt: "Nowoczesny kocioł kondensacyjny De Dietrich", desc: "Prowadzimy sprzedaż pieców marki De Dietrich — posiadamy autoryzację producenta. Instalujemy również piece innych marek zgodnie z preferencjami klienta." },
 ];
 
 const marki = ["De Dietrich", "Junkers", "Vaillant", "Termet", "Beretta", "Bosch", "Buderus", "Duval"];
