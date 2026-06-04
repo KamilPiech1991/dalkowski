@@ -12,7 +12,7 @@ export default defineConfig({
           // Only auto-process images that opt-in with ?optimize
           if (url.searchParams.has("optimize")) {
             return new URLSearchParams({
-              format: "avif;webp;jpg",
+              format: "avif;webp",
               quality: "72",
               as: "picture",
             });
