@@ -18,7 +18,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      { rel: "preload", as: "image", href: hero.sources["image/avif"]?.split(",")[0]?.trim().split(" ")[0] ?? hero.img.src, fetchpriority: "high", type: "image/avif" },
+    ],
   }),
   component: Index,
 });
