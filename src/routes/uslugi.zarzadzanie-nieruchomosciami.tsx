@@ -6,13 +6,11 @@ import hero from "@/assets/hero-buildings.jpg?optimize&as=picture";
 import g1 from "@/assets/gallery-1.jpg?optimize&as=picture";
 import g2 from "@/assets/gallery-2.jpg?optimize&as=picture";
 import g4 from "@/assets/gallery-4.jpg?optimize&as=picture";
-import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 import p7150 from "@/assets/photo-7150.jpg.asset.json";
 import p7159 from "@/assets/photo-7159.jpg.asset.json";
 import p7165 from "@/assets/photo-7165.jpg.asset.json";
 import p1260 from "@/assets/photo-1260.jpg.asset.json";
 import p2762 from "@/assets/photo-2762.jpg.asset.json";
-import p2766 from "@/assets/photo-2766.jpg.asset.json";
 
 const TITLE = "Zarządzanie Nieruchomościami Piaseczno — Wspólnoty Mieszkaniowe | Dalkowski";
 const DESC = "Profesjonalne zarządzanie i administrowanie wspólnotami mieszkaniowymi w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Obsługa administracyjna, księgowa i techniczna. Licencja nr 23367.";
