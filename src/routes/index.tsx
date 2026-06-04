@@ -55,7 +55,7 @@ function Index() {
             </div>
           </div>
           <div className="relative">
-            <img src={hero} alt="Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie" width={1600} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover aspect-[4/3]" />
+            <OptimizedImage picture={hero} alt="Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie" width={1600} height={1000} priority className="rounded-2xl shadow-soft w-full h-auto object-cover aspect-[4/3]" />
             <div className="hidden md:block absolute -bottom-6 -left-6 bg-background rounded-2xl shadow-card p-5 border border-border max-w-xs">
               <div className="flex items-center gap-3">
                 <div className="rounded-full bg-primary-soft p-2.5"><Shield className="h-5 w-5 text-primary" /></div>
