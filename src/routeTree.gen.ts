@@ -18,6 +18,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as UslugiIndexRouteImport } from './routes/uslugi.index'
 import { Route as UslugiZarzadzanieNieruchomosciamiRouteImport } from './routes/uslugi.zarzadzanie-nieruchomosciami'
 import { Route as UslugiTechnikaGrzewczaRouteImport } from './routes/uslugi.technika-grzewcza'
+import { Route as UslugiKonserwacjaNieruchomosciRouteImport } from './routes/uslugi.konserwacja-nieruchomosci'
 
 const UslugiRoute = UslugiRouteImport.update({
   id: '/uslugi',
@@ -65,6 +66,12 @@ const UslugiTechnikaGrzewczaRoute = UslugiTechnikaGrzewczaRouteImport.update({
   path: '/technika-grzewcza',
   getParentRoute: () => UslugiRoute,
 } as any)
+const UslugiKonserwacjaNieruchomosciRoute =
+  UslugiKonserwacjaNieruchomosciRouteImport.update({
+    id: '/konserwacja-nieruchomosci',
+    path: '/konserwacja-nieruchomosci',
+    getParentRoute: () => UslugiRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/o-nas': typeof ONasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uslugi': typeof UslugiRouteWithChildren
+  '/uslugi/konserwacja-nieruchomosci': typeof UslugiKonserwacjaNieruchomosciRoute
   '/uslugi/technika-grzewcza': typeof UslugiTechnikaGrzewczaRoute
   '/uslugi/zarzadzanie-nieruchomosciami': typeof UslugiZarzadzanieNieruchomosciamiRoute
   '/uslugi/': typeof UslugiIndexRoute
@@ -83,6 +91,7 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/o-nas': typeof ONasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/uslugi/konserwacja-nieruchomosci': typeof UslugiKonserwacjaNieruchomosciRoute
   '/uslugi/technika-grzewcza': typeof UslugiTechnikaGrzewczaRoute
   '/uslugi/zarzadzanie-nieruchomosciami': typeof UslugiZarzadzanieNieruchomosciamiRoute
   '/uslugi': typeof UslugiIndexRoute
@@ -95,6 +104,7 @@ export interface FileRoutesById {
   '/o-nas': typeof ONasRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/uslugi': typeof UslugiRouteWithChildren
+  '/uslugi/konserwacja-nieruchomosci': typeof UslugiKonserwacjaNieruchomosciRoute
   '/uslugi/technika-grzewcza': typeof UslugiTechnikaGrzewczaRoute
   '/uslugi/zarzadzanie-nieruchomosciami': typeof UslugiZarzadzanieNieruchomosciamiRoute
   '/uslugi/': typeof UslugiIndexRoute
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/o-nas'
     | '/sitemap.xml'
     | '/uslugi'
+    | '/uslugi/konserwacja-nieruchomosci'
     | '/uslugi/technika-grzewcza'
     | '/uslugi/zarzadzanie-nieruchomosciami'
     | '/uslugi/'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/o-nas'
     | '/sitemap.xml'
+    | '/uslugi/konserwacja-nieruchomosci'
     | '/uslugi/technika-grzewcza'
     | '/uslugi/zarzadzanie-nieruchomosciami'
     | '/uslugi'
@@ -129,6 +141,7 @@ export interface FileRouteTypes {
     | '/o-nas'
     | '/sitemap.xml'
     | '/uslugi'
+    | '/uslugi/konserwacja-nieruchomosci'
     | '/uslugi/technika-grzewcza'
     | '/uslugi/zarzadzanie-nieruchomosciami'
     | '/uslugi/'
@@ -208,16 +221,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UslugiTechnikaGrzewczaRouteImport
       parentRoute: typeof UslugiRoute
     }
+    '/uslugi/konserwacja-nieruchomosci': {
+      id: '/uslugi/konserwacja-nieruchomosci'
+      path: '/konserwacja-nieruchomosci'
+      fullPath: '/uslugi/konserwacja-nieruchomosci'
+      preLoaderRoute: typeof UslugiKonserwacjaNieruchomosciRouteImport
+      parentRoute: typeof UslugiRoute
+    }
   }
 }
 
 interface UslugiRouteChildren {
+  UslugiKonserwacjaNieruchomosciRoute: typeof UslugiKonserwacjaNieruchomosciRoute
   UslugiTechnikaGrzewczaRoute: typeof UslugiTechnikaGrzewczaRoute
   UslugiZarzadzanieNieruchomosciamiRoute: typeof UslugiZarzadzanieNieruchomosciamiRoute
   UslugiIndexRoute: typeof UslugiIndexRoute
 }
 
 const UslugiRouteChildren: UslugiRouteChildren = {
+  UslugiKonserwacjaNieruchomosciRoute: UslugiKonserwacjaNieruchomosciRoute,
   UslugiTechnikaGrzewczaRoute: UslugiTechnikaGrzewczaRoute,
   UslugiZarzadzanieNieruchomosciamiRoute:
     UslugiZarzadzanieNieruchomosciamiRoute,

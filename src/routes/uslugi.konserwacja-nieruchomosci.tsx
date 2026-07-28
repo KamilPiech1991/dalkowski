@@ -108,7 +108,7 @@ function Konserwacja() {
             </div>
           </div>
           <div className="rounded-3xl overflow-hidden shadow-soft">
-            <OptimizedImage source={hero} alt="Konserwator z narzędziami w budynku mieszkalnym" width={1600} height={1000} priority className="w-full h-auto" />
+            <OptimizedImage picture={hero} alt="Konserwator z narzędziami w budynku mieszkalnym" width={1600} height={1000} priority className="w-full h-auto" />
           </div>
         </div>
       </section>
@@ -139,7 +139,7 @@ function Konserwacja() {
               </ul>
             </div>
             <div className={`rounded-3xl overflow-hidden shadow-soft ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-              <OptimizedImage source={[g1, g3, g5][i]} alt={s.title} width={1600} height={1067} className="w-full h-auto" />
+              <OptimizedImage picture={[g1, g3, g5][i]} alt={s.title} width={1600} height={1067} className="w-full h-auto" />
             </div>
           </div>
         </section>
