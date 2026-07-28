@@ -11,6 +11,7 @@ const nav = [
     label: "Usługi",
     children: [
       { to: "/uslugi/zarzadzanie-nieruchomosciami", label: "Zarządzanie nieruchomościami" },
+      { to: "/uslugi/konserwacja-nieruchomosci", label: "Konserwacja nieruchomości" },
       { to: "/uslugi/technika-grzewcza", label: "Technika grzewcza" },
     ],
   },
