@@ -8,7 +8,7 @@ import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
 import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 
 const TITLE = "Konserwacja Nieruchomości Piaseczno — Hydraulik, Elektryk, Złota Rączka 24/7 | Dalkowski";
-const DESC = "Konserwacja techniczna wspólnot i budynków w Piasecznie: hydraulika, elektryka, drobne prace budowlane i usługi „złotej rączki". Dostępność 24/7 dla klientów obsługiwanych administracyjnie.";
+const DESC = "Konserwacja techniczna wspólnot i budynków w Piasecznie: hydraulika, elektryka, drobne prace budowlane i usługi złotej rączki. Dostępność 24/7 dla klientów obsługiwanych administracyjnie.";
 
 export const Route = createFileRoute("/uslugi/konserwacja-nieruchomosci")({
   head: () => ({
