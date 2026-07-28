@@ -8,6 +8,7 @@ const paths = [
   { path: "/o-nas", priority: "0.8", changefreq: "monthly" as const },
   { path: "/uslugi", priority: "0.8", changefreq: "monthly" as const },
   { path: "/uslugi/zarzadzanie-nieruchomosciami", priority: "0.9", changefreq: "monthly" as const },
+  { path: "/uslugi/konserwacja-nieruchomosci", priority: "0.9", changefreq: "monthly" as const },
   { path: "/uslugi/technika-grzewcza", priority: "0.9", changefreq: "monthly" as const },
   { path: "/galeria", priority: "0.6", changefreq: "monthly" as const },
   { path: "/kontakt", priority: "0.7", changefreq: "yearly" as const },
