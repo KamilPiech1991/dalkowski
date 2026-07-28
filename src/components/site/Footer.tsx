@@ -20,6 +20,7 @@ export function Footer() {
             <li><Link to="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
             <li><Link to="/o-nas" className="text-muted-foreground hover:text-primary">O nas</Link></li>
             <li><Link to="/uslugi/zarzadzanie-nieruchomosciami" className="text-muted-foreground hover:text-primary">Zarządzanie nieruchomościami</Link></li>
+            <li><Link to="/uslugi/konserwacja-nieruchomosci" className="text-muted-foreground hover:text-primary">Konserwacja nieruchomości</Link></li>
             <li><Link to="/uslugi/technika-grzewcza" className="text-muted-foreground hover:text-primary">Technika grzewcza</Link></li>
             <li><Link to="/galeria" className="text-muted-foreground hover:text-primary">Galeria</Link></li>
             <li><Link to="/kontakt" className="text-muted-foreground hover:text-primary">Kontakt</Link></li>

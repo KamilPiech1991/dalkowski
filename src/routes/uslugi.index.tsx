@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Building2, Flame, ArrowRight } from "lucide-react";
+import { Building2, Flame, Wrench, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
 const TITLE = "Usługi — Zarządzanie Nieruchomościami i Technika Grzewcza | Dalkowski";
@@ -32,9 +32,10 @@ function UslugiIndex() {
         </div>
       </section>
 
-      <section className="container-page py-16 grid md:grid-cols-2 gap-6">
+      <section className="container-page py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           { to: "/uslugi/zarzadzanie-nieruchomosciami", icon: Building2, title: "Zarządzanie nieruchomościami", desc: "Obsługa administracyjna, księgowa i techniczna wspólnot mieszkaniowych w Piasecznie, Konstancinie i Józefosławiu." },
+          { to: "/uslugi/konserwacja-nieruchomosci", icon: Wrench, title: "Konserwacja nieruchomości", desc: "Hydraulika, elektryka i drobne prace budowlane. Dla naszych klientów dostępność 24/7 przez cały tydzień." },
           { to: "/uslugi/technika-grzewcza", icon: Flame, title: "Technika grzewcza", desc: "Serwis, instalacja i przeglądy pieców c.o. Autoryzowany serwis De Dietrich. Naprawimy każdy piec." },
         ].map((s) => (
           <Link key={s.to} to={s.to} className="group rounded-3xl border border-border bg-card p-10 hover:shadow-soft hover:border-primary/30 transition-all">
