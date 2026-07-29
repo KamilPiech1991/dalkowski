@@ -36,7 +36,7 @@ function UslugiIndex() {
         {[
           { to: "/uslugi/zarzadzanie-nieruchomosciami", icon: Building2, title: "Zarządzanie nieruchomościami", desc: "Obsługa administracyjna, księgowa i techniczna wspólnot mieszkaniowych w Piasecznie, Konstancinie i Józefosławiu." },
           { to: "/uslugi/konserwacja-nieruchomosci", icon: Wrench, title: "Konserwacja nieruchomości", desc: "Hydraulika, elektryka i drobne prace budowlane. Dla naszych klientów dostępność 24/7 przez cały tydzień." },
-          { to: "/uslugi/technika-grzewcza", icon: Flame, title: "Technika grzewcza", desc: "Serwis, instalacja i przeglądy pieców c.o. Autoryzowany serwis De Dietrich. Naprawimy każdy piec." },
+          { to: "/uslugi/technika-grzewcza", icon: Flame, title: "Technika grzewcza", desc: "Autoryzowany serwis pieców De Dietrich. Przeglądy, naprawy i instalacje kotłów gazowych w Piasecznie i okolicach." },
         ].map((s) => (
           <Link key={s.to} to={s.to} className="group rounded-3xl border border-border bg-card p-10 hover:shadow-soft hover:border-primary/30 transition-all">
             <div className="rounded-2xl bg-primary-soft p-4 w-fit"><s.icon className="h-8 w-8 text-primary" /></div>

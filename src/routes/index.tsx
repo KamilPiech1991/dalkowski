@@ -148,7 +148,7 @@ function Index() {
               <h3 className="text-2xl font-bold">Technika grzewcza</h3>
             </div>
             <p className="text-muted-foreground mb-5">
-              Serwis, instalacja i przeglądy pieców centralnego ogrzewania. Autoryzowany serwis De Dietrich. Naprawimy każdy piec.
+              Autoryzowany serwis pieców De Dietrich — przeglądy, naprawy i instalacje kotłów gazowych. Umawiamy wizyty na dogodne godziny.
             </p>
             <ul className="space-y-2 mb-6">
               {["Naprawy awaryjne — szybki dojazd", "Coroczne przeglądy i konserwacje", "Sprzedaż i montaż nowych pieców", "Gwarancja na piśmie na każdą usługę"].map((t) => (
@@ -199,7 +199,7 @@ function Index() {
         <div className="rounded-3xl bg-gradient-brand px-8 sm:px-14 py-14 text-center text-primary-foreground shadow-soft">
           <h2 className="text-3xl sm:text-4xl font-bold">Potrzebujesz pomocy z nieruchomością lub piecem?</h2>
           <p className="mt-4 text-primary-foreground/85 max-w-2xl mx-auto">
-            Zadzwoń lub napisz — odpowiemy w ciągu dnia roboczego. Awarie pieców c.o. obsługujemy całą dobę.
+            Zadzwoń lub napisz — odpowiemy w ciągu dnia roboczego. Awarie w zarządzanych przez nas wspólnotach obsługujemy całą dobę.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <a href="tel:+48793720760" className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-semibold text-primary hover:opacity-90">

@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
 const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Pieców";
-const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie. Tel. +48 793 720 760 (biuro), +48 732 820 870 (awarie 24/7). ul. Armii Krajowej 2, 05-500 Piaseczno.";
+const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie. Tel. +48 793 720 760 (biuro), +48 732 820 870 (awarie w zarządzanych wspólnotach), +48 792 040 540 (technika grzewcza). ul. Armii Krajowej 2, 05-500 Piaseczno.";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -44,7 +44,7 @@ function Kontakt() {
 
           <div className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-lg font-bold flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-primary" /> Dział techniczny — awarie</h2>
-            <p className="text-xs text-muted-foreground mt-2">W sprawach zgłoszeń problemów lub awarii prosimy o kontakt z działem technicznym (całą dobę).</p>
+            <p className="text-xs text-muted-foreground mt-2">Całodobowy numer dla wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora. Drobne awarie usuwamy od razu, bez czekania na zewnętrznych wykonawców.</p>
             <div className="mt-3 space-y-1 text-sm">
               <a href="tel:+48732820870" className="block font-semibold text-foreground hover:text-primary">+48 732 820 870</a>
             </div>
@@ -68,7 +68,7 @@ function Kontakt() {
           <div className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-lg font-bold flex items-center gap-2"><Clock className="h-5 w-5 text-primary" /> Godziny pracy</h2>
             <p className="mt-3 text-sm text-muted-foreground">Poniedziałek – Piątek: <strong className="text-foreground">10:00 – 17:00</strong></p>
-            <p className="text-sm text-muted-foreground">Awarie pieców c.o.: <strong className="text-foreground">całą dobę</strong></p>
+            <p className="text-sm text-muted-foreground">Serwis pieców: <strong className="text-foreground">wizyty w uzgodnionych godzinach</strong></p>
           </div>
         </div>
 
