@@ -41,7 +41,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Godziny pracy</h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-2"><Clock className="h-4 w-4 mt-0.5 text-primary" /> Pon. – Pt. 10:00 – 17:00</li>
-            <li className="pl-6">Awarie pieców c.o. – całą dobę</li>
+            <li className="pl-6">Awarie w zarządzanych wspólnotach – 24/7</li>
             <li className="pl-6 text-xs pt-2">Licencja zawodowa nr 23367</li>
             <li className="pl-6 text-xs">NIP 821-137-87-39</li>
           </ul>

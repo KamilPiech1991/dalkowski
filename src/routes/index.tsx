@@ -83,7 +83,7 @@ function Index() {
             <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
               <div><div className="text-3xl font-bold text-primary">18+</div><div className="text-xs text-muted-foreground mt-1">lat doświadczenia</div></div>
               <div><div className="text-3xl font-bold text-primary">11</div><div className="text-xs text-muted-foreground mt-1">obsługiwanych wspólnot</div></div>
-              <div><div className="text-3xl font-bold text-primary">24/7</div><div className="text-xs text-muted-foreground mt-1">dostępność awarii</div></div>
+              <div><div className="text-3xl font-bold text-primary">24/7</div><div className="text-xs text-muted-foreground mt-1">awarie w zarządzanych wspólnotach</div></div>
             </div>
           </div>
           <div className="lg:col-span-7 relative">
