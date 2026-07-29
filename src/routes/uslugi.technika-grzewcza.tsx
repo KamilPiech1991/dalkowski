@@ -7,15 +7,15 @@ import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
 import g6 from "@/assets/gallery-6.jpg?optimize&as=picture";
 import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 
-const TITLE = "Serwis Pieców c.o. Piaseczno — Naprawy, Przeglądy, Instalacja | Dalkowski";
-const DESC = "Autoryzowany serwis pieców De Dietrich oraz serwis wszystkich marek: Junkers, Vaillant, Bosch, Buderus, Termet. Naprawy awaryjne, przeglądy, montaż. Piaseczno i okolice.";
+const TITLE = "Autoryzowany Serwis De Dietrich Piaseczno — Przeglądy, Naprawy, Montaż | Dalkowski";
+const DESC = "Autoryzowany serwis pieców De Dietrich w Piasecznie i okolicach. Przeglądy okresowe, naprawy awaryjne, instalacja i wymiana kotłów gazowych. Umawiamy się na dogodne godziny.";
 
 export const Route = createFileRoute("/uslugi/technika-grzewcza")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "keywords", content: "serwis pieców co Piaseczno, naprawa pieca gazowego, autoryzowany serwis De Dietrich, przegląd pieca, instalacja kotła gazowego Piaseczno" },
+      { name: "keywords", content: "autoryzowany serwis De Dietrich Piaseczno, serwis pieców De Dietrich, przegląd pieca gazowego, naprawa kotła De Dietrich, instalacja pieca gazowego Piaseczno" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/uslugi/technika-grzewcza" },
@@ -28,12 +28,12 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
-        serviceType: "Serwis pieców centralnego ogrzewania",
+        serviceType: "Autoryzowany serwis pieców De Dietrich",
         provider: { "@type": "LocalBusiness", name: "Dalkowski Technika Grzewcza", telephone: "+48792040540" },
         areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
         description: DESC,
         offers: [
-          { "@type": "Offer", name: "Przegląd okresowy pieca c.o.", price: "250", priceCurrency: "PLN" },
+          { "@type": "Offer", name: "Przegląd okresowy pieca gazowego De Dietrich", price: "250", priceCurrency: "PLN" },
           { "@type": "Offer", name: "Naprawa awaryjna (diagnoza i prosta naprawa)", price: "250", priceCurrency: "PLN" },
         ],
       }),
@@ -43,12 +43,12 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
 });
 
 const services = [
-  { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej pieca gazowego", desc: "W przypadku konieczności pilnej naprawy przyjeżdżamy tak szybko jak to możliwe. Zapewniamy części do naprawy. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
-  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd pieca centralnego ogrzewania", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
-  { icon: ShoppingCart, title: "Sprzedaż i instalacja", img: g6, alt: "Nowoczesny kocioł kondensacyjny De Dietrich", desc: "Prowadzimy sprzedaż pieców marki De Dietrich — posiadamy autoryzację producenta. Instalujemy również piece innych marek zgodnie z preferencjami klienta." },
+  { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej pieca gazowego De Dietrich", desc: "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
+  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd pieca centralnego ogrzewania De Dietrich", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
+  { icon: ShoppingCart, title: "Sprzedaż i instalacja", img: g6, alt: "Nowoczesny kocioł kondensacyjny De Dietrich", desc: "Jako autoryzowany partner De Dietrich prowadzimy sprzedaż i profesjonalny montaż kotłów gazowych tej marki. Dobieramy moc i model do potrzeb budynku oraz zapewniamy pełne wsparcie gwarancyjne." },
 ];
 
-const marki = ["De Dietrich", "Junkers", "Vaillant", "Termet", "Beretta", "Bosch", "Buderus", "Duval"];
+const marki = ["De Dietrich"];
 
 const gwarancje = [
   "Na wykonane usługi zawsze udzielamy gwarancji na piśmie",
@@ -68,12 +68,12 @@ function Technika() {
             <nav className="text-xs text-muted-foreground mb-4" aria-label="Breadcrumb">
               <Link to="/uslugi" className="hover:text-primary">Usługi</Link> / <span className="text-foreground">Technika grzewcza</span>
             </nav>
-            <h1 className="text-4xl sm:text-5xl font-extrabold">Serwis pieców centralnego ogrzewania</h1>
+            <h1 className="text-4xl sm:text-5xl font-extrabold">Autoryzowany serwis pieców De Dietrich</h1>
             <p className="mt-5 text-lg text-muted-foreground">
-              <strong className="text-foreground">Naprawimy każdy piec.</strong> Serwisujemy, naprawiamy i instalujemy piece c.o. wszystkich popularnych marek. Autoryzowany serwis De Dietrich.
+              <strong className="text-foreground">Specjalizujemy się w kotłach De Dietrich.</strong> Przeglądy, naprawy awaryjne oraz sprzedaż i montaż nowych urządzeń w Piasecznie i okolicach. Dla klientów indywidualnych umawiamy wizyty na dogodne godziny.
             </p>
-            <a href="tel:+48732820870" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-soft">
-              <Phone className="h-4 w-4" /> Awaria? +48 732 820 870
+            <a href="tel:+48792040540" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-soft">
+              <Phone className="h-4 w-4" /> Umów serwis: +48 792 040 540
             </a>
           </div>
           <OptimizedImage picture={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
@@ -96,9 +96,9 @@ function Technika() {
       <section className="bg-secondary/50 py-16">
         <div className="container-page">
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-xs font-semibold text-primary uppercase tracking-wider">Serwisowane marki</span>
-            <h2 className="mt-3 text-3xl font-bold">Serwisujemy wszystkie kotły</h2>
-            <p className="mt-3 text-muted-foreground">Pracownicy firmy Dalkowski posiadają autoryzację jednego z wiodących producentów pieców c.o. — De Dietrich.</p>
+            <span className="text-xs font-semibold text-primary uppercase tracking-wider">Autoryzacja</span>
+            <h2 className="mt-3 text-3xl font-bold">Autoryzowany serwis De Dietrich</h2>
+            <p className="mt-3 text-muted-foreground">Jako autoryzowany partner De Dietrich znamy te kotły od podszewki. Realizujemy przeglądy, naprawy i instalacje zgodnie ze standardami producenta, zachowując gwarancję i pełną dokumentację serwisową.</p>
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {marki.map((m) => (
