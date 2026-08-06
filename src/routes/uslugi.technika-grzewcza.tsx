@@ -84,7 +84,7 @@ function Technika() {
               </a>
             </div>
           </div>
-          <OptimizedImage picture={boiler} alt="Serwis kotła gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+          <OptimizedImage picture={ddBoiler.url} alt="Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni" width={768} height={692} className="rounded-2xl shadow-soft w-full h-auto object-cover" priority />
         </div>
       </section>
 
