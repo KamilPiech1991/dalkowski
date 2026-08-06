@@ -34,7 +34,10 @@ export function Footer() {
             <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48574988293" className="hover:text-primary">+48 574 988 293 (biuro)</a></li>
             <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48793720760" className="hover:text-primary">+48 793 720 760 (zarządzanie)</a></li>
             <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48730704502" className="hover:text-primary">+48 730 704 502 (technika, konserwacja)</a></li>
+            <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> <a href="mailto:adm.dalkowski@gmail.com" className="hover:text-primary">adm.dalkowski@gmail.com</a></li>
             <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> <a href="mailto:barbaradalkowska@gmail.com" className="hover:text-primary">barbaradalkowska@gmail.com</a></li>
+            <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> <a href="mailto:dalkowskiroman@gmail.com" className="hover:text-primary">dalkowskiroman@gmail.com</a></li>
+
           </ul>
         </div>
 
