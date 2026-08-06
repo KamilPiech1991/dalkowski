@@ -85,29 +85,41 @@ function Kontakt() {
             e.preventDefault();
             const f = e.currentTarget as HTMLFormElement;
             const fd = new FormData(f);
-            const subject = `Wiadomość ze strony — ${fd.get("name") || "kontakt"}`;
-            const body = `Imię: ${fd.get("name")}\nEmail: ${fd.get("email")}\n\n${fd.get("message")}`;
-            window.location.href = `mailto:barbaradalkowska@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const topic = String(fd.get("topic") || "");
+            const subject = `[${topic}] Wiadomość ze strony — ${fd.get("name") || "kontakt"}`;
+            const body = `Temat: ${topic}\nImię: ${fd.get("name")}\nEmail: ${fd.get("email")}\n\n${fd.get("message")}`;
+            window.location.href = `mailto:adm.dalkowski@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
           }}
         >
           <h2 className="text-2xl font-bold">Napisz do nas</h2>
           <p className="text-sm text-muted-foreground mt-1">Odpowiemy w ciągu dnia roboczego.</p>
           <div className="mt-5 space-y-4">
             <div>
+              <label className="text-xs font-semibold text-foreground" htmlFor="topic">Temat kontaktu <span className="text-primary">*</span></label>
+              <select id="topic" name="topic" required defaultValue="" className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40">
+                <option value="" disabled>Wybierz temat…</option>
+                <option value="Kotły gazowe">Kotły gazowe</option>
+                <option value="Administracja">Administracja</option>
+                <option value="Konserwacja techniczna">Konserwacja techniczna</option>
+              </select>
+              <p className="mt-1 text-xs text-muted-foreground">Dzięki temu wiadomość trafi od razu do właściwej osoby.</p>
+            </div>
+            <div>
               <label className="text-xs font-semibold text-foreground" htmlFor="name">Imię i nazwisko</label>
-              <input id="name" name="name" required className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" />
+              <input id="name" name="name" required maxLength={100} className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" />
             </div>
             <div>
               <label className="text-xs font-semibold text-foreground" htmlFor="email">E-mail</label>
-              <input id="email" name="email" type="email" required className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" />
+              <input id="email" name="email" type="email" required maxLength={255} className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" />
             </div>
             <div>
               <label className="text-xs font-semibold text-foreground" htmlFor="message">Treść wiadomości</label>
-              <textarea id="message" name="message" rows={6} required className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" />
+              <textarea id="message" name="message" rows={6} required maxLength={2000} className="mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40" />
             </div>
             <button type="submit" className="w-full rounded-full bg-primary text-primary-foreground py-3 text-sm font-semibold hover:opacity-90">Wyślij wiadomość</button>
           </div>
         </form>
+
       </section>
     </SiteLayout>
   );
