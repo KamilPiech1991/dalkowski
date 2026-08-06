@@ -202,6 +202,9 @@ function Index() {
             Zadzwoń lub napisz — odpowiemy w ciągu dnia roboczego. Awarie w zarządzanych przez nas wspólnotach obsługujemy całą dobę.
           </p>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <a href="tel:+48574988293" className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-semibold text-primary hover:opacity-90">
+              <Phone className="h-4 w-4" /> +48 574 988 293
+            </a>
             <a href="tel:+48793720760" className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-semibold text-primary hover:opacity-90">
               <Phone className="h-4 w-4" /> +48 793 720 760
             </a>

@@ -189,6 +189,7 @@ function Zarzadzanie() {
             <p className="mt-3 text-primary-foreground/85">Umów rozmowę — z chęcią poznamy specyfikę Twojej wspólnoty i przedstawimy ofertę dopasowaną do jej potrzeb.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="tel:+48793720760" className="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 text-sm font-semibold"><Phone className="h-4 w-4" /> +48 793 720 760</a>
+              <a href="tel:+48574988293" className="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 text-sm font-semibold"><Phone className="h-4 w-4" /> +48 574 988 293</a>
               <Link to="/kontakt" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-sm font-semibold hover:bg-primary-foreground/10">Napisz do nas</Link>
             </div>
           </div>

@@ -97,6 +97,9 @@ function Konserwacja() {
               <a href="tel:+48730704502" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
                 <Phone className="h-4 w-4" /> Zgłoś awarię: +48 730 704 502
               </a>
+              <a href="tel:+48574988293" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold hover:border-primary transition-colors">
+                <Phone className="h-4 w-4 text-primary" /> Biuro: +48 574 988 293
+              </a>
               <Link to="/kontakt" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold hover:border-primary transition-colors">
                 Zapytaj o ofertę
               </Link>
