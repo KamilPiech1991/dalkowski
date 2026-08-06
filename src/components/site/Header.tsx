@@ -25,10 +25,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="container-page flex h-20 items-center justify-between gap-6">
+      <div className="container-page flex h-24 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-3" aria-label="Dalkowski — strona główna">
-          <img src={logoAsset.url} alt="Dalkowski" className="h-12 w-auto" width={160} height={48} />
+          <img src={logoAsset.url} alt="Dalkowski" className="h-14 lg:h-16 w-auto" width={213} height={64} />
         </Link>
+
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Główna nawigacja">
           {nav.map((item) =>

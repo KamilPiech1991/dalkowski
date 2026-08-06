@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Dalkowski – Zarządzanie Nieruchomościami i Technika Grzewcza",
           image: "/favicon.ico",
           telephone: "+48574988293",
-          email: "barbaradalkowska@gmail.com",
+          email: "adm.dalkowski@gmail.com",
           address: {
             "@type": "PostalAddress",
             streetAddress: "ul. Armii Krajowej 2",
