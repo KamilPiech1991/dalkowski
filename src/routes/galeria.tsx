@@ -51,6 +51,7 @@ const realPhotos: Photo[] = [
 ];
 
 const stockPhotos: Photo[] = [
+  { src: ddBoiler.url, alt: "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni" },
   { src: g1.img.src, alt: "Osiedle mieszkaniowe — widok z lotu ptaka" },
   { src: g2.img.src, alt: "Wejście do budynku wspólnoty z zadbaną zielenią" },
   { src: g4.img.src, alt: "Plac zabaw na osiedlu w Józefosławiu" },
