@@ -132,25 +132,26 @@ function Technika() {
             <div className="border-b border-border pb-4">
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="font-semibold">Przegląd okresowy kotła gazowego</h3>
-                <span className="text-primary font-bold whitespace-nowrap">250 zł</span>
+                <span className="text-primary font-bold whitespace-nowrap">350 zł netto</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">Kocioł gazowy wiszący lub stojący. Przy 5 przeglądach jednego dnia na tym samym osiedlu — rabat 20% (199 zł / przegląd).</p>
+              <p className="text-xs text-muted-foreground mt-2">Kocioł gazowy wiszący lub stojący. Przy 5 przeglądach jednego dnia na tym samym osiedlu — rabat 20% (280 zł netto / przegląd).</p>
             </div>
             <div className="border-b border-border pb-4">
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-semibold">Instalacja nowego kotła gazowego</h3>
-                <span className="text-primary font-bold whitespace-nowrap">wycena</span>
+                <h3 className="font-semibold">Montaż nowego kotła gazowego</h3>
+                <span className="text-primary font-bold whitespace-nowrap">wycena indywidualna</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">Cena ustalana indywidualnie — zależy od modelu kotła i warunków instalacji.</p>
+              <p className="text-xs text-muted-foreground mt-2">Koszt zależy od modelu kotła, stanu instalacji i warunków montażu — wycenę przygotowujemy po oględzinach.</p>
             </div>
             <div>
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="font-semibold">Naprawa awaryjna</h3>
-                <span className="text-primary font-bold whitespace-nowrap">od 250 zł</span>
+                <span className="text-primary font-bold whitespace-nowrap">wycena indywidualna</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">Diagnoza + prosta naprawa podczas jednej wizyty + koszt części. Złożone naprawy — wycena do akceptacji. Po 17:00 i w dni wolne +50 zł.</p>
+              <p className="text-xs text-muted-foreground mt-2">Kosztu naprawy nie da się przewidzieć z góry — w zależności od usterki i części może to być 150 zł, jak i 2500 zł. Po diagnozie zawsze podajemy cenę do akceptacji przed rozpoczęciem prac.</p>
             </div>
           </div>
+
         </div>
       </section>
     </SiteLayout>
