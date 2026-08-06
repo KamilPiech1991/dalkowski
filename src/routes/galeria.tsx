@@ -17,6 +17,7 @@ import p2762 from "@/assets/photo-2762.jpg.asset.json";
 import p2766 from "@/assets/photo-2766.jpg.asset.json";
 import p2769 from "@/assets/photo-2769.jpg.asset.json";
 import p2773 from "@/assets/photo-2773.jpg.asset.json";
+import ddBoiler from "@/assets/de-dietrich-kociol.png.asset.json";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
