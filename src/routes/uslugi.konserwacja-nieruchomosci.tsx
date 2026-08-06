@@ -94,8 +94,8 @@ function Konserwacja() {
               Poza standardową administracją wspólnoty oferujemy pełną konserwację techniczną budynku i lokali. Dla klientów, którzy wybiorą tę opcję, jesteśmy dostępni <strong>24 godziny na dobę, 7 dni w tygodniu</strong> — również w weekendy i święta.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="tel:+48732820870" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
-                <Phone className="h-4 w-4" /> Zgłoś awarię: +48 732 820 870
+              <a href="tel:+48730704502" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
+                <Phone className="h-4 w-4" /> Zgłoś awarię: +48 730 704 502
               </a>
               <Link to="/kontakt" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold hover:border-primary transition-colors">
                 Zapytaj o ofertę
@@ -154,8 +154,8 @@ function Konserwacja() {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <a href="tel:+48732820870" className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-semibold hover:opacity-90">
-              <Phone className="h-4 w-4" /> +48 732 820 870
+            <a href="tel:+48730704502" className="inline-flex items-center justify-center gap-2 rounded-full bg-background text-foreground px-6 py-3 text-sm font-semibold hover:opacity-90">
+              <Phone className="h-4 w-4" /> +48 730 704 502
             </a>
             <Link to="/uslugi/zarzadzanie-nieruchomosciami" className="inline-flex items-center justify-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-sm font-semibold hover:bg-primary-foreground/10">
               Zobacz pakiet zarządzania

@@ -72,11 +72,11 @@ export function Header() {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:+48793720760"
+            href="tel:+48574988293"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
           >
             <Phone className="h-4 w-4" />
-            +48 793 720 760
+            +48 574 988 293
           </a>
         </div>
 
@@ -136,11 +136,11 @@ export function Header() {
               )
             )}
             <a
-              href="tel:+48793720760"
+              href="tel:+48574988293"
               className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
             >
               <Phone className="h-4 w-4" />
-              +48 793 720 760
+              +48 574 988 293
             </a>
           </div>
         </div>
