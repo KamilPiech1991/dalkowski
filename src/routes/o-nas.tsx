@@ -67,7 +67,10 @@ function ONas() {
               Moje doświadczenie w zarządzaniu Wspólnotą sięga 2004 roku, kiedy zostałam członkiem Zarządu Wspólnoty Mieszkaniowej „Staszica 42" w Piasecznie — 8 budynków, łącznie 121 lokali. Doświadczenie jakie tam zdobyłam to prawdziwa szkoła zarządzania.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Budynki były w upadłości deweloperskiej, brakowało finansowania na media i utrzymanie nieruchomości. Poprzez zmianę organizacji pracy i osobiste zaangażowanie udało się wypracować oszczędności, z których zainwestowaliśmy w plac rekreacyjny i sportowy. Konieczne było także znalezienie finansowania na remont dachów i balkonów.
+              Budynki były w upadłości deweloperskiej, brakowało finansowania na media i utrzymanie nieruchomości. Poprzez zmianę organizacji pracy, negocjacje z dostawcami i osobiste zaangażowanie udało się uporządkować finanse wspólnoty oraz znaleźć środki na niezbędne remonty, m.in. dachów i balkonów.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Na co dzień stawiam na bezpośredni kontakt, przejrzystą sprawozdawczość i szybkie reagowanie na zgłoszenia mieszkańców. Zależy mi, żeby każdy właściciel wiedział, na co idą pieniądze wspólnoty i w jakim stanie jest jego budynek.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Uważam, że <strong className="text-foreground">każda nieruchomość ma odmienną specyfikę</strong> — dlatego docelowy model administrowania zawsze wypracowuję wspólnie z mieszkańcami i Członkami Wspólnoty, których zdanie i oczekiwania są dla mnie kluczowe.
