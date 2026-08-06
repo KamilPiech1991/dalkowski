@@ -17,6 +17,7 @@ import p2762 from "@/assets/photo-2762.jpg.asset.json";
 import p2766 from "@/assets/photo-2766.jpg.asset.json";
 import p2769 from "@/assets/photo-2769.jpg.asset.json";
 import p2773 from "@/assets/photo-2773.jpg.asset.json";
+import ddBoiler from "@/assets/de-dietrich-kociol.png.asset.json";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
@@ -50,6 +51,7 @@ const realPhotos: Photo[] = [
 ];
 
 const stockPhotos: Photo[] = [
+  { src: ddBoiler.url, alt: "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni" },
   { src: g1.img.src, alt: "Osiedle mieszkaniowe — widok z lotu ptaka" },
   { src: g2.img.src, alt: "Wejście do budynku wspólnoty z zadbaną zielenią" },
   { src: g4.img.src, alt: "Plac zabaw na osiedlu w Józefosławiu" },
