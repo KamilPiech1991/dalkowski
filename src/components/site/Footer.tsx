@@ -31,8 +31,9 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Kontakt</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5 text-primary" /> ul. Armii Krajowej 2, 05-500 Piaseczno</li>
-            <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48793720760" className="hover:text-primary">+48 793 720 760</a></li>
-            <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48732820870" className="hover:text-primary">+48 732 820 870 (awarie)</a></li>
+            <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48574988293" className="hover:text-primary">+48 574 988 293 (biuro)</a></li>
+            <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48793720760" className="hover:text-primary">+48 793 720 760 (zarządzanie)</a></li>
+            <li className="flex items-start gap-2"><Phone className="h-4 w-4 mt-0.5 text-primary" /> <a href="tel:+48730704502" className="hover:text-primary">+48 730 704 502 (technika, konserwacja)</a></li>
             <li className="flex items-start gap-2"><Mail className="h-4 w-4 mt-0.5 text-primary" /> <a href="mailto:barbaradalkowska@gmail.com" className="hover:text-primary">barbaradalkowska@gmail.com</a></li>
           </ul>
         </div>

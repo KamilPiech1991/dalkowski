@@ -29,7 +29,7 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
         "@context": "https://schema.org",
         "@type": "Service",
         serviceType: "Autoryzowany serwis pieców De Dietrich",
-        provider: { "@type": "LocalBusiness", name: "Dalkowski Technika Grzewcza", telephone: "+48792040540" },
+        provider: { "@type": "LocalBusiness", name: "Dalkowski Technika Grzewcza", telephone: "+48730704502" },
         areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
         description: DESC,
         offers: [
@@ -72,9 +72,14 @@ function Technika() {
             <p className="mt-5 text-lg text-muted-foreground">
               <strong className="text-foreground">Specjalizujemy się w kotłach De Dietrich.</strong> Przeglądy, naprawy awaryjne oraz sprzedaż i montaż nowych urządzeń w Piasecznie i okolicach. Dla klientów indywidualnych umawiamy wizyty na dogodne godziny.
             </p>
-            <a href="tel:+48792040540" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-soft">
-              <Phone className="h-4 w-4" /> Umów serwis: +48 792 040 540
-            </a>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href="tel:+48730704502" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-soft">
+                <Phone className="h-4 w-4" /> Serwis: +48 730 704 502
+              </a>
+              <a href="tel:+48574988293" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold hover:border-primary transition-colors">
+                <Phone className="h-4 w-4 text-primary" /> Biuro: +48 574 988 293
+              </a>
+            </div>
           </div>
           <OptimizedImage picture={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
         </div>

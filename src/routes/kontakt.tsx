@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
 const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Pieców";
-const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie. Tel. +48 793 720 760 (biuro), +48 732 820 870 (awarie w zarządzanych wspólnotach), +48 792 040 540 (technika grzewcza). ul. Armii Krajowej 2, 05-500 Piaseczno.";
+const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie. Tel. +48 574 988 293 (biuro), +48 793 720 760 (zarządzanie nieruchomościami), +48 730 704 502 (technika grzewcza, hydraulika, elektryka). ul. Armii Krajowej 2, 05-500 Piaseczno.";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -35,28 +35,32 @@ function Kontakt() {
       <section className="container-page py-16 grid lg:grid-cols-2 gap-10">
         <div className="space-y-5">
           <div className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-lg font-bold flex items-center gap-2"><Phone className="h-5 w-5 text-primary" /> Biuro / zarządzanie</h2>
+            <h2 className="text-lg font-bold flex items-center gap-2"><Phone className="h-5 w-5 text-primary" /> Biuro — umawianie wizyt i zgłoszenia</h2>
+            <p className="text-xs text-muted-foreground mt-2">Główny numer kontaktowy do wszystkich usług — zarządzanie, konserwacja i technika grzewcza.</p>
             <div className="mt-3 space-y-1 text-sm">
-              <a href="tel:+48793720760" className="block font-semibold text-foreground hover:text-primary">+48 793 720 760</a>
+              <a href="tel:+48574988293" className="block font-semibold text-foreground hover:text-primary">+48 574 988 293</a>
               <a href="mailto:barbaradalkowska@gmail.com" className="block text-muted-foreground hover:text-primary">barbaradalkowska@gmail.com</a>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-lg font-bold flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-primary" /> Dział techniczny — awarie</h2>
-            <p className="text-xs text-muted-foreground mt-2">Całodobowy numer dla wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora. Drobne awarie usuwamy od razu, bez czekania na zewnętrznych wykonawców.</p>
+            <h2 className="text-lg font-bold flex items-center gap-2"><Phone className="h-5 w-5 text-primary" /> Zarządzanie nieruchomościami</h2>
+            <p className="text-xs text-muted-foreground mt-2">Barbara Dalkowska — zarządca nieruchomości. Gdy numer jest zajęty, prosimy dzwonić do biura.</p>
             <div className="mt-3 space-y-1 text-sm">
-              <a href="tel:+48732820870" className="block font-semibold text-foreground hover:text-primary">+48 732 820 870</a>
+              <a href="tel:+48793720760" className="block font-semibold text-foreground hover:text-primary">+48 793 720 760</a>
+              <a href="tel:+48574988293" className="block text-muted-foreground hover:text-primary">+48 574 988 293 (biuro)</a>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-lg font-bold flex items-center gap-2"><Phone className="h-5 w-5 text-primary" /> Technika grzewcza</h2>
+            <h2 className="text-lg font-bold flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-primary" /> Technika grzewcza, hydraulika, elektryka</h2>
+            <p className="text-xs text-muted-foreground mt-2">Pan Roman — serwis pieców De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny.</p>
             <div className="mt-3 space-y-1 text-sm">
-              <a href="tel:+48792040540" className="block font-semibold text-foreground hover:text-primary">+48 792 040 540</a>
-              <a href="mailto:serwis@technika-grzewcza-dalkowski.pl" className="block text-muted-foreground hover:text-primary">serwis@technika-grzewcza-dalkowski.pl</a>
+              <a href="tel:+48730704502" className="block font-semibold text-foreground hover:text-primary">+48 730 704 502</a>
+              <a href="tel:+48574988293" className="block text-muted-foreground hover:text-primary">+48 574 988 293 (biuro)</a>
             </div>
           </div>
+
 
           <div className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-lg font-bold flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" /> Adres</h2>
