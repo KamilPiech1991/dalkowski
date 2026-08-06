@@ -33,9 +33,11 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
         areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
         description: DESC,
         offers: [
-          { "@type": "Offer", name: "Przegląd okresowy kotła gazowego De Dietrich", price: "250", priceCurrency: "PLN" },
-          { "@type": "Offer", name: "Naprawa awaryjna (diagnoza i prosta naprawa)", price: "250", priceCurrency: "PLN" },
+          { "@type": "Offer", name: "Przegląd okresowy kotła gazowego De Dietrich", price: "350", priceCurrency: "PLN", description: "Cena netto" },
+          { "@type": "Offer", name: "Naprawa awaryjna kotła gazowego", priceCurrency: "PLN", description: "Wycena indywidualna — zakres i koszt zależą od usterki" },
+          { "@type": "Offer", name: "Montaż kotła gazowego", priceCurrency: "PLN", description: "Wycena indywidualna" },
         ],
+
       }),
     }],
   }),
