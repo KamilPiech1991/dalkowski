@@ -9,7 +9,7 @@ Adres: ul. Armii Krajowej 2, 05-500 Piaseczno.
 
 ## Strony
 
-- [Home](/): przegląd firmy, dwa filary działalności, kontakt awaryjny.
+- [Strona główna](/): przegląd firmy, dwa filary działalności, kontakt awaryjny.
 - [O nas](/o-nas): historia firmy, Barbara Dalkowska, lista zarządzanych wspólnot, licencja zawodowa.
 - [Usługi](/uslugi): rozdzielnik do dwóch głównych usług.
 - [Zarządzanie nieruchomościami](/uslugi/zarzadzanie-nieruchomosciami): pełny zakres obsługi administracyjnej, księgowej i technicznej wspólnot.

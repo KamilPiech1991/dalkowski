@@ -82,7 +82,7 @@ function ONas() {
 
             <h3 className="mt-10 text-xl font-bold">Technika grzewcza</h3>
             <p className="mt-3 text-muted-foreground leading-relaxed">
-              W 2020 roku rozszerzyliśmy działalność o serwis i instalację kotłów gazowych centralnego ogrzewania. Nasi specjaliści mają wieloletnie doświadczenie i autoryzację jednego z wiodących producentów — <strong className="text-foreground">De Dietrich</strong>. Serwisujemy wszystkie marki kotłów gazowych: Junkers, Vaillant, Bosch, Buderus, Termet, Beretta, Duval i inne.
+              W 2020 roku rozszerzyliśmy działalność o serwis i instalację kotłów gazowych centralnego ogrzewania. Nasi specjaliści mają wieloletnie doświadczenie i autoryzację jednego z wiodących producentów — <strong className="text-foreground">De Dietrich</strong>. Specjalizujemy się wyłącznie w kotłach De Dietrich — dzięki temu znamy je od podszewki.
             </p>
           </div>
         </div>

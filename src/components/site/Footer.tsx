@@ -17,7 +17,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Nawigacja</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
+            <li><Link to="/" className="text-muted-foreground hover:text-primary">Strona główna</Link></li>
             <li><Link to="/o-nas" className="text-muted-foreground hover:text-primary">O nas</Link></li>
             <li><Link to="/uslugi/zarzadzanie-nieruchomosciami" className="text-muted-foreground hover:text-primary">Zarządzanie nieruchomościami</Link></li>
             <li><Link to="/uslugi/konserwacja-nieruchomosci" className="text-muted-foreground hover:text-primary">Konserwacja nieruchomości</Link></li>
