@@ -28,7 +28,7 @@ export const Route = createFileRoute("/uslugi/konserwacja-nieruchomosci")({
         "@context": "https://schema.org",
         "@type": "Service",
         serviceType: "Konserwacja nieruchomości",
-        provider: { "@type": "LocalBusiness", name: "Dalkowski", telephone: "+48793720760" },
+        provider: { "@type": "LocalBusiness", name: "Dalkowski", telephone: "+48730704502" },
         areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
         description: DESC,
         hoursAvailable: "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
