@@ -6,6 +6,7 @@ import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
 import g6 from "@/assets/gallery-6.jpg?optimize&as=picture";
 import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
+import ddBoiler from "@/assets/de-dietrich-kociol.png.asset.json";
 
 const TITLE = "Autoryzowany Serwis De Dietrich Piaseczno — Przeglądy, Naprawy, Montaż | Dalkowski";
 const DESC = "Autoryzowany serwis kotłów gazowych De Dietrich w Piasecznie i okolicach. Przeglądy okresowe, naprawy awaryjne, instalacja i wymiana kotłów gazowych. Umawiamy się na dogodne godziny.";
