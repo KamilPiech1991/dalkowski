@@ -39,7 +39,7 @@ function Kontakt() {
             <p className="text-xs text-muted-foreground mt-2">Główny numer kontaktowy do wszystkich usług — zarządzanie, konserwacja i technika grzewcza.</p>
             <div className="mt-3 space-y-1 text-sm">
               <a href="tel:+48574988293" className="block font-semibold text-foreground hover:text-primary">+48 574 988 293</a>
-              <a href="mailto:barbaradalkowska@gmail.com" className="block text-muted-foreground hover:text-primary">barbaradalkowska@gmail.com</a>
+              <a href="mailto:adm.dalkowski@gmail.com" className="block text-muted-foreground hover:text-primary">adm.dalkowski@gmail.com</a>
             </div>
           </div>
 
@@ -49,17 +49,20 @@ function Kontakt() {
             <div className="mt-3 space-y-1 text-sm">
               <a href="tel:+48793720760" className="block font-semibold text-foreground hover:text-primary">+48 793 720 760</a>
               <a href="tel:+48574988293" className="block text-muted-foreground hover:text-primary">+48 574 988 293 (biuro)</a>
+              <a href="mailto:barbaradalkowska@gmail.com" className="block text-muted-foreground hover:text-primary">barbaradalkowska@gmail.com</a>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6">
-            <h2 className="text-lg font-bold flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-primary" /> Technika grzewcza, hydraulika, elektryka</h2>
+            <h2 className="text-lg font-bold flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-primary" /> Kotły gazowe, hydraulika, elektryka</h2>
             <p className="text-xs text-muted-foreground mt-2">Pan Roman — serwis kotłów gazowych De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny.</p>
             <div className="mt-3 space-y-1 text-sm">
               <a href="tel:+48730704502" className="block font-semibold text-foreground hover:text-primary">+48 730 704 502</a>
               <a href="tel:+48574988293" className="block text-muted-foreground hover:text-primary">+48 574 988 293 (biuro)</a>
+              <a href="mailto:dalkowskiroman@gmail.com" className="block text-muted-foreground hover:text-primary">dalkowskiroman@gmail.com</a>
             </div>
           </div>
+
 
 
           <div className="rounded-2xl border border-border bg-card p-6">
