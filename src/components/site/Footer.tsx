@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <img src={logoAsset.url} alt="Dalkowski" className="h-12 w-auto mb-4" width={160} height={48} />
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Profesjonalne zarządzanie nieruchomościami oraz serwis pieców centralnego ogrzewania.
+            Profesjonalne zarządzanie nieruchomościami oraz serwis kotłów gazowych centralnego ogrzewania.
             Piaseczno i okolice. Działamy od 2006 roku.
           </p>
         </div>

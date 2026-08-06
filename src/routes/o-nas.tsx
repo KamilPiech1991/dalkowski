@@ -5,7 +5,7 @@ import { OptimizedImage } from "@/components/site/OptimizedImage";
 import portrait from "@/assets/about-portrait.jpg?optimize&as=picture";
 
 const TITLE = "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia";
-const DESC = "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis pieców c.o. w Piasecznie od 2006 roku. Licencja zawodowa nr 23367.";
+const DESC = "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie od 2006 roku. Licencja zawodowa nr 23367.";
 
 export const Route = createFileRoute("/o-nas")({
   head: () => ({
@@ -46,7 +46,7 @@ function ONas() {
             Lokalne doświadczenie w zarządzaniu nieruchomościami od 2006 roku
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-3xl">
-            Firma Dalkowski to rodzinna marka z Piaseczna, która łączy administrację wspólnotami mieszkaniowymi z autoryzowanym serwisem pieców centralnego ogrzewania.
+            Firma Dalkowski to rodzinna marka z Piaseczna, która łączy administrację wspólnotami mieszkaniowymi z autoryzowanym serwisem kotłów gazowych centralnego ogrzewania.
           </p>
         </div>
       </section>
@@ -82,7 +82,7 @@ function ONas() {
 
             <h3 className="mt-10 text-xl font-bold">Technika grzewcza</h3>
             <p className="mt-3 text-muted-foreground leading-relaxed">
-              W 2020 roku rozszerzyliśmy działalność o serwis i instalację pieców centralnego ogrzewania. Nasi specjaliści mają wieloletnie doświadczenie i autoryzację jednego z wiodących producentów — <strong className="text-foreground">De Dietrich</strong>. Serwisujemy wszystkie marki pieców: Junkers, Vaillant, Bosch, Buderus, Termet, Beretta, Duval i inne.
+              W 2020 roku rozszerzyliśmy działalność o serwis i instalację kotłów gazowych centralnego ogrzewania. Nasi specjaliści mają wieloletnie doświadczenie i autoryzację jednego z wiodących producentów — <strong className="text-foreground">De Dietrich</strong>. Serwisujemy wszystkie marki kotłów gazowych: Junkers, Vaillant, Bosch, Buderus, Termet, Beretta, Duval i inne.
             </p>
           </div>
         </div>

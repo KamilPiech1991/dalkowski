@@ -1,6 +1,6 @@
 # Dalkowski — Zarządzanie Nieruchomościami i Technika Grzewcza
 
-> Rodzinna firma z Piaseczna (od 2006 r.) świadząca usługi zarządzania wspólnotami mieszkaniowymi oraz autoryzowany serwis pieców centralnego ogrzewania marki De Dietrich.
+> Rodzinna firma z Piaseczna (od 2006 r.) świadząca usługi zarządzania wspólnotami mieszkaniowymi oraz autoryzowany serwis kotłów gazowych centralnego ogrzewania marki De Dietrich.
 
 Obszar działania: Piaseczno, Konstancin-Jeziorna, Józefosław, Warszawa i okolice.
 Właścicielka: Barbara Dalkowska — licencja zawodowa zarządcy nr 23367, polisa OC 50 000 €.
@@ -14,6 +14,6 @@ Adres: ul. Armii Krajowej 2, 05-500 Piaseczno.
 - [Usługi](/uslugi): rozdzielnik do dwóch głównych usług.
 - [Zarządzanie nieruchomościami](/uslugi/zarzadzanie-nieruchomosciami): pełny zakres obsługi administracyjnej, księgowej i technicznej wspólnot.
 - [Konserwacja nieruchomości](/uslugi/konserwacja-nieruchomosci): usługa dodatkowa — hydraulika, elektryka, drobne prace budowlane, złota rączka, dostępność 24/7.
-- [Technika grzewcza](/uslugi/technika-grzewcza): serwis, przeglądy, instalacja pieców c.o., cennik, autoryzacja De Dietrich.
+- [Technika grzewcza](/uslugi/technika-grzewcza): serwis, przeglądy, instalacja kotłów gazowych, cennik, autoryzacja De Dietrich.
 - [Galeria](/galeria): zdjęcia zarządzanych osiedli i realizacji serwisowych.
 - [Kontakt](/kontakt): telefony, e-mail, adres, godziny pracy, formularz.

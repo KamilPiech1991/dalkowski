@@ -19,7 +19,7 @@ import p2769 from "@/assets/photo-2769.jpg.asset.json";
 import p2773 from "@/assets/photo-2773.jpg.asset.json";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
-const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji pieców c.o.";
+const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
 
 export const Route = createFileRoute("/galeria")({
   head: () => ({
@@ -55,8 +55,8 @@ const stockPhotos: Photo[] = [
   { src: g4.img.src, alt: "Plac zabaw na osiedlu w Józefosławiu" },
   { src: hero.img.src, alt: "Wewnętrzny dziedziniec wspólnoty w Piasecznie" },
   { src: g5.img.src, alt: "Elewacja budynku po termomodernizacji" },
-  { src: g3.img.src, alt: "Serwisant Dalkowski Technika Grzewcza podczas przeglądu pieca" },
-  { src: boiler.img.src, alt: "Instalacja nowego pieca gazowego" },
+  { src: g3.img.src, alt: "Serwisant Dalkowski Technika Grzewcza podczas przeglądu kotła" },
+  { src: boiler.img.src, alt: "Instalacja nowego kotła gazowego" },
   { src: g6.img.src, alt: "Nowoczesny kocioł kondensacyjny" },
 ];
 
