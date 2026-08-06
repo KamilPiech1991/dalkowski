@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import logoAsset from "@/assets/logo-dalkowski.png.asset.json";
 
 const nav = [
-  { to: "/", label: "Home" },
+  { to: "/", label: "Strona główna" },
   { to: "/o-nas", label: "O nas" },
   {
     to: "/uslugi",

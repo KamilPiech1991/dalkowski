@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
-const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Pieców";
+const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Kotłów Gazowych";
 const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie. Tel. +48 574 988 293 (biuro), +48 793 720 760 (zarządzanie nieruchomościami), +48 730 704 502 (technika grzewcza, hydraulika, elektryka). ul. Armii Krajowej 2, 05-500 Piaseczno.";
 
 export const Route = createFileRoute("/kontakt")({
@@ -54,7 +54,7 @@ function Kontakt() {
 
           <div className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-lg font-bold flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-primary" /> Technika grzewcza, hydraulika, elektryka</h2>
-            <p className="text-xs text-muted-foreground mt-2">Pan Roman — serwis pieców De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny.</p>
+            <p className="text-xs text-muted-foreground mt-2">Pan Roman — serwis kotłów gazowych De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny.</p>
             <div className="mt-3 space-y-1 text-sm">
               <a href="tel:+48730704502" className="block font-semibold text-foreground hover:text-primary">+48 730 704 502</a>
               <a href="tel:+48574988293" className="block text-muted-foreground hover:text-primary">+48 574 988 293 (biuro)</a>
@@ -72,7 +72,7 @@ function Kontakt() {
           <div className="rounded-2xl border border-border bg-card p-6">
             <h2 className="text-lg font-bold flex items-center gap-2"><Clock className="h-5 w-5 text-primary" /> Godziny pracy</h2>
             <p className="mt-3 text-sm text-muted-foreground">Poniedziałek – Piątek: <strong className="text-foreground">10:00 – 17:00</strong></p>
-            <p className="text-sm text-muted-foreground">Serwis pieców: <strong className="text-foreground">wizyty w uzgodnionych godzinach</strong></p>
+            <p className="text-sm text-muted-foreground">Serwis kotłów gazowych: <strong className="text-foreground">wizyty w uzgodnionych godzinach</strong></p>
           </div>
         </div>
 

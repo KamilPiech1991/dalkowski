@@ -8,14 +8,14 @@ import g6 from "@/assets/gallery-6.jpg?optimize&as=picture";
 import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 
 const TITLE = "Autoryzowany Serwis De Dietrich Piaseczno — Przeglądy, Naprawy, Montaż | Dalkowski";
-const DESC = "Autoryzowany serwis pieców De Dietrich w Piasecznie i okolicach. Przeglądy okresowe, naprawy awaryjne, instalacja i wymiana kotłów gazowych. Umawiamy się na dogodne godziny.";
+const DESC = "Autoryzowany serwis kotłów gazowych De Dietrich w Piasecznie i okolicach. Przeglądy okresowe, naprawy awaryjne, instalacja i wymiana kotłów gazowych. Umawiamy się na dogodne godziny.";
 
 export const Route = createFileRoute("/uslugi/technika-grzewcza")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "keywords", content: "autoryzowany serwis De Dietrich Piaseczno, serwis pieców De Dietrich, przegląd pieca gazowego, naprawa kotła De Dietrich, instalacja pieca gazowego Piaseczno" },
+      { name: "keywords", content: "autoryzowany serwis De Dietrich Piaseczno, serwis kotłów gazowych De Dietrich, przegląd kotła gazowego, naprawa kotła De Dietrich, instalacja kotła gazowego Piaseczno" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/uslugi/technika-grzewcza" },
@@ -28,14 +28,16 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Service",
-        serviceType: "Autoryzowany serwis pieców De Dietrich",
+        serviceType: "Autoryzowany serwis kotłów gazowych De Dietrich",
         provider: { "@type": "LocalBusiness", name: "Dalkowski Technika Grzewcza", telephone: "+48730704502" },
         areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
         description: DESC,
         offers: [
-          { "@type": "Offer", name: "Przegląd okresowy pieca gazowego De Dietrich", price: "250", priceCurrency: "PLN" },
-          { "@type": "Offer", name: "Naprawa awaryjna (diagnoza i prosta naprawa)", price: "250", priceCurrency: "PLN" },
+          { "@type": "Offer", name: "Przegląd okresowy kotła gazowego De Dietrich", price: "350", priceCurrency: "PLN", description: "Cena netto" },
+          { "@type": "Offer", name: "Naprawa awaryjna kotła gazowego", priceCurrency: "PLN", description: "Wycena indywidualna — zakres i koszt zależą od usterki" },
+          { "@type": "Offer", name: "Montaż kotła gazowego", priceCurrency: "PLN", description: "Wycena indywidualna" },
         ],
+
       }),
     }],
   }),
@@ -43,8 +45,8 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
 });
 
 const services = [
-  { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej pieca gazowego De Dietrich", desc: "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
-  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd pieca centralnego ogrzewania De Dietrich", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność pieca i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
+  { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej kotła gazowego De Dietrich", desc: "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
+  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
   { icon: ShoppingCart, title: "Sprzedaż i instalacja", img: g6, alt: "Nowoczesny kocioł kondensacyjny De Dietrich", desc: "Jako autoryzowany partner De Dietrich prowadzimy sprzedaż i profesjonalny montaż kotłów gazowych tej marki. Dobieramy moc i model do potrzeb budynku oraz zapewniamy pełne wsparcie gwarancyjne." },
 ];
 
@@ -68,7 +70,7 @@ function Technika() {
             <nav className="text-xs text-muted-foreground mb-4" aria-label="Breadcrumb">
               <Link to="/uslugi" className="hover:text-primary">Usługi</Link> / <span className="text-foreground">Technika grzewcza</span>
             </nav>
-            <h1 className="text-4xl sm:text-5xl font-extrabold">Autoryzowany serwis pieców De Dietrich</h1>
+            <h1 className="text-4xl sm:text-5xl font-extrabold">Autoryzowany serwis kotłów gazowych De Dietrich</h1>
             <p className="mt-5 text-lg text-muted-foreground">
               <strong className="text-foreground">Specjalizujemy się w kotłach De Dietrich.</strong> Przeglądy, naprawy awaryjne oraz sprzedaż i montaż nowych urządzeń w Piasecznie i okolicach. Dla klientów indywidualnych umawiamy wizyty na dogodne godziny.
             </p>
@@ -81,7 +83,7 @@ function Technika() {
               </a>
             </div>
           </div>
-          <OptimizedImage picture={boiler} alt="Serwis pieca gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+          <OptimizedImage picture={boiler} alt="Serwis kotła gazowego — Dalkowski Technika Grzewcza Piaseczno" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
         </div>
       </section>
 
@@ -129,26 +131,27 @@ function Technika() {
           <div className="mt-6 space-y-5">
             <div className="border-b border-border pb-4">
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-semibold">Przegląd okresowy pieca c.o.</h3>
-                <span className="text-primary font-bold whitespace-nowrap">250 zł</span>
+                <h3 className="font-semibold">Przegląd okresowy kotła gazowego</h3>
+                <span className="text-primary font-bold whitespace-nowrap">350 zł netto</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">Kocioł gazowy wiszący lub stojący. Przy 5 przeglądach jednego dnia na tym samym osiedlu — rabat 20% (199 zł / przegląd).</p>
+              <p className="text-xs text-muted-foreground mt-2">Kocioł gazowy wiszący lub stojący. Przy 5 przeglądach jednego dnia na tym samym osiedlu — rabat 20% (280 zł netto / przegląd).</p>
             </div>
             <div className="border-b border-border pb-4">
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="font-semibold">Instalacja nowego pieca</h3>
-                <span className="text-primary font-bold whitespace-nowrap">wycena</span>
+                <h3 className="font-semibold">Montaż nowego kotła gazowego</h3>
+                <span className="text-primary font-bold whitespace-nowrap">wycena indywidualna</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">Cena ustalana indywidualnie — zależy od modelu pieca i warunków instalacji.</p>
+              <p className="text-xs text-muted-foreground mt-2">Koszt zależy od modelu kotła, stanu instalacji i warunków montażu — wycenę przygotowujemy po oględzinach.</p>
             </div>
             <div>
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="font-semibold">Naprawa awaryjna</h3>
-                <span className="text-primary font-bold whitespace-nowrap">od 250 zł</span>
+                <span className="text-primary font-bold whitespace-nowrap">wycena indywidualna</span>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">Diagnoza + prosta naprawa podczas jednej wizyty + koszt części. Złożone naprawy — wycena do akceptacji. Po 17:00 i w dni wolne +50 zł.</p>
+              <p className="text-xs text-muted-foreground mt-2">Kosztu naprawy nie da się przewidzieć z góry — w zależności od usterki i części może to być 150 zł, jak i 2500 zł. Po diagnozie zawsze podajemy cenę do akceptacji przed rozpoczęciem prac.</p>
             </div>
           </div>
+
         </div>
       </section>
     </SiteLayout>

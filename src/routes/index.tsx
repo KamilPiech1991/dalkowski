@@ -6,15 +6,15 @@ import { OptimizedImage } from "@/components/site/OptimizedImage";
 import hero from "@/assets/hero-buildings.jpg?optimize&as=picture";
 import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
-const TITLE = "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Pieców";
-const DESC = "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja pieców c.o. w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.";
+const TITLE = "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Kotłów Gazowych";
+const DESC = "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja kotłów gazowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
-      { name: "keywords", content: "zarządzanie nieruchomościami Piaseczno, administrowanie wspólnot, serwis pieców co Piaseczno, instalacja pieców De Dietrich, Dalkowski" },
+      { name: "keywords", content: "zarządzanie nieruchomościami Piaseczno, administrowanie wspólnot, serwis kotłów gazowych co Piaseczno, instalacja kotłów De Dietrich, Dalkowski" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: "/" },
@@ -70,7 +70,7 @@ function Index() {
               w <span className="text-primary">dobrych rękach</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              Kompleksowe zarządzanie wspólnotami mieszkaniowymi i profesjonalny serwis pieców centralnego ogrzewania w Piasecznie i okolicach.
+              Kompleksowe zarządzanie wspólnotami mieszkaniowymi i profesjonalny serwis kotłów gazowych centralnego ogrzewania w Piasecznie i okolicach.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/kontakt" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-soft">
@@ -120,7 +120,7 @@ function Index() {
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold text-primary uppercase tracking-wider">Dwa filary, jedna firma</span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Co dla Ciebie zrobimy</h2>
-          <p className="mt-4 text-muted-foreground">Od administracji budynkiem po szybki serwis pieca — wszystko w jednym miejscu.</p>
+          <p className="mt-4 text-muted-foreground">Od administracji budynkiem po szybki serwis kotła gazowego — wszystko w jednym miejscu.</p>
         </div>
 
         <div className="mt-12 grid md:grid-cols-2 gap-6">
@@ -148,10 +148,10 @@ function Index() {
               <h3 className="text-2xl font-bold">Technika grzewcza</h3>
             </div>
             <p className="text-muted-foreground mb-5">
-              Autoryzowany serwis pieców De Dietrich — przeglądy, naprawy i instalacje kotłów gazowych. Umawiamy wizyty na dogodne godziny.
+              Autoryzowany serwis kotłów gazowych De Dietrich — przeglądy, naprawy i instalacje kotłów gazowych. Umawiamy wizyty na dogodne godziny.
             </p>
             <ul className="space-y-2 mb-6">
-              {["Naprawy awaryjne — szybki dojazd", "Coroczne przeglądy i konserwacje", "Sprzedaż i montaż nowych pieców", "Gwarancja na piśmie na każdą usługę"].map((t) => (
+              {["Naprawy awaryjne — szybki dojazd", "Coroczne przeglądy i konserwacje", "Sprzedaż i montaż nowych kotłów gazowych", "Gwarancja na piśmie na każdą usługę"].map((t) => (
                 <li key={t} className="flex items-start gap-2 text-sm"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" /> {t}</li>
               ))}
             </ul>
@@ -166,7 +166,7 @@ function Index() {
       <section className="bg-secondary/50 py-20">
         <div className="container-page">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <OptimizedImage picture={boiler} alt="Profesjonalny serwis pieca gazowego — Dalkowski Technika Grzewcza" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+            <OptimizedImage picture={boiler} alt="Profesjonalny serwis kotła gazowego — Dalkowski Technika Grzewcza" width={1400} height={1000} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
             <div>
               <span className="text-xs font-semibold text-primary uppercase tracking-wider">Dlaczego my</span>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Lokalna firma rodzinna z misją</h2>
@@ -197,7 +197,7 @@ function Index() {
       {/* CTA */}
       <section className="container-page py-20">
         <div className="rounded-3xl bg-gradient-brand px-8 sm:px-14 py-14 text-center text-primary-foreground shadow-soft">
-          <h2 className="text-3xl sm:text-4xl font-bold">Potrzebujesz pomocy z nieruchomością lub piecem?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold">Potrzebujesz pomocy z nieruchomością lub kotłem?</h2>
           <p className="mt-4 text-primary-foreground/85 max-w-2xl mx-auto">
             Zadzwoń lub napisz — odpowiemy w ciągu dnia roboczego. Awarie w zarządzanych przez nas wspólnotach obsługujemy całą dobę.
           </p>

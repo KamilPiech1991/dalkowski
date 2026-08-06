@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <img src={logoAsset.url} alt="Dalkowski" className="h-12 w-auto mb-4" width={160} height={48} />
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Profesjonalne zarządzanie nieruchomościami oraz serwis pieców centralnego ogrzewania.
+            Profesjonalne zarządzanie nieruchomościami oraz serwis kotłów gazowych centralnego ogrzewania.
             Piaseczno i okolice. Działamy od 2006 roku.
           </p>
         </div>
@@ -17,7 +17,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Nawigacja</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
+            <li><Link to="/" className="text-muted-foreground hover:text-primary">Strona główna</Link></li>
             <li><Link to="/o-nas" className="text-muted-foreground hover:text-primary">O nas</Link></li>
             <li><Link to="/uslugi/zarzadzanie-nieruchomosciami" className="text-muted-foreground hover:text-primary">Zarządzanie nieruchomościami</Link></li>
             <li><Link to="/uslugi/konserwacja-nieruchomosci" className="text-muted-foreground hover:text-primary">Konserwacja nieruchomości</Link></li>
