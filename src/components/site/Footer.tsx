@@ -54,7 +54,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-page py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>© {new Date().getFullYear()} Dalkowski – Zarządzanie Nieruchomościami & Technika Grzewcza. Wszelkie prawa zastrzeżone.</p>
-          <p>Piaseczno · Konstancin-Jeziorna · Józefosław</p>
+          <p>Piaseczno · Warszawa · Konstancin-Jeziorna · Józefosław</p>
         </div>
       </div>
     </footer>

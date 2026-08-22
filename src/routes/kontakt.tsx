@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, AlertTriangle } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
 const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Kotłów Gazowych";
-const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie. Tel. +48 574 988 293 (biuro), +48 793 720 760 (zarządzanie nieruchomościami), +48 730 704 502 (technika grzewcza, hydraulika, elektryka). ul. Armii Krajowej 2, 05-500 Piaseczno.";
+const DESC = "Skontaktuj się z firmą Dalkowski w Piasecznie i Warszawie. Tel. +48 574 988 293 (biuro), +48 793 720 760 (zarządzanie nieruchomościami), +48 730 704 502 (technika grzewcza, hydraulika, elektryka). ul. Armii Krajowej 2, 05-500 Piaseczno.";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({

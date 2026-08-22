@@ -7,8 +7,8 @@ import g1 from "@/assets/gallery-1.jpg?optimize&as=picture";
 import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
 import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 
-const TITLE = "Konserwacja Nieruchomości Piaseczno — Hydraulik, Elektryk, Złota Rączka 24/7 | Dalkowski";
-const DESC = "Konserwacja techniczna wspólnot i budynków w Piasecznie: hydraulika, elektryka, drobne prace budowlane i usługi złotej rączki. Dostępność 24/7 dla klientów obsługiwanych administracyjnie.";
+const TITLE = "Konserwacja Nieruchomości Piaseczno, Warszawa — Hydraulik, Elektryk, Złota Rączka 24/7 | Dalkowski";
+const DESC = "Konserwacja techniczna wspólnot i budynków w Piasecznie i Warszawie: hydraulika, elektryka, drobne prace budowlane i usługi złotej rączki. Dostępność 24/7 dla klientów obsługiwanych administracyjnie.";
 
 export const Route = createFileRoute("/uslugi/konserwacja-nieruchomosci")({
   head: () => ({
@@ -49,20 +49,18 @@ const sections = [
       "Wymiana grzejników, głowic termostatycznych i odpowietrzników",
       "Lokalizacja i usuwanie wycieków w instalacjach wodnych i c.o.",
       "Montaż i wymiana wodomierzy oraz zaworów podpionowych",
-      "Naprawa hydroforów, pomp obiegowych i węzłów cieplnych",
     ],
   },
   {
     icon: Zap,
     title: "Usługi elektryczne",
-    intro: "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm i pomiarami odbiorczymi.",
+    intro: "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm.",
     items: [
       "Naprawa i wymiana gniazdek, włączników, opraw i puszek",
       "Wymiana bezpieczników, zabezpieczeń różnicowoprądowych i tablic",
       "Diagnostyka zaników napięcia i zwarć w instalacji",
       "Wymiana oświetlenia klatek schodowych na LED",
-      "Montaż czujników ruchu, domofonów i oświetlenia awaryjnego",
-      "Okresowe pomiary elektryczne wymagane prawem budowlanym",
+      "Montaż czujników ruchu i oświetlenia awaryjnego",
     ],
   },
   {
@@ -70,12 +68,11 @@ const sections = [
     title: "Złota rączka i drobne prace budowlane",
     intro: "Prace wykończeniowe i konserwacyjne w mieszkaniach, częściach wspólnych i wokół budynku.",
     items: [
-      "Naprawa i regulacja drzwi, okien, zamków oraz klamek",
-      "Uzupełnianie fug, silikonów, drobne prace glazurnicze",
-      "Malowanie klatek schodowych, korytarzy i pomieszczeń wspólnych",
+      "Naprawa i regulacja drzwi, zamków oraz klamek",
       "Montaż półek, karniszy, luster, tablic informacyjnych",
       "Naprawa balustrad, poręczy, ławek i infrastruktury osiedla",
       "Drobne prace ślusarskie i stolarskie na zgłoszenie mieszkańca",
+      "Nie regulujemy okien",
     ],
   },
 ];
@@ -118,9 +115,9 @@ function Konserwacja() {
 
       <section className="container-page py-16 lg:py-20">
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold">Konserwacja to opcja dodatkowa — bo nie każdy zarządca ją oferuje</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold">Konserwacja to opcja dodatkowa — nie każdy zarządca ją oferuje</h2>
           <p className="mt-4 text-muted-foreground">
-            Standardowe zarządzanie wspólnotą kończy się na organizowaniu wykonawców z zewnątrz. My idziemy dalej — jeśli klient chce, przejmujemy również bieżącą konserwację techniczną budynku i lokali. Dzięki temu drobne awarie usuwamy w ciągu godzin, a nie dni, bez czekania na dostępność firm zewnętrznych i bez pośredników w rozliczeniach.
+            Standardowe zarządzanie wspólnotą kończy się na organizowaniu wykonawców z zewnątrz. My idziemy dalej — jeśli klient wybierze tę opcję, przejmujemy również tę konserwację techniczną budynku i lokali. Dzięki temu drobne awarie usuwamy w ciągu godzin, a nie dni, bez czekania na dostępność firm zewnętrznych i bez pośredników w rozliczeniach.
           </p>
         </div>
       </section>
