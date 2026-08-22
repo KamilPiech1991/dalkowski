@@ -50,9 +50,18 @@ type Photo = { src: string; alt: string };
 
 const realPhotos: Photo[] = [
   { src: p7150.url, alt: "Zarządzana wspólnota mieszkaniowa — elewacja budynku z balkonami i zadbaną zielenią" },
+  { src: n52.url, alt: "Budynek zarządzanej wspólnoty mieszkaniowej z parkingiem i żywopłotem w Józefosławiu" },
+  { src: n54.url, alt: "Osiedle zarządzane przez Dalkowski — budynek z balkonami i miejscami postojowymi" },
+  { src: n57.url, alt: "Wejście główne do budynku zarządzanej wspólnoty mieszkaniowej" },
+  { src: n58.url, alt: "Część wspólna osiedla — przejazd bramowy i balkony budynku wspólnoty" },
+  { src: n73.url, alt: "Wspólnota Nieruchomości Wilanowska 11A z lokalami usługowymi" },
+  { src: n74.url, alt: "Wspólnota Nieruchomości Planety 2 — budynek z lokalami usługowymi" },
   { src: p7159.url, alt: "Samochód serwisowy Dalkowski — administracja nieruchomości, księgowość, konserwacja" },
   { src: p7165.url, alt: "Nowoczesny budynek wspólnoty mieszkaniowej z lokalami usługowymi w Józefosławiu" },
   { src: p1260.url, alt: "Samochód firmy Dalkowski przy budynku przy ul. Świetlistej w Józefosławiu" },
+  { src: n62.url, alt: "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku" },
+  { src: n67.url, alt: "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni wspólnoty" },
+  { src: n72.url, alt: "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku" },
   { src: p2762.url, alt: "Biuro Dalkowski — zarządzanie wspólnotami mieszkaniowymi w Piasecznie" },
   { src: p2766.url, alt: "Recepcja w biurowcu — siedziba firmy Dalkowski Zarządzanie Nieruchomościami" },
   { src: p2769.url, alt: "Flota samochodów firmowych Dalkowski przed siedzibą firmy" },
