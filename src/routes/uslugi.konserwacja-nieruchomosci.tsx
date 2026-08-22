@@ -115,9 +115,9 @@ function Konserwacja() {
 
       <section className="container-page py-16 lg:py-20">
         <div className="max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-extrabold">Konserwacja to opcja dodatkowa — bo nie każdy zarządca ją oferuje</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold">Konserwacja to opcja dodatkowa — nie każdy zarządca ją oferuje</h2>
           <p className="mt-4 text-muted-foreground">
-            Standardowe zarządzanie wspólnotą kończy się na organizowaniu wykonawców z zewnątrz. My idziemy dalej — jeśli klient chce, przejmujemy również bieżącą konserwację techniczną budynku i lokali. Dzięki temu drobne awarie usuwamy w ciągu godzin, a nie dni, bez czekania na dostępność firm zewnętrznych i bez pośredników w rozliczeniach.
+            Standardowe zarządzanie wspólnotą kończy się na organizowaniu wykonawców z zewnątrz. My idziemy dalej — jeśli klient wybierze tę opcję, przejmujemy również tę konserwację techniczną budynku i lokali. Dzięki temu drobne awarie usuwamy w ciągu godzin, a nie dni, bez czekania na dostępność firm zewnętrznych i bez pośredników w rozliczeniach.
           </p>
         </div>
       </section>
