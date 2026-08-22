@@ -27,6 +27,11 @@ import n67 from "@/assets/photo-1000055867.jpg.asset.json";
 import n72 from "@/assets/photo-1000055872.jpg.asset.json";
 import n73 from "@/assets/photo-1000055873.jpg.asset.json";
 import n74 from "@/assets/photo-1000055874.jpg.asset.json";
+import n58b from "@/assets/photo-1000055958.jpg.asset.json";
+import n59 from "@/assets/photo-1000055959.jpg.asset.json";
+import n60 from "@/assets/photo-1000055960.jpg.asset.json";
+import n61 from "@/assets/photo-1000055961.jpg.asset.json";
+import n63 from "@/assets/photo-1000055962.jpg.asset.json";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
