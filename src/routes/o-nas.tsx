@@ -5,7 +5,7 @@ import { OptimizedImage } from "@/components/site/OptimizedImage";
 import portrait from "@/assets/about-portrait.jpg?optimize&as=picture";
 
 const TITLE = "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia";
-const DESC = "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie od 2006 roku. Licencja zawodowa nr 23367.";
+const DESC = "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie i Warszawie od 2006 roku. Licencja zawodowa nr 23367.";
 
 export const Route = createFileRoute("/o-nas")({
   head: () => ({
@@ -26,14 +26,18 @@ const wspolnoty = [
   "WM Brzozowy Park, ul. Ogrodowa 8, Józefosław",
   "WM Bielawska 24, Konstancin-Jeziorna",
   "WM Nadarzyńska 38, Piaseczno",
-  "WM Valor Konstancin, Konstancin-Jeziorna",
-  "WM Planety 20-26, Józefosław",
   "WM Okulickiego 30, Piaseczno",
   "WM Okulickiego 32, Piaseczno",
-  "WM ul. Ogrodowa 15a, Józefosław",
-  "WM ul. Świetlista, Józefosław",
   "Stowarzyszenie ul. Świetlista, Józefosław",
-  "Nieruchomości ul. Planety 2 i Wilanowska 11, Józefosław",
+  "Nieruchomości ul. Planety 2, Wilanowska 11 i 11A, Józefosław",
+  "WM Tenisowa 1, Józefosław",
+  "WM Osiedle Cynamonowe, Józefosław",
+  "WM Chyliczkowska 57A, Piaseczno",
+  "WM Osiedle Przy Miodowej, Józefosław",
+  "WM Osiedle Pod Topolami, Zamienie",
+  "WM Nieruchomości Wilanowska 8, Józefosław",
+  "WM Nieruchomości Wilanowska 15, Józefosław",
+  "WM Nieruchomości Wilanowska 4A, Józefosław",
 ];
 
 function ONas() {

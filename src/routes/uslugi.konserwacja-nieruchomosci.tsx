@@ -7,8 +7,8 @@ import g1 from "@/assets/gallery-1.jpg?optimize&as=picture";
 import g3 from "@/assets/gallery-3.jpg?optimize&as=picture";
 import g5 from "@/assets/gallery-5.jpg?optimize&as=picture";
 
-const TITLE = "Konserwacja Nieruchomości Piaseczno — Hydraulik, Elektryk, Złota Rączka 24/7 | Dalkowski";
-const DESC = "Konserwacja techniczna wspólnot i budynków w Piasecznie: hydraulika, elektryka, drobne prace budowlane i usługi złotej rączki. Dostępność 24/7 dla klientów obsługiwanych administracyjnie.";
+const TITLE = "Konserwacja Nieruchomości Piaseczno, Warszawa — Hydraulik, Elektryk, Złota Rączka 24/7 | Dalkowski";
+const DESC = "Konserwacja techniczna wspólnot i budynków w Piasecznie i Warszawie: hydraulika, elektryka, drobne prace budowlane i usługi złotej rączki. Dostępność 24/7 dla klientów obsługiwanych administracyjnie.";
 
 export const Route = createFileRoute("/uslugi/konserwacja-nieruchomosci")({
   head: () => ({
@@ -49,20 +49,18 @@ const sections = [
       "Wymiana grzejników, głowic termostatycznych i odpowietrzników",
       "Lokalizacja i usuwanie wycieków w instalacjach wodnych i c.o.",
       "Montaż i wymiana wodomierzy oraz zaworów podpionowych",
-      "Naprawa hydroforów, pomp obiegowych i węzłów cieplnych",
     ],
   },
   {
     icon: Zap,
     title: "Usługi elektryczne",
-    intro: "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm i pomiarami odbiorczymi.",
+    intro: "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm.",
     items: [
       "Naprawa i wymiana gniazdek, włączników, opraw i puszek",
       "Wymiana bezpieczników, zabezpieczeń różnicowoprądowych i tablic",
       "Diagnostyka zaników napięcia i zwarć w instalacji",
       "Wymiana oświetlenia klatek schodowych na LED",
-      "Montaż czujników ruchu, domofonów i oświetlenia awaryjnego",
-      "Okresowe pomiary elektryczne wymagane prawem budowlanym",
+      "Montaż czujników ruchu i oświetlenia awaryjnego",
     ],
   },
   {
@@ -70,12 +68,11 @@ const sections = [
     title: "Złota rączka i drobne prace budowlane",
     intro: "Prace wykończeniowe i konserwacyjne w mieszkaniach, częściach wspólnych i wokół budynku.",
     items: [
-      "Naprawa i regulacja drzwi, okien, zamków oraz klamek",
-      "Uzupełnianie fug, silikonów, drobne prace glazurnicze",
-      "Malowanie klatek schodowych, korytarzy i pomieszczeń wspólnych",
+      "Naprawa i regulacja drzwi, zamków oraz klamek",
       "Montaż półek, karniszy, luster, tablic informacyjnych",
       "Naprawa balustrad, poręczy, ławek i infrastruktury osiedla",
       "Drobne prace ślusarskie i stolarskie na zgłoszenie mieszkańca",
+      "Nie regulujemy okien",
     ],
   },
 ];

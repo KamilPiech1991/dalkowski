@@ -13,7 +13,7 @@ import p1260 from "@/assets/photo-1260.jpg.asset.json";
 import p2762 from "@/assets/photo-2762.jpg.asset.json";
 
 const TITLE = "Zarządzanie Nieruchomościami Piaseczno — Wspólnoty Mieszkaniowe | Dalkowski";
-const DESC = "Profesjonalne zarządzanie i administrowanie wspólnotami mieszkaniowymi w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Obsługa administracyjna, księgowa i techniczna. Licencja nr 23367.";
+const DESC = "Profesjonalne zarządzanie i administrowanie wspólnotami mieszkaniowymi w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu. Obsługa administracyjna, księgowa i techniczna. Licencja nr 23367.";
 
 export const Route = createFileRoute("/uslugi/zarzadzanie-nieruchomosciami")({
   head: () => ({
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/uslugi/zarzadzanie-nieruchomosciami")({
         "@type": "Service",
         serviceType: "Zarządzanie nieruchomościami",
         provider: { "@type": "LocalBusiness", name: "Dalkowski", telephone: "+48793720760" },
-        areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław"],
+        areaServed: ["Piaseczno", "Warszawa", "Konstancin-Jeziorna", "Józefosław"],
         description: DESC,
       }),
     }],
@@ -79,7 +79,7 @@ const sections = [
       "Zapewnienie dostaw mediów dla nieruchomości",
       "Organizacja usuwania awarii i ich skutków",
       "Konserwacje hydrauliczne: instalacje sanitarne, udrażnianie kanalizacji, mycie myjką 120 bar",
-      "Konserwacje elektryczne: przeglądy, pomiary, naprawy, montaż instalacji odgromowych",
+      "Konserwacje elektryczne: przeglądy i naprawy instalacji, montaż instalacji odgromowych",
       "Prace ogólnobudowlane: regulacja drzwi, naprawy ślusarskie, mycie pojemników na odpady",
     ],
   },
@@ -94,7 +94,7 @@ function Zarzadzanie() {
             <nav className="text-xs text-muted-foreground mb-4" aria-label="Breadcrumb">
               <Link to="/uslugi" className="hover:text-primary">Usługi</Link> / <span className="text-foreground">Zarządzanie nieruchomościami</span>
             </nav>
-            <h1 className="text-4xl sm:text-5xl font-extrabold max-w-3xl">Zarządzanie nieruchomościami w Piasecznie i okolicach</h1>
+            <h1 className="text-4xl sm:text-5xl font-extrabold max-w-3xl">Zarządzanie nieruchomościami w Piasecznie, Warszawie i okolicach</h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-3xl">
               Podstawowym zakresem naszej działalności jest <strong className="text-foreground">zarządzanie i administrowanie nieruchomościami</strong> powierzonymi. Doświadczenie w tym zakresie zdobywamy od 2006 roku.
             </p>

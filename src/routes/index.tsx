@@ -7,7 +7,7 @@ import hero from "@/assets/hero-buildings.jpg?optimize&as=picture";
 import boiler from "@/assets/heating-boiler.jpg?optimize&as=picture";
 
 const TITLE = "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Kotłów Gazowych";
-const DESC = "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja kotłów gazowych w Piasecznie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.";
+const DESC = "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja kotłów gazowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -70,7 +70,7 @@ function Index() {
               w <span className="text-primary">dobrych rękach</span>
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              Kompleksowe zarządzanie wspólnotami mieszkaniowymi i profesjonalny serwis kotłów gazowych centralnego ogrzewania w Piasecznie i okolicach.
+              Kompleksowe zarządzanie wspólnotami mieszkaniowymi i profesjonalny serwis kotłów gazowych centralnego ogrzewania w Piasecznie, Warszawie i okolicach.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/kontakt" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-soft">
@@ -82,7 +82,7 @@ function Index() {
             </div>
             <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
               <div><div className="text-3xl font-bold text-primary">18+</div><div className="text-xs text-muted-foreground mt-1">lat doświadczenia</div></div>
-              <div><div className="text-3xl font-bold text-primary">11</div><div className="text-xs text-muted-foreground mt-1">obsługiwanych wspólnot</div></div>
+              <div><div className="text-3xl font-bold text-primary">15</div><div className="text-xs text-muted-foreground mt-1">obsługiwanych wspólnot</div></div>
               <div><div className="text-3xl font-bold text-primary">24/7</div><div className="text-xs text-muted-foreground mt-1">awarie w zarządzanych wspólnotach</div></div>
             </div>
           </div>
@@ -171,7 +171,7 @@ function Index() {
               <span className="text-xs font-semibold text-primary uppercase tracking-wider">Dlaczego my</span>
               <h2 className="mt-3 text-3xl sm:text-4xl font-bold">Lokalna firma rodzinna z misją</h2>
               <p className="mt-4 text-muted-foreground">
-                Działamy w Piasecznie i okolicach od 2006 roku. Łączymy zarządzanie wspólnotami z własnym działem technicznym — dzięki temu nasze osiedla otrzymują szybką, fachową obsługę awarii i przeglądów.
+              Działamy w Piasecznie, Warszawie i okolicach od 2006 roku. Łączymy zarządzanie wspólnotami z własnym działem technicznym — dzięki temu nasze osiedla otrzymują szybką, fachową obsługę awarii i przeglądów.
               </p>
               <div className="mt-8 grid sm:grid-cols-2 gap-5">
                 {[

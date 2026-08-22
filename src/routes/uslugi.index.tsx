@@ -3,7 +3,7 @@ import { Building2, Flame, Wrench, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
 const TITLE = "Usługi — Zarządzanie Nieruchomościami i Technika Grzewcza | Dalkowski";
-const DESC = "Pełen zakres usług firmy Dalkowski: zarządzanie wspólnotami mieszkaniowymi w Piasecznie oraz serwis i instalacja kotłów gazowych centralnego ogrzewania.";
+const DESC = "Pełen zakres usług firmy Dalkowski: zarządzanie wspólnotami mieszkaniowymi w Piasecznie, Warszawie i okolicach oraz serwis i instalacja kotłów gazowych centralnego ogrzewania.";
 
 export const Route = createFileRoute("/uslugi/")({
   head: () => ({
@@ -34,7 +34,7 @@ function UslugiIndex() {
 
       <section className="container-page py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { to: "/uslugi/zarzadzanie-nieruchomosciami", icon: Building2, title: "Zarządzanie nieruchomościami", desc: "Obsługa administracyjna, księgowa i techniczna wspólnot mieszkaniowych w Piasecznie, Konstancinie i Józefosławiu." },
+          { to: "/uslugi/zarzadzanie-nieruchomosciami", icon: Building2, title: "Zarządzanie nieruchomościami", desc: "Obsługa administracyjna, księgowa i techniczna wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie i Józefosławiu." },
           { to: "/uslugi/konserwacja-nieruchomosci", icon: Wrench, title: "Konserwacja nieruchomości", desc: "Hydraulika, elektryka i drobne prace budowlane. Dla naszych klientów dostępność 24/7 przez cały tydzień." },
           { to: "/uslugi/technika-grzewcza", icon: Flame, title: "Technika grzewcza", desc: "Autoryzowany serwis kotłów gazowych De Dietrich. Przeglądy, naprawy i instalacje kotłów gazowych w Piasecznie i okolicach." },
         ].map((s) => (
