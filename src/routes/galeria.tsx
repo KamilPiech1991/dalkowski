@@ -27,6 +27,11 @@ import n67 from "@/assets/photo-1000055867.jpg.asset.json";
 import n72 from "@/assets/photo-1000055872.jpg.asset.json";
 import n73 from "@/assets/photo-1000055873.jpg.asset.json";
 import n74 from "@/assets/photo-1000055874.jpg.asset.json";
+import n58b from "@/assets/photo-1000055958.jpg.asset.json";
+import n59 from "@/assets/photo-1000055959.jpg.asset.json";
+import n60 from "@/assets/photo-1000055960.jpg.asset.json";
+import n61 from "@/assets/photo-1000055961.jpg.asset.json";
+import n63 from "@/assets/photo-1000055962.jpg.asset.json";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
@@ -56,6 +61,11 @@ const realPhotos: Photo[] = [
   { src: n58.url, alt: "Część wspólna osiedla — przejazd bramowy i balkony budynku wspólnoty" },
   { src: n73.url, alt: "Wspólnota Nieruchomości Wilanowska 11A z lokalami usługowymi" },
   { src: n74.url, alt: "Wspólnota Nieruchomości Planety 2 — budynek z lokalami usługowymi" },
+  { src: n58b.url, alt: "Zamknięte osiedle zarządzane przez Dalkowski — brama wjazdowa i domy szeregowe" },
+  { src: n59.url, alt: "Osiedle z bramą automatyczną i strefą zamieszkania — wspólnota pod naszą administracją" },
+  { src: n60.url, alt: "Tablica informacyjna: nieruchomością administruje firma Dalkowski" },
+  { src: n61.url, alt: "Budynek wielorodzinny zarządzanej wspólnoty mieszkaniowej z balkonami" },
+  { src: n63.url, alt: "Samochód Dalkowski przy budynku wspólnoty przy ul. Okulickiego 32" },
   { src: p7159.url, alt: "Samochód serwisowy Dalkowski — administracja nieruchomości, księgowość, konserwacja" },
   { src: p7165.url, alt: "Nowoczesny budynek wspólnoty mieszkaniowej z lokalami usługowymi w Józefosławiu" },
   { src: p1260.url, alt: "Samochód firmy Dalkowski przy budynku przy ul. Świetlistej w Józefosławiu" },
