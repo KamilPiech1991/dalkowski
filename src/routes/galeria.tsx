@@ -18,6 +18,15 @@ import p2766 from "@/assets/photo-2766.jpg.asset.json";
 import p2769 from "@/assets/photo-2769.jpg.asset.json";
 import p2773 from "@/assets/photo-2773.jpg.asset.json";
 import ddBoiler from "@/assets/de-dietrich-kociol.png.asset.json";
+import n52 from "@/assets/photo-1000055852.jpg.asset.json";
+import n54 from "@/assets/photo-1000055854.jpg.asset.json";
+import n57 from "@/assets/photo-1000055857.jpg.asset.json";
+import n58 from "@/assets/photo-1000055858.jpg.asset.json";
+import n62 from "@/assets/photo-1000055862.jpg.asset.json";
+import n67 from "@/assets/photo-1000055867.jpg.asset.json";
+import n72 from "@/assets/photo-1000055872.jpg.asset.json";
+import n73 from "@/assets/photo-1000055873.jpg.asset.json";
+import n74 from "@/assets/photo-1000055874.jpg.asset.json";
 
 const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC = "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
