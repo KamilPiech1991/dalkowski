@@ -47,7 +47,7 @@ export const Route = createFileRoute("/uslugi/technika-grzewcza")({
 
 const services = [
   { icon: AlertCircle, title: "Awarie", img: g3, alt: "Serwisant Dalkowski podczas naprawy awaryjnej kotła gazowego De Dietrich", desc: "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie." },
-  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz. Z wyprzedzeniem przypominamy o terminie przeglądu." },
+  { icon: Calendar, title: "Przeglądy i konserwacje", img: boiler, alt: "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich", desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz." },
   { icon: ShoppingCart, title: "Sprzedaż i instalacja", img: g6, alt: "Nowoczesny kocioł kondensacyjny De Dietrich", desc: "Jako autoryzowany partner De Dietrich prowadzimy sprzedaż i profesjonalny montaż kotłów gazowych tej marki. Dobieramy moc i model do potrzeb budynku oraz zapewniamy pełne wsparcie gwarancyjne." },
 ];
 
@@ -57,7 +57,6 @@ const gwarancje = [
   "Na wykonane usługi zawsze udzielamy gwarancji na piśmie",
   "Klient zawsze może liczyć na poradę telefoniczną przy naprawie lub serwisie",
   "Nasi serwisanci nigdy nie chodzą w brudnych butach po mieszkaniu klienta",
-  "Z wyprzedzeniem telefonicznie przypominamy o serwisie rocznym",
   "Dotrzymujemy umów i zawsze mamy własne narzędzia",
   'Nie boimy się wziąć udziału w programie „Usterka…”',
 ];
