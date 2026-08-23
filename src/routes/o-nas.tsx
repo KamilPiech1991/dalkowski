@@ -58,7 +58,7 @@ function ONas() {
       <section className="container-page py-16">
         <div className="grid lg:grid-cols-[400px_1fr] gap-12">
           <div>
-            <OptimizedImage picture={portrait} alt="Barbara Dalkowska — właścicielka firmy Dalkowski" width={1000} height={1200} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
+            <OptimizedImage picture={portraitAsset.url} alt="Barbara Dalkowska — właścicielka firmy Dalkowski" width={685} height={1024} className="rounded-2xl shadow-soft w-full h-auto object-cover" />
             <div className="mt-6 rounded-2xl border border-border p-5 bg-card">
               <div className="flex items-center gap-2 text-sm font-semibold"><Award className="h-4 w-4 text-primary" /> Licencja zawodowa nr 23367</div>
               <p className="text-xs text-muted-foreground mt-2">Polisa Odpowiedzialności Cywilnej Zarządcy Nieruchomości – 50 000 € (UNIQA).</p>
