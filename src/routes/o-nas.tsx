@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Award, MapPin, CheckCircle2 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { OptimizedImage } from "@/components/site/OptimizedImage";
-import portrait from "@/assets/about-portrait.jpg?optimize&as=picture";
+import portraitAsset from "@/assets/barbara-dalkowska.jpg.asset.json";
 
 const TITLE = "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia";
 const DESC = "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie i Warszawie od 2006 roku. Licencja zawodowa nr 23367.";
