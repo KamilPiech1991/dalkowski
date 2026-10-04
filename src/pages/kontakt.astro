@@ -3,33 +3,34 @@ import { TriangleAlert, Clock, MapPin, Phone } from "@lucide/astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import { getSiteSettings } from "@/lib/sanity";
+import { getPage } from "@/lib/pages";
 
 const { phones, emails, address, openingHours } = await getSiteSettings();
+const page = await getPage("contactPage");
 
-const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Kotłów Gazowych";
-const DESC = `Skontaktuj się z firmą Dalkowski w Piasecznie i Warszawie. Tel. ${phones.office.label} (biuro), ${phones.management.label} (zarządzanie nieruchomościami), ${phones.technical.label} (technika grzewcza, hydraulika, elektryka). ${address.street}, ${address.postalCode} ${address.city}.`;
+// Pusty opis w Sanity → opis składany z aktualnych numerów i adresu.
+const description =
+  page.seo.description ||
+  `Skontaktuj się z firmą Dalkowski w Piasecznie i Warszawie. Tel. ${phones.office.label} (biuro), ${phones.management.label} (zarządzanie nieruchomościami), ${phones.technical.label} (technika grzewcza, hydraulika, elektryka). ${address.street}, ${address.postalCode} ${address.city}.`;
 
 const contacts = [
   {
     icon: Phone,
-    title: "Biuro — umawianie wizyt i zgłoszenia",
-    note: "Główny numer kontaktowy do wszystkich usług — zarządzanie, konserwacja i technika grzewcza.",
+    ...page.office,
     phone: phones.office,
     officeFallback: false,
     email: emails.office,
   },
   {
     icon: Phone,
-    title: "Zarządzanie nieruchomościami",
-    note: "Barbara Dalkowska — zarządca nieruchomości. Gdy numer jest zajęty, prosimy dzwonić do biura.",
+    ...page.management,
     phone: phones.management,
     officeFallback: true,
     email: emails.management,
   },
   {
     icon: TriangleAlert,
-    title: "Kotły gazowe, hydraulika, elektryka",
-    note: "Pan Roman — serwis kotłów gazowych De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny.",
+    ...page.technical,
     phone: phones.technical,
     officeFallback: true,
     email: emails.technical,
@@ -40,10 +41,9 @@ const fieldClass =
   "mt-1 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40";
 ---
 
-<BaseLayout title={TITLE} description={DESC}>
-  <PageHero eyebrow="Kontakt" title="Porozmawiajmy" wide={false}>
-    Jeśli potrzebują Państwo dodatkowych wyjaśnień, służymy pomocą. Proszę dzwonić lub pisać na
-    adres e-mail.
+<BaseLayout title={page.seo.title} description={description} keywords={page.seo.keywords}>
+  <PageHero eyebrow={page.hero.eyebrow} title={page.hero.title} wide={false}>
+    {page.hero.lead}
   </PageHero>
 
   <section class="container-page py-16 grid lg:grid-cols-2 gap-10">
@@ -104,8 +104,8 @@ const fieldClass =
       method="post"
       enctype="text/plain"
     >
-      <h2 class="text-2xl font-bold">Napisz do nas</h2>
-      <p class="text-sm text-muted-foreground mt-1">Odpowiemy w ciągu dnia roboczego.</p>
+      <h2 class="text-2xl font-bold">{page.form.title}</h2>
+      <p class="text-sm text-muted-foreground mt-1">{page.form.subtitle}</p>
       <div class="mt-5 space-y-4">
         <div>
           <label class="text-xs font-semibold text-foreground" for="topic">

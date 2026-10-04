@@ -9,19 +9,13 @@ import {
 } from "@lucide/astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
-import Img from "@/components/Img.astro";
+import Photo from "@/components/Photo.astro";
 import { getPricing, getSiteSettings } from "@/lib/sanity";
-import { image } from "@/lib/images";
+import { getPage } from "@/lib/pages";
 import boiler from "@/assets/heating-boiler.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
 
 const { phones } = await getSiteSettings();
-
-const TITLE = "Autoryzowany Serwis De Dietrich Piaseczno — Przeglądy, Naprawy, Montaż | Dalkowski";
-const DESC =
-  "Autoryzowany serwis kotłów gazowych De Dietrich w Piasecznie i okolicach. Przeglądy okresowe, naprawy awaryjne, instalacja i wymiana kotłów gazowych. Umawiamy się na dogodne godziny.";
+const page = await getPage("heatingPage");
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -33,7 +27,7 @@ const jsonLd = {
     telephone: "+48730704502",
   },
   areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
-  description: DESC,
+  description: page.seo.description,
   offers: [
     {
       "@type": "Offer",
@@ -57,47 +51,19 @@ const jsonLd = {
   ],
 };
 
-const services = [
-  {
-    icon: CircleAlert,
-    title: "Awarie",
-    img: g3,
-    alt: "Serwisant Dalkowski podczas naprawy awaryjnej kotła gazowego De Dietrich",
-    desc: "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie.",
-  },
-  {
-    icon: Calendar,
-    title: "Przeglądy i konserwacje",
-    img: boiler,
-    alt: "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich",
-    desc: "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Sprzedaż i instalacja",
-    img: g6,
-    alt: "Nowoczesny kocioł kondensacyjny De Dietrich",
-    desc: "Jako autoryzowany partner De Dietrich prowadzimy sprzedaż i profesjonalny montaż kotłów gazowych tej marki. Dobieramy moc i model do potrzeb budynku oraz zapewniamy pełne wsparcie gwarancyjne.",
-  },
-];
-
-const marki = ["De Dietrich"];
-
-const gwarancje = [
-  "Na wykonane usługi zawsze udzielamy gwarancji na piśmie",
-  "Klient zawsze może liczyć na poradę telefoniczną przy naprawie lub serwisie",
-  "Nasi serwisanci nigdy nie chodzą w brudnych butach po mieszkaniu klienta",
-  "Dotrzymujemy umów i zawsze mamy własne narzędzia",
-  "Nie boimy się wziąć udziału w programie „Usterka…”",
-];
+const serviceIcons = [CircleAlert, Calendar, ShoppingCart];
+const services = page.services.map((s, i) => ({
+  ...s,
+  icon: serviceIcons[i % serviceIcons.length],
+}));
 
 const cennik = await getPricing();
 ---
 
 <BaseLayout
-  title={TITLE}
-  description={DESC}
-  keywords="autoryzowany serwis De Dietrich Piaseczno, serwis kotłów gazowych De Dietrich, przegląd kotła gazowego, naprawa kotła De Dietrich, instalacja kotła gazowego Piaseczno"
+  title={page.seo.title}
+  description={page.seo.description}
+  keywords={page.seo.keywords}
   ogType="article"
   ogImage={boiler.src}
   jsonLd={[jsonLd]}
@@ -106,14 +72,8 @@ const cennik = await getPricing();
     <div class="container-page py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
       <div>
         <Breadcrumb current="Technika grzewcza" />
-        <h1 class="text-4xl sm:text-5xl font-extrabold">
-          Autoryzowany serwis kotłów gazowych De Dietrich
-        </h1>
-        <p class="mt-5 text-lg text-muted-foreground">
-          <strong class="text-foreground">Specjalizujemy się w kotłach De Dietrich.</strong>{" "}
-          Przeglądy, naprawy awaryjne oraz sprzedaż i montaż nowych urządzeń w Piasecznie i
-          okolicach. Dla klientów indywidualnych umawiamy wizyty na dogodne godziny.
-        </p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold">{page.hero.title}</h1>
+        <div class="rich-text mt-5 text-lg text-muted-foreground" set:html={page.hero.lead} />
         <div class="mt-7 flex flex-wrap gap-3">
           <a
             href={phones.technical.href}
@@ -129,9 +89,8 @@ const cennik = await getPricing();
           </a>
         </div>
       </div>
-      <Img
-        src={image("de-dietrich-kociol.png")}
-        alt="Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni"
+      <Photo
+        photo={page.hero.image}
         priority
         class="rounded-2xl shadow-soft w-full h-auto object-cover"
       />
@@ -141,9 +100,8 @@ const cennik = await getPricing();
   <section class="container-page py-16 grid md:grid-cols-3 gap-6">
     {services.map((s) => (
       <article class="rounded-3xl border border-border bg-card overflow-hidden flex flex-col">
-        <Img
-          src={s.img}
-          alt={s.alt}
+        <Photo
+          photo={s.image}
           sizes="(min-width: 768px) 33vw, 100vw"
           class="w-full h-48 object-cover"
         />
@@ -152,7 +110,7 @@ const cennik = await getPricing();
             <s.icon class="h-6 w-6 text-primary" />
           </div>
           <h2 class="mt-5 text-xl font-bold">{s.title}</h2>
-          <p class="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+          <p class="mt-3 text-sm text-muted-foreground leading-relaxed">{s.description}</p>
         </div>
       </article>
     ))}
@@ -161,16 +119,14 @@ const cennik = await getPricing();
   <section class="bg-secondary/50 py-16">
     <div class="container-page">
       <div class="text-center max-w-2xl mx-auto">
-        <span class="text-xs font-semibold text-primary uppercase tracking-wider">Autoryzacja</span>
-        <h2 class="mt-3 text-3xl font-bold">Autoryzowany serwis De Dietrich</h2>
-        <p class="mt-3 text-muted-foreground">
-          Jako autoryzowany partner De Dietrich znamy te kotły od podszewki. Realizujemy przeglądy,
-          naprawy i instalacje zgodnie ze standardami producenta, zachowując gwarancję i pełną
-          dokumentację serwisową.
-        </p>
+        <span class="text-xs font-semibold text-primary uppercase tracking-wider">
+          {page.authorization.eyebrow}
+        </span>
+        <h2 class="mt-3 text-3xl font-bold">{page.authorization.title}</h2>
+        <p class="mt-3 text-muted-foreground">{page.authorization.text}</p>
       </div>
       <div class="mt-10 flex flex-wrap justify-center gap-3">
-        {marki.map((m) => (
+        {page.authorization.brands.map((m) => (
           <span class="rounded-full bg-background border border-border px-5 py-2.5 text-sm font-semibold text-foreground/80">
             {m}
           </span>
@@ -181,19 +137,18 @@ const cennik = await getPricing();
 
   <section class="container-page py-16 grid lg:grid-cols-2 gap-10">
     <div>
-      <Img
-        src={g5}
-        alt="Elewacja budynku po pracach instalacyjnych — Dalkowski Technika Grzewcza"
+      <Photo
+        photo={page.quality.image}
         class="rounded-3xl shadow-card w-full h-72 object-cover mb-8"
       />
       <span class="text-xs font-semibold text-primary uppercase tracking-wider">
-        Deklaracja jakości
+        {page.quality.eyebrow}
       </span>
       <h2 class="mt-3 text-3xl font-bold flex items-center gap-2">
-        <ShieldCheck class="h-7 w-7 text-primary" /> Nasze zasady
+        <ShieldCheck class="h-7 w-7 text-primary" /> {page.quality.title}
       </h2>
       <ul class="mt-6 space-y-3">
-        {gwarancje.map((g) => (
+        {page.quality.points.map((g) => (
           <li class="flex items-start gap-2 text-sm">
             <CircleCheck class="h-4 w-4 text-primary mt-0.5 shrink-0" /> {g}
           </li>
@@ -201,7 +156,7 @@ const cennik = await getPricing();
       </ul>
     </div>
     <div class="rounded-3xl border border-border bg-card p-8 h-fit">
-      <h2 class="text-2xl font-bold">Cennik przykładowych usług</h2>
+      <h2 class="text-2xl font-bold">{page.pricingTitle}</h2>
       <div class="mt-6 space-y-5">
         {cennik.map((c, i) => (
           <div class:list={[i < cennik.length - 1 && "border-b border-border pb-4"]}>

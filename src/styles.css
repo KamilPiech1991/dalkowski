@@ -109,6 +109,16 @@
   padding-inline: 1.25rem;
   max-width: 1200px;
 }
+/* Tekst sformatowany z Sanity (akapity z pogrubieniem/kursywą), wstawiany jako HTML. */
+@utility rich-text {
+  & > p + p {
+    margin-top: 1rem;
+  }
+  & strong {
+    font-weight: 700;
+    color: var(--foreground);
+  }
+}
 
 /* Paralaksa zdjęcia w hero — czysty CSS (scroll-driven animations).
    Przeglądarki bez wsparcia pokazują zwykłe, nieruchome zdjęcie. */

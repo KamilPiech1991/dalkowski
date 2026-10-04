@@ -14,7 +14,7 @@ export default defineConfig({
   plugins: [structureTool({ structure }), visionTool(), plPLLocale()],
   schema: {
     types: schemaTypes,
-    // Ustawienia strony to jeden dokument — nie da się utworzyć drugiego.
+    // Ustawienia i strony to pojedyncze dokumenty — nie da się utworzyć drugiego.
     templates: (templates) =>
       templates.filter(({ schemaType }) => !SINGLETONS.includes(schemaType)),
   },
