@@ -64,6 +64,13 @@ import { image } from "@/lib/images";
 
 Astro samo przygotuje wersje AVIF/WebP w kilku rozmiarach.
 
+## Animacje
+
+Animacje (GSAP + ScrollTrigger) są w `src/scripts/animations.ts` i włącza się je atrybutami w
+HTML: `data-hero`, `data-reveal`, `data-reveal-group`, `data-reveal-image`, `data-count`
+(opis w nagłówku pliku). Nagłówki `h2` animują się same. To tylko dodatek: bez JavaScriptu
+albo przy włączonym w systemie „ograniczaniu ruchu” strona wygląda tak samo, tylko bez animacji.
+
 ## Linki wewnętrzne
 
 Strona na GitHub Pages działa w podkatalogu `/dalkowski/`, dlatego linki wewnętrzne zawsze

@@ -142,3 +142,51 @@
     }
   }
 }
+
+/* ---- Animacje GSAP (src/scripts/animations.ts) ----
+   Stan początkowy elementów przed animacją. Działa tylko z klasą `anim` na <html>,
+   którą ustawia skrypt w <head> — bez JavaScriptu wszystko jest widoczne od razu. */
+.anim main h2,
+.anim [data-hero] h1 {
+  visibility: hidden;
+}
+.anim [data-reveal]:not(.revealed),
+.anim [data-reveal-group] > :not(.revealed) {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+}
+.anim [data-reveal-group] > :not(.revealed) {
+  transform: translateY(32px) scale(0.97);
+}
+.anim [data-float]:not(.revealed) {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+}
+.anim [data-hero-image]:not(.revealed) {
+  clip-path: inset(12% 12% 12% 12% round 1.5rem);
+}
+.anim [data-reveal-image]:not(.revealed) {
+  clip-path: inset(0% 0% 100% 0%);
+}
+
+/* Maska słów w nagłówkach — zapas na ogonki liter (j, g, ę), żeby nie były przycinane. */
+.split-word-mask {
+  padding-block: 0.08em 0.16em;
+  margin-block: -0.08em -0.16em;
+}
+
+/* Pasek postępu przewijania (wypełniany przez GSAP). */
+.scroll-progress {
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+html:not(.anim) .scroll-progress {
+  display: none;
+}
