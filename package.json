@@ -7,7 +7,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "assets:fetch": "node scripts/fetch-lovable-assets.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

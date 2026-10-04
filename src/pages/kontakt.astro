@@ -95,7 +95,13 @@ const fieldClass =
       </div>
     </div>
 
-    <form class="rounded-2xl border border-border bg-card p-7 h-fit" data-contact-form>
+    <!-- Formularz bez JS: przeglądarka otwiera program pocztowy z wypełnioną wiadomością -->
+    <form
+      class="rounded-2xl border border-border bg-card p-7 h-fit"
+      action={`mailto:${EMAILS.office}?subject=${encodeURIComponent("Wiadomość ze strony dalkowski")}`}
+      method="post"
+      enctype="text/plain"
+    >
       <h2 class="text-2xl font-bold">Napisz do nas</h2>
       <p class="text-sm text-muted-foreground mt-1">Odpowiemy w ciągu dnia roboczego.</p>
       <div class="mt-5 space-y-4">
@@ -103,7 +109,7 @@ const fieldClass =
           <label class="text-xs font-semibold text-foreground" for="topic">
             Temat kontaktu <span class="text-primary">*</span>
           </label>
-          <select id="topic" name="topic" required class={fieldClass}>
+          <select id="topic" name="Temat" required class={fieldClass}>
             <option value="" disabled selected>
               Wybierz temat…
             </option>
@@ -121,7 +127,7 @@ const fieldClass =
           </label>
           <input
             id="name"
-            name="name"
+            name="Imię i nazwisko"
             required
             maxlength="100"
             autocomplete="name"
@@ -134,7 +140,7 @@ const fieldClass =
           </label>
           <input
             id="email"
-            name="email"
+            name="E-mail"
             type="email"
             required
             maxlength="255"
@@ -148,7 +154,7 @@ const fieldClass =
           </label>
           <textarea
             id="message"
-            name="message"
+            name="Wiadomość"
             rows="6"
             required
             maxlength="2000"
@@ -165,17 +171,3 @@ const fieldClass =
     </form>
   </section>
 </BaseLayout>
-
-<script>
-  import { EMAILS } from "@/data/site";
-
-  const form = document.querySelector<HTMLFormElement>("[data-contact-form]");
-  form?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    const topic = String(fd.get("topic") || "");
-    const subject = `[${topic}] Wiadomość ze strony — ${fd.get("name") || "kontakt"}`;
-    const body = `Temat: ${topic}\nImię: ${fd.get("name")}\nEmail: ${fd.get("email")}\n\n${fd.get("message")}`;
-    window.location.href = `mailto:${EMAILS.office}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  });
-</script>

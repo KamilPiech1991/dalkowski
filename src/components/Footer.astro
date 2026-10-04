@@ -1,9 +1,8 @@
 ---
 import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
 import { EMAILS, PHONES } from "@/data/site";
-import { lovableImage, imageUrl } from "@/lib/images";
+import Logo from "@/components/Logo.astro";
 
-const logo = imageUrl(lovableImage("logo-dalkowski.png"));
 const year = new Date().getFullYear();
 const links = [
   { href: "/", label: "Strona główna" },
@@ -19,14 +18,7 @@ const links = [
 <footer class="mt-24 border-t border-border bg-secondary/60">
   <div class="container-page py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
     <div>
-      <img
-        src={logo}
-        alt="Dalkowski"
-        class="h-12 w-auto mb-4"
-        width="160"
-        height="48"
-        loading="lazy"
-      />
+      <Logo class="h-12 w-auto mb-4" height={48} />
       <p class="text-sm text-muted-foreground leading-relaxed">
         Profesjonalne zarządzanie nieruchomościami oraz serwis kotłów gazowych centralnego
         ogrzewania. Piaseczno i okolice. Działamy od 2006 roku.

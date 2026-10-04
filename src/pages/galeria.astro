@@ -2,7 +2,8 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import Img from "@/components/Img.astro";
-import { imageUrl, lovableImage, type ImageSource } from "@/lib/images";
+import type { ImageMetadata } from "astro";
+import { image } from "@/lib/images";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
@@ -16,7 +17,7 @@ const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
 const DESC =
   "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
 
-type Photo = { src: ImageSource; alt: string };
+type Photo = { src: ImageMetadata; alt: string };
 
 const realPhotos: Photo[] = [
   [
@@ -71,11 +72,11 @@ const realPhotos: Photo[] = [
   ["photo-2766.jpg", "Recepcja w biurowcu — siedziba firmy Dalkowski Zarządzanie Nieruchomościami"],
   ["photo-2769.jpg", "Flota samochodów firmowych Dalkowski przed siedzibą firmy"],
   ["photo-2773.jpg", "Budynek biurowy — siedziba firmy Dalkowski w Piasecznie"],
-].map(([name, alt]) => ({ src: lovableImage(name), alt }));
+].map(([name, alt]) => ({ src: image(name), alt }));
 
 const stockPhotos: Photo[] = [
   {
-    src: lovableImage("de-dietrich-kociol.png"),
+    src: image("de-dietrich-kociol.png"),
     alt: "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni",
   },
   { src: g1, alt: "Osiedle mieszkaniowe — widok z lotu ptaka" },
@@ -89,12 +90,12 @@ const stockPhotos: Photo[] = [
 ];
 
 const groups = [
-  { title: "Z naszej codziennej pracy", photos: realPhotos, size: { width: 1920, height: 1280 } },
-  { title: "Realizacje i obiekty referencyjne", photos: stockPhotos, size: {} },
+  { title: "Z naszej codziennej pracy", photos: realPhotos },
+  { title: "Realizacje i obiekty referencyjne", photos: stockPhotos },
 ];
 ---
 
-<BaseLayout title={TITLE} description={DESC} ogImage={imageUrl(hero)}>
+<BaseLayout title={TITLE} description={DESC} ogImage={hero.src}>
   <PageHero eyebrow="Galeria" title="Nasze wspólnoty i realizacje">
     Wybrane zdjęcia z osiedli i budynków, które administrujemy, oraz przykładowe realizacje z
     zakresu techniki grzewczej.
@@ -110,7 +111,6 @@ const groups = [
               <Img
                 src={it.src}
                 alt={it.alt}
-                {...g.size}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
               />

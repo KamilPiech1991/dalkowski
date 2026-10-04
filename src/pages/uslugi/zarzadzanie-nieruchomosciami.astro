@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Img from "@/components/Img.astro";
 import { PHONES } from "@/data/site";
-import { lovableImage } from "@/lib/images";
+import { image } from "@/lib/images";
 import hero from "@/assets/hero-buildings.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
@@ -25,11 +25,11 @@ const jsonLd = {
 
 const references = [
   {
-    src: lovableImage("photo-7150.jpg"),
+    src: image("photo-7150.jpg"),
     alt: "Elewacja zarządzanej wspólnoty mieszkaniowej z balkonami",
   },
   {
-    src: lovableImage("photo-7165.jpg"),
+    src: image("photo-7165.jpg"),
     alt: "Nowoczesny budynek wspólnoty z lokalami usługowymi w Józefosławiu",
   },
   { src: g1, alt: "Osiedle mieszkaniowe — widok z góry" },
@@ -56,7 +56,7 @@ const sections = [
   {
     icon: Calculator,
     title: "Obsługa księgowa",
-    img: lovableImage("photo-2762.jpg"),
+    img: image("photo-2762.jpg"),
     imgAlt: "Biuro Dalkowski — zarządzanie wspólnotami w Piasecznie",
     items: [
       "Naliczanie i rozliczanie zaliczek wynikających z planu gospodarczego",
@@ -70,7 +70,7 @@ const sections = [
   {
     icon: Wrench,
     title: "Obsługa techniczna",
-    img: lovableImage("photo-1260.jpg"),
+    img: image("photo-1260.jpg"),
     imgAlt: "Samochód firmowy Dalkowski przy obiekcie wspólnoty",
     items: [
       "Prowadzenie książki obiektu budowlanego zgodnie z Prawem budowlanym",
@@ -180,7 +180,7 @@ const sections = [
     <div class="grid lg:grid-cols-12 gap-8 items-stretch">
       <div class="lg:col-span-5 rounded-3xl overflow-hidden shadow-card">
         <Img
-          src={lovableImage("photo-7159.jpg")}
+          src={image("photo-7159.jpg")}
           alt="Samochód serwisowy Dalkowski — administracja i konserwacja wspólnot"
           class="w-full h-72 lg:h-full object-cover"
         />

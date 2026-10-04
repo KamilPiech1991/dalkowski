@@ -109,3 +109,26 @@
   padding-inline: 1.25rem;
   max-width: 1200px;
 }
+
+/* Paralaksa zdjęcia w hero — czysty CSS (scroll-driven animations).
+   Przeglądarki bez wsparcia pokazują zwykłe, nieruchome zdjęcie. */
+@keyframes parallax {
+  from {
+    transform: translate3d(0, -8%, 0);
+  }
+  to {
+    transform: translate3d(0, 8%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .parallax {
+      animation: parallax linear both;
+    }
+    /* Osobny selektor, żeby minifier nie wcisnął timeline do skrótu `animation`. */
+    img.parallax {
+      animation-timeline: view();
+    }
+  }
+}

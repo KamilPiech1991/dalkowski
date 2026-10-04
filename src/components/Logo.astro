@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import logo from "@/assets/logo-dalkowski.png";
+
+interface Props {
+  class?: string;
+  height: number;
+  priority?: boolean;
+}
+
+const { class: className, height, priority } = Astro.props;
+---
+
+<Image
+  src={logo}
+  alt="Dalkowski"
+  class={className}
+  height={height}
+  densities={[1, 2]}
+  format="webp"
+  loading={priority ? "eager" : "lazy"}
+  decoding="async"
+/>

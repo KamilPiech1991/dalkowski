@@ -11,7 +11,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Img from "@/components/Img.astro";
 import { PHONES } from "@/data/site";
-import { imageUrl, lovableImage } from "@/lib/images";
+import { image } from "@/lib/images";
 import boiler from "@/assets/heating-boiler.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g5 from "@/assets/gallery-5.jpg";
@@ -113,7 +113,7 @@ const cennik = [
   description={DESC}
   keywords="autoryzowany serwis De Dietrich Piaseczno, serwis kotłów gazowych De Dietrich, przegląd kotła gazowego, naprawa kotła De Dietrich, instalacja kotła gazowego Piaseczno"
   ogType="article"
-  ogImage={imageUrl(boiler)}
+  ogImage={boiler.src}
   jsonLd={[jsonLd]}
 >
   <section class="bg-gradient-hero">
@@ -144,10 +144,8 @@ const cennik = [
         </div>
       </div>
       <Img
-        src={lovableImage("de-dietrich-kociol.png")}
+        src={image("de-dietrich-kociol.png")}
         alt="Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni"
-        width={768}
-        height={692}
         priority
         class="rounded-2xl shadow-soft w-full h-auto object-cover"
       />

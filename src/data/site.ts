@@ -13,8 +13,7 @@ export const EMAILS = {
   technical: "dalkowskiroman@gmail.com",
 } as const;
 
-export const DEFAULT_OG_IMAGE =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/906bc37b-f339-47ab-afc7-e16ca425e4bc/id-preview-6d125d8b--bf3d4489-09f4-4b49-b539-caebf92d5b0f.lovable.app-1780573278007.png";
+export const DEFAULT_OG_IMAGE = "/og-image.png";
 
 export type NavItem = {
   href: string;

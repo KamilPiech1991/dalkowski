@@ -1,9 +1,11 @@
 # Dalkowski — strona internetowa
 
 Strona firmy Dalkowski (zarządzanie nieruchomościami, konserwacja i technika grzewcza),
-zbudowana w [Astro](https://astro.build) + Tailwind CSS 4. Generowana statycznie — wynik
-builda (`dist/`) można wrzucić na dowolny hosting (Netlify, Cloudflare Pages, Vercel, zwykły
-serwer).
+zbudowana w [Astro](https://astro.build) + Tailwind CSS 4. Strona jest w pełni statyczna:
+czysty HTML i CSS, **bez JavaScriptu w przeglądarce** (menu mobilne to `<details>`, paralaksa w
+hero to animacja CSS sterowana scrollem, formularz kontaktowy to zwykły formularz `mailto:`).
+
+**Adres strony:** https://dalkowski.pages.dev (Cloudflare Pages — patrz „Wdrożenie”).
 
 ## Uruchomienie
 
@@ -30,37 +32,52 @@ src/
     kontakt.astro           → /kontakt
     sitemap.xml.ts, robots.txt.ts
   layouts/BaseLayout.astro  # <head>, meta SEO/OG, JSON-LD, nagłówek i stopka
-  components/               # Header, Footer, Img, PageHero, Breadcrumb
+  components/               # Header, Footer, Logo, Img, PageHero, Breadcrumb
   data/site.ts              # telefony, e-maile, menu, sitemap, dane firmy (JSON-LD)
-  assets/                   # zdjęcia optymalizowane przez Astro (AVIF/WebP)
-  assets/lovable/           # zdjęcia przeniesione z Lovable (patrz niżej)
+  assets/                   # wszystkie zdjęcia i logo (Astro generuje AVIF/WebP)
   styles.css                # kolory marki i style globalne (Tailwind)
-public/                     # pliki serwowane 1:1 (np. llms.txt)
+public/                     # pliki serwowane 1:1 (llms.txt, og-image.png, _headers)
 ```
 
 Dane kontaktowe i menu zmienia się w jednym miejscu: `src/data/site.ts`.
 
-## Adres strony (SEO)
+### Dodawanie zdjęć
 
-Canonical, `og:url`, `sitemap.xml` i `robots.txt` budowane są z adresu ustawionego w
-`astro.config.mjs`. Domyślnie to `https://dalkowski.lovable.app` — przy wdrożeniu na własną
-domenę ustaw zmienną środowiskową, np.:
+Wrzuć plik do `src/assets/` i użyj go w stronie:
 
-```sh
-SITE_URL=https://www.twoja-domena.pl npm run build
+```astro
+---
+import Img from "@/components/Img.astro";
+import { image } from "@/lib/images";
+---
+
+<Img src={image("nowe-zdjecie.jpg")} alt="Opis zdjęcia" class="rounded-2xl" />
 ```
 
-## Zdjęcia z Lovable
+Astro samo przygotuje wersje AVIF/WebP w kilku rozmiarach.
 
-Część zdjęć (logo, zdjęcia wspólnot, portret, kocioł De Dietrich) była wgrana do Lovable —
-w repo są tylko manifesty `src/assets/lovable/*.asset.json`, a pliki leżą na serwerze Lovable.
-Dopóki ich nie pobierzesz, strona linkuje do nich na `dalkowski.lovable.app`.
+## Wdrożenie (Cloudflare Pages)
 
-Aby przenieść je do repo (zalecane przed wyłączeniem projektu w Lovable):
+Strona jest publikowana na **Cloudflare Pages** (darmowy plan, działa z prywatnym repo,
+automatyczne wdrożenie po każdym pushu do `main` i podgląd dla każdego PR).
 
-```sh
-npm run assets:fetch
-git add src/assets/lovable && git commit -m "Pobierz zdjęcia z Lovable"
-```
+Jednorazowa konfiguracja w panelu Cloudflare:
 
-Po pobraniu Astro automatycznie zacznie je optymalizować (AVIF/WebP, responsywne rozmiary).
+1. **Workers & Pages → Create → Pages → Connect to Git** i wybierz repo `KamilPiech1991/dalkowski`.
+2. Nazwa projektu: `dalkowski` → adres strony: **https://dalkowski.pages.dev**.
+3. Ustawienia builda:
+   - Framework preset: **Astro**
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Production branch: `main`
+4. **Save and Deploy.**
+
+Jeśli nazwa `dalkowski` byłaby zajęta, Cloudflare doda przyrostek (np. `dalkowski-abc.pages.dev`) —
+wtedy w **Settings → Variables** ustaw `SITE_URL` na ten adres, żeby canonical i sitemap były
+poprawne.
+
+### Własna domena
+
+W projekcie Cloudflare Pages: **Custom domains → Set up a custom domain** (np. `dalkowski.pl`),
+a następnie ustaw zmienną `SITE_URL=https://dalkowski.pl` (albo zmień domyślny adres w
+`astro.config.mjs`).

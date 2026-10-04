@@ -3,13 +3,13 @@ import { Award, CircleCheck, MapPin } from "@lucide/astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import Img from "@/components/Img.astro";
-import { lovableImage } from "@/lib/images";
+import { image } from "@/lib/images";
 
 const TITLE = "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia";
 const DESC =
   "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie i Warszawie od 2006 roku. Licencja zawodowa nr 23367.";
 
-const portrait = lovableImage("barbara-dalkowska.jpg");
+const portrait = image("barbara-dalkowska.jpg");
 
 const wspolnoty = [
   "WM Brzozowy Park, ul. Ogrodowa 8, Józefosław",
@@ -45,8 +45,6 @@ const wspolnoty = [
         <Img
           src={portrait}
           alt="Barbara Dalkowska — właścicielka firmy Dalkowski"
-          width={685}
-          height={1024}
           sizes="(min-width: 1024px) 400px, 100vw"
           class="rounded-2xl shadow-soft w-full h-auto object-cover"
         />
