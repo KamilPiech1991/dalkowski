@@ -1,0 +1,50 @@
+name: Sanity Studio
+
+on:
+  push:
+    branches: [main]
+    paths: [studio/**, src/data/sanity.ts]
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Wgraj obecne treści i zdjęcia strony do Sanity (pomija istniejące dokumenty)"
+        type: boolean
+        default: false
+
+jobs:
+  studio:
+    runs-on: ubuntu-latest
+    env:
+      SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+    defaults:
+      run:
+        working-directory: studio
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sprawdź konfigurację
+        id: config
+        working-directory: .
+        run: |
+          if grep -q 'SANITY_PROJECT_ID = ""' src/data/sanity.ts; then
+            echo "::notice::Brak ID projektu Sanity w src/data/sanity.ts — pomijam."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          elif [ -z "$SANITY_AUTH_TOKEN" ]; then
+            echo "::error::Brak sekretu SANITY_AUTH_TOKEN (Settings → Secrets and variables → Actions)."
+            exit 1
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/setup-node@v4
+        if: steps.config.outputs.ready == 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - if: steps.config.outputs.ready == 'true'
+        run: npm ci
+      - name: Wgraj treści do Sanity
+        if: steps.config.outputs.ready == 'true' && inputs.seed
+        run: npm run seed
+      - name: Wdróż Studio (https://dalkowski.sanity.studio)
+        if: steps.config.outputs.ready == 'true'
+        run: npx sanity deploy -y

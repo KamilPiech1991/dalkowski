@@ -10,12 +10,14 @@ import {
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Img from "@/components/Img.astro";
-import { PHONES } from "@/data/site";
+import { getPricing, getSiteSettings } from "@/lib/sanity";
 import { image } from "@/lib/images";
 import boiler from "@/assets/heating-boiler.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g5 from "@/assets/gallery-5.jpg";
 import g6 from "@/assets/gallery-6.jpg";
+
+const { phones } = await getSiteSettings();
 
 const TITLE = "Autoryzowany Serwis De Dietrich Piaseczno — Przeglądy, Naprawy, Montaż | Dalkowski";
 const DESC =
@@ -89,23 +91,7 @@ const gwarancje = [
   "Nie boimy się wziąć udziału w programie „Usterka…”",
 ];
 
-const cennik = [
-  {
-    name: "Przegląd okresowy kotła gazowego",
-    price: "350 zł netto",
-    note: "Kocioł gazowy wiszący lub stojący. Przy 5 przeglądach jednego dnia na tym samym osiedlu — rabat 20% (280 zł netto / przegląd).",
-  },
-  {
-    name: "Montaż nowego kotła gazowego",
-    price: "wycena indywidualna",
-    note: "Koszt zależy od modelu kotła, stanu instalacji i warunków montażu — wycenę przygotowujemy po oględzinach.",
-  },
-  {
-    name: "Naprawa awaryjna",
-    price: "wycena indywidualna",
-    note: "Kosztu naprawy nie da się przewidzieć z góry — w zależności od usterki i części może to być 150 zł, jak i 2500 zł. Po diagnozie zawsze podajemy cenę do akceptacji przed rozpoczęciem prac.",
-  },
-];
+const cennik = await getPricing();
 ---
 
 <BaseLayout
@@ -130,16 +116,16 @@ const cennik = [
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a
-            href={PHONES.technical.href}
+            href={phones.technical.href}
             class="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold shadow-soft"
           >
-            <Phone class="h-4 w-4" /> Serwis: {PHONES.technical.label}
+            <Phone class="h-4 w-4" /> Serwis: {phones.technical.label}
           </a>
           <a
-            href={PHONES.office.href}
+            href={phones.office.href}
             class="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold hover:border-primary transition-colors"
           >
-            <Phone class="h-4 w-4 text-primary" /> Biuro: {PHONES.office.label}
+            <Phone class="h-4 w-4 text-primary" /> Biuro: {phones.office.label}
           </a>
         </div>
       </div>

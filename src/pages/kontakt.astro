@@ -2,36 +2,37 @@
 import { TriangleAlert, Clock, MapPin, Phone } from "@lucide/astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
-import { EMAILS, PHONES } from "@/data/site";
+import { getSiteSettings } from "@/lib/sanity";
+
+const { phones, emails, address, openingHours } = await getSiteSettings();
 
 const TITLE = "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Kotłów Gazowych";
-const DESC =
-  "Skontaktuj się z firmą Dalkowski w Piasecznie i Warszawie. Tel. +48 574 988 293 (biuro), +48 793 720 760 (zarządzanie nieruchomościami), +48 730 704 502 (technika grzewcza, hydraulika, elektryka). ul. Armii Krajowej 2, 05-500 Piaseczno.";
+const DESC = `Skontaktuj się z firmą Dalkowski w Piasecznie i Warszawie. Tel. ${phones.office.label} (biuro), ${phones.management.label} (zarządzanie nieruchomościami), ${phones.technical.label} (technika grzewcza, hydraulika, elektryka). ${address.street}, ${address.postalCode} ${address.city}.`;
 
 const contacts = [
   {
     icon: Phone,
     title: "Biuro — umawianie wizyt i zgłoszenia",
     note: "Główny numer kontaktowy do wszystkich usług — zarządzanie, konserwacja i technika grzewcza.",
-    phone: PHONES.office,
+    phone: phones.office,
     officeFallback: false,
-    email: EMAILS.office,
+    email: emails.office,
   },
   {
     icon: Phone,
     title: "Zarządzanie nieruchomościami",
     note: "Barbara Dalkowska — zarządca nieruchomości. Gdy numer jest zajęty, prosimy dzwonić do biura.",
-    phone: PHONES.management,
+    phone: phones.management,
     officeFallback: true,
-    email: EMAILS.management,
+    email: emails.management,
   },
   {
     icon: TriangleAlert,
     title: "Kotły gazowe, hydraulika, elektryka",
     note: "Pan Roman — serwis kotłów gazowych De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny.",
-    phone: PHONES.technical,
+    phone: phones.technical,
     officeFallback: true,
-    email: EMAILS.technical,
+    email: emails.technical,
   },
 ];
 
@@ -58,8 +59,8 @@ const fieldClass =
               {c.phone.label}
             </a>
             {c.officeFallback && (
-              <a href={PHONES.office.href} class="block text-muted-foreground hover:text-primary">
-                {PHONES.office.label} (biuro)
+              <a href={phones.office.href} class="block text-muted-foreground hover:text-primary">
+                {phones.office.label} (biuro)
               </a>
             )}
             <a href={`mailto:${c.email}`} class="block text-muted-foreground hover:text-primary">
@@ -74,8 +75,9 @@ const fieldClass =
           <MapPin class="h-5 w-5 text-primary" /> Adres
         </h2>
         <address class="not-italic mt-3 text-sm text-muted-foreground">
-          ul. Armii Krajowej 2<br />
-          05-500 Piaseczno
+          {address.street}
+          <br />
+          {`${address.postalCode} ${address.city}`}
           <br />
           Polska
         </address>
@@ -86,7 +88,7 @@ const fieldClass =
           <Clock class="h-5 w-5 text-primary" /> Godziny pracy
         </h2>
         <p class="mt-3 text-sm text-muted-foreground">
-          Poniedziałek – Piątek: <strong class="text-foreground">10:00 – 17:00</strong>
+          <strong class="text-foreground">{openingHours}</strong>
         </p>
         <p class="text-sm text-muted-foreground">
           Serwis kotłów gazowych:{" "}
@@ -98,7 +100,7 @@ const fieldClass =
     <!-- Formularz bez JS: przeglądarka otwiera program pocztowy z wypełnioną wiadomością -->
     <form
       class="rounded-2xl border border-border bg-card p-7 h-fit"
-      action={`mailto:${EMAILS.office}?subject=${encodeURIComponent("Wiadomość ze strony dalkowski")}`}
+      action={`mailto:${emails.office}?subject=${encodeURIComponent("Wiadomość ze strony dalkowski")}`}
       method="post"
       enctype="text/plain"
     >

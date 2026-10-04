@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Webhook z Sanity po publikacji treści (patrz README → „Sanity CMS”).
+  repository_dispatch:
+    types: [sanity-publish]
 
 permissions:
   contents: read

@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 import Img from "@/components/Img.astro";
 import { image } from "@/lib/images";
+import { getCommunities } from "@/lib/sanity";
 
 const TITLE = "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia";
 const DESC =
@@ -11,23 +12,7 @@ const DESC =
 
 const portrait = image("barbara-dalkowska.jpg");
 
-const wspolnoty = [
-  "WM Brzozowy Park, ul. Ogrodowa 8, Józefosław",
-  "WM Bielawska 24, Konstancin-Jeziorna",
-  "WM Nadarzyńska 38, Piaseczno",
-  "WM Okulickiego 30, Piaseczno",
-  "WM Okulickiego 32, Piaseczno",
-  "Stowarzyszenie ul. Świetlista, Józefosław",
-  "Nieruchomości ul. Planety 2, Wilanowska 11 i 11A, Józefosław",
-  "WM Tenisowa 1, Józefosław",
-  "WM Osiedle Cynamonowe, Józefosław",
-  "WM Chyliczkowska 57A, Piaseczno",
-  "WM Osiedle Przy Miodowej, Józefosław",
-  "WM Osiedle Pod Topolami, Zamienie",
-  "WM Nieruchomości Wilanowska 8, Józefosław",
-  "WM Nieruchomości Wilanowska 15, Józefosław",
-  "WM Nieruchomości Wilanowska 4A, Józefosław",
-];
+const wspolnoty = await getCommunities();
 ---
 
 <BaseLayout title={TITLE} description={DESC} ogType="article">

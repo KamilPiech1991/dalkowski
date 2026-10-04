@@ -1,8 +1,10 @@
 ---
 import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
-import { EMAILS, PHONES } from "@/data/site";
+import { getSiteSettings } from "@/lib/sanity";
 import Logo from "@/components/Logo.astro";
 import { link } from "@/lib/url";
+
+const { phones, emails, address, openingHours, licenseNumber, nip } = await getSiteSettings();
 
 const year = new Date().getFullYear();
 const links = [
@@ -43,27 +45,28 @@ const links = [
       <h3 class="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Kontakt</h3>
       <ul class="space-y-3 text-sm text-muted-foreground">
         <li class="flex items-start gap-2">
-          <MapPin class="h-4 w-4 mt-0.5 text-primary" /> ul. Armii Krajowej 2, 05-500 Piaseczno
+          <MapPin class="h-4 w-4 mt-0.5 text-primary" /> {address.street}, {address.postalCode}{" "}
+          {address.city}
         </li>
         <li class="flex items-start gap-2">
           <Phone class="h-4 w-4 mt-0.5 text-primary" />
-          <a href={PHONES.office.href} class="hover:text-primary">
-            {PHONES.office.label} (biuro)
+          <a href={phones.office.href} class="hover:text-primary">
+            {phones.office.label} (biuro)
           </a>
         </li>
         <li class="flex items-start gap-2">
           <Phone class="h-4 w-4 mt-0.5 text-primary" />
-          <a href={PHONES.management.href} class="hover:text-primary">
-            {PHONES.management.label} (zarządzanie)
+          <a href={phones.management.href} class="hover:text-primary">
+            {phones.management.label} (zarządzanie)
           </a>
         </li>
         <li class="flex items-start gap-2">
           <Phone class="h-4 w-4 mt-0.5 text-primary" />
-          <a href={PHONES.technical.href} class="hover:text-primary">
-            {PHONES.technical.label} (technika, konserwacja)
+          <a href={phones.technical.href} class="hover:text-primary">
+            {phones.technical.label} (technika, konserwacja)
           </a>
         </li>
-        {Object.values(EMAILS).map((email) => (
+        {Object.values(emails).map((email) => (
           <li class="flex items-start gap-2">
             <Mail class="h-4 w-4 mt-0.5 text-primary" />
             <a href={`mailto:${email}`} class="hover:text-primary">
@@ -80,11 +83,11 @@ const links = [
       </h3>
       <ul class="space-y-2 text-sm text-muted-foreground">
         <li class="flex items-start gap-2">
-          <Clock class="h-4 w-4 mt-0.5 text-primary" /> Pon. – Pt. 10:00 – 17:00
+          <Clock class="h-4 w-4 mt-0.5 text-primary" /> {openingHours}
         </li>
         <li class="pl-6">Awarie w zarządzanych wspólnotach – 24/7</li>
-        <li class="pl-6 text-xs pt-2">Licencja zawodowa nr 23367</li>
-        <li class="pl-6 text-xs">NIP 821-137-87-39</li>
+        <li class="pl-6 text-xs pt-2">Licencja zawodowa nr {licenseNumber}</li>
+        <li class="pl-6 text-xs">NIP {nip}</li>
       </ul>
     </div>
   </div>

@@ -13,9 +13,11 @@ import {
 } from "@lucide/astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Img from "@/components/Img.astro";
-import { PHONES } from "@/data/site";
+import { getSiteSettings } from "@/lib/sanity";
 import hero from "@/assets/hero-buildings.jpg";
 import boiler from "@/assets/heating-boiler.jpg";
+
+const { phones } = await getSiteSettings();
 
 const TITLE = "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Kotłów Gazowych";
 const DESC =
@@ -222,18 +224,18 @@ const features = [
       </p>
       <div class="mt-8 flex flex-wrap gap-3 justify-center">
         <a
-          href={PHONES.office.href}
+          href={phones.office.href}
           class="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-semibold text-primary hover:opacity-90"
         >
           <Phone class="h-4 w-4" />
-          {PHONES.office.label}
+          {phones.office.label}
         </a>
         <a
-          href={PHONES.management.href}
+          href={phones.management.href}
           class="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-semibold text-primary hover:opacity-90"
         >
           <Phone class="h-4 w-4" />
-          {PHONES.management.label}
+          {phones.management.label}
         </a>
         <a
           href={link("/kontakt")}

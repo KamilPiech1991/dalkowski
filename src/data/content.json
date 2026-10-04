@@ -1,0 +1,213 @@
+{
+  "settings": {
+    "phones": {
+      "office": "+48 574 988 293",
+      "management": "+48 793 720 760",
+      "technical": "+48 730 704 502"
+    },
+    "emails": {
+      "office": "adm.dalkowski@gmail.com",
+      "management": "barbaradalkowska@gmail.com",
+      "technical": "dalkowskiroman@gmail.com"
+    },
+    "address": {
+      "street": "ul. Armii Krajowej 2",
+      "postalCode": "05-500",
+      "city": "Piaseczno"
+    },
+    "openingHours": "Pon. – Pt. 10:00 – 17:00",
+    "licenseNumber": "23367",
+    "nip": "821-137-87-39"
+  },
+  "communities": [
+    "WM Brzozowy Park, ul. Ogrodowa 8, Józefosław",
+    "WM Bielawska 24, Konstancin-Jeziorna",
+    "WM Nadarzyńska 38, Piaseczno",
+    "WM Okulickiego 30, Piaseczno",
+    "WM Okulickiego 32, Piaseczno",
+    "Stowarzyszenie ul. Świetlista, Józefosław",
+    "Nieruchomości ul. Planety 2, Wilanowska 11 i 11A, Józefosław",
+    "WM Tenisowa 1, Józefosław",
+    "WM Osiedle Cynamonowe, Józefosław",
+    "WM Chyliczkowska 57A, Piaseczno",
+    "WM Osiedle Przy Miodowej, Józefosław",
+    "WM Osiedle Pod Topolami, Zamienie",
+    "WM Nieruchomości Wilanowska 8, Józefosław",
+    "WM Nieruchomości Wilanowska 15, Józefosław",
+    "WM Nieruchomości Wilanowska 4A, Józefosław"
+  ],
+  "pricing": [
+    {
+      "name": "Przegląd okresowy kotła gazowego",
+      "price": "350 zł netto",
+      "note": "Kocioł gazowy wiszący lub stojący. Przy 5 przeglądach jednego dnia na tym samym osiedlu — rabat 20% (280 zł netto / przegląd)."
+    },
+    {
+      "name": "Montaż nowego kotła gazowego",
+      "price": "wycena indywidualna",
+      "note": "Koszt zależy od modelu kotła, stanu instalacji i warunków montażu — wycenę przygotowujemy po oględzinach."
+    },
+    {
+      "name": "Naprawa awaryjna",
+      "price": "wycena indywidualna",
+      "note": "Kosztu naprawy nie da się przewidzieć z góry — w zależności od usterki i części może to być 150 zł, jak i 2500 zł. Po diagnozie zawsze podajemy cenę do akceptacji przed rozpoczęciem prac."
+    }
+  ],
+  "gallery": [
+    {
+      "file": "photo-7150.jpg",
+      "alt": "Zarządzana wspólnota mieszkaniowa — elewacja budynku z balkonami i zadbaną zielenią",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055852.jpg",
+      "alt": "Budynek zarządzanej wspólnoty mieszkaniowej z parkingiem i żywopłotem w Józefosławiu",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055854.jpg",
+      "alt": "Osiedle zarządzane przez Dalkowski — budynek z balkonami i miejscami postojowymi",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055857.jpg",
+      "alt": "Wejście główne do budynku zarządzanej wspólnoty mieszkaniowej",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055858.jpg",
+      "alt": "Część wspólna osiedla — przejazd bramowy i balkony budynku wspólnoty",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055873.jpg",
+      "alt": "Wspólnota Nieruchomości Wilanowska 11A z lokalami usługowymi",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055874.jpg",
+      "alt": "Wspólnota Nieruchomości Planety 2 — budynek z lokalami usługowymi",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055958.jpg",
+      "alt": "Zamknięte osiedle zarządzane przez Dalkowski — brama wjazdowa i domy szeregowe",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055959.jpg",
+      "alt": "Osiedle z bramą automatyczną i strefą zamieszkania — wspólnota pod naszą administracją",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055960.jpg",
+      "alt": "Tablica informacyjna: nieruchomością administruje firma Dalkowski",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055961.jpg",
+      "alt": "Budynek wielorodzinny zarządzanej wspólnoty mieszkaniowej z balkonami",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055962.jpg",
+      "alt": "Samochód Dalkowski przy budynku wspólnoty przy ul. Okulickiego 32",
+      "category": "praca"
+    },
+    {
+      "file": "photo-7159.jpg",
+      "alt": "Samochód serwisowy Dalkowski — administracja nieruchomości, księgowość, konserwacja",
+      "category": "praca"
+    },
+    {
+      "file": "photo-7165.jpg",
+      "alt": "Nowoczesny budynek wspólnoty mieszkaniowej z lokalami usługowymi w Józefosławiu",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1260.jpg",
+      "alt": "Samochód firmy Dalkowski przy budynku przy ul. Świetlistej w Józefosławiu",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055862.jpg",
+      "alt": "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055867.jpg",
+      "alt": "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni wspólnoty",
+      "category": "praca"
+    },
+    {
+      "file": "photo-1000055872.jpg",
+      "alt": "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku",
+      "category": "praca"
+    },
+    {
+      "file": "photo-2762.jpg",
+      "alt": "Biuro Dalkowski — zarządzanie wspólnotami mieszkaniowymi w Piasecznie",
+      "category": "praca"
+    },
+    {
+      "file": "photo-2766.jpg",
+      "alt": "Recepcja w biurowcu — siedziba firmy Dalkowski Zarządzanie Nieruchomościami",
+      "category": "praca"
+    },
+    {
+      "file": "photo-2769.jpg",
+      "alt": "Flota samochodów firmowych Dalkowski przed siedzibą firmy",
+      "category": "praca"
+    },
+    {
+      "file": "photo-2773.jpg",
+      "alt": "Budynek biurowy — siedziba firmy Dalkowski w Piasecznie",
+      "category": "praca"
+    },
+    {
+      "file": "de-dietrich-kociol.png",
+      "alt": "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni",
+      "category": "realizacje"
+    },
+    {
+      "file": "gallery-1.jpg",
+      "alt": "Osiedle mieszkaniowe — widok z lotu ptaka",
+      "category": "realizacje"
+    },
+    {
+      "file": "gallery-2.jpg",
+      "alt": "Wejście do budynku wspólnoty z zadbaną zielenią",
+      "category": "realizacje"
+    },
+    {
+      "file": "gallery-4.jpg",
+      "alt": "Plac zabaw na osiedlu w Józefosławiu",
+      "category": "realizacje"
+    },
+    {
+      "file": "hero-buildings.jpg",
+      "alt": "Wewnętrzny dziedziniec wspólnoty w Piasecznie",
+      "category": "realizacje"
+    },
+    {
+      "file": "gallery-5.jpg",
+      "alt": "Elewacja budynku po termomodernizacji",
+      "category": "realizacje"
+    },
+    {
+      "file": "gallery-3.jpg",
+      "alt": "Serwisant Dalkowski Technika Grzewcza podczas przeglądu kotła",
+      "category": "realizacje"
+    },
+    {
+      "file": "heating-boiler.jpg",
+      "alt": "Instalacja nowego kotła gazowego",
+      "category": "realizacje"
+    },
+    {
+      "file": "gallery-6.jpg",
+      "alt": "Nowoczesny kocioł kondensacyjny",
+      "category": "realizacje"
+    }
+  ]
+}

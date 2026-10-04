@@ -1,17 +1,19 @@
 import type { APIRoute } from "astro";
 import { link } from "@/lib/url";
+import { getSiteSettings } from "@/lib/sanity";
 
 // Opis strony dla asystentów AI (https://llmstxt.org) — linki uwzględniają podkatalog strony.
-export const GET: APIRoute = () =>
-  new Response(
+export const GET: APIRoute = async () => {
+  const { phones, emails, address, licenseNumber } = await getSiteSettings();
+  return new Response(
     `# Dalkowski — Zarządzanie Nieruchomościami i Technika Grzewcza
 
 > Rodzinna firma z Piaseczna (od 2006 r.) świadząca usługi zarządzania wspólnotami mieszkaniowymi oraz autoryzowany serwis kotłów gazowych centralnego ogrzewania marki De Dietrich.
 
 Obszar działania: Piaseczno, Konstancin-Jeziorna, Józefosław, Warszawa i okolice.
-Właścicielka: Barbara Dalkowska — licencja zawodowa zarządcy nr 23367, polisa OC 50 000 €.
-Kontakt: +48 574 988 293 (biuro — umawianie wizyt, wszystkie usługi), +48 793 720 760 (zarządzanie nieruchomościami), +48 730 704 502 (technika grzewcza, hydraulika, elektryka, złota rączka), adm.dalkowski@gmail.com (biuro/administracja), barbaradalkowska@gmail.com (zarządzanie), dalkowskiroman@gmail.com (kotły gazowe, konserwacja).
-Adres: ul. Armii Krajowej 2, 05-500 Piaseczno.
+Właścicielka: Barbara Dalkowska — licencja zawodowa zarządcy nr ${licenseNumber}, polisa OC 50 000 €.
+Kontakt: ${phones.office.label} (biuro — umawianie wizyt, wszystkie usługi), ${phones.management.label} (zarządzanie nieruchomościami), ${phones.technical.label} (technika grzewcza, hydraulika, elektryka, złota rączka), ${emails.office} (biuro/administracja), ${emails.management} (zarządzanie), ${emails.technical} (kotły gazowe, konserwacja).
+Adres: ${address.street}, ${address.postalCode} ${address.city}.
 
 ## Strony
 
@@ -26,3 +28,4 @@ Adres: ul. Armii Krajowej 2, 05-500 Piaseczno.
 `,
     { headers: { "Content-Type": "text/plain; charset=utf-8" } },
   );
+};
