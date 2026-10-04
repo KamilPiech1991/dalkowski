@@ -1,0 +1,217 @@
+---
+import { Calculator, CircleCheck, ClipboardList, Phone, Wrench } from "@lucide/astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Img from "@/components/Img.astro";
+import { PHONES } from "@/data/site";
+import { lovableImage } from "@/lib/images";
+import hero from "@/assets/hero-buildings.jpg";
+import g1 from "@/assets/gallery-1.jpg";
+import g2 from "@/assets/gallery-2.jpg";
+import g4 from "@/assets/gallery-4.jpg";
+
+const TITLE = "Zarządzanie Nieruchomościami Piaseczno — Wspólnoty Mieszkaniowe | Dalkowski";
+const DESC =
+  "Profesjonalne zarządzanie i administrowanie wspólnotami mieszkaniowymi w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu. Obsługa administracyjna, księgowa i techniczna. Licencja nr 23367.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Zarządzanie nieruchomościami",
+  provider: { "@type": "LocalBusiness", name: "Dalkowski", telephone: "+48793720760" },
+  areaServed: ["Piaseczno", "Warszawa", "Konstancin-Jeziorna", "Józefosław"],
+  description: DESC,
+};
+
+const references = [
+  {
+    src: lovableImage("photo-7150.jpg"),
+    alt: "Elewacja zarządzanej wspólnoty mieszkaniowej z balkonami",
+  },
+  {
+    src: lovableImage("photo-7165.jpg"),
+    alt: "Nowoczesny budynek wspólnoty z lokalami usługowymi w Józefosławiu",
+  },
+  { src: g1, alt: "Osiedle mieszkaniowe — widok z góry" },
+  { src: g4, alt: "Plac zabaw na osiedlu w Józefosławiu" },
+];
+
+const sections = [
+  {
+    icon: ClipboardList,
+    title: "Obsługa administracyjna",
+    img: g2,
+    imgAlt: "Administrator wspólnoty Dalkowski przy wejściu do budynku",
+    items: [
+      "Znany z imienia i nazwiska administrator dostępny pod telefonem całą dobę",
+      "Prowadzenie formalno-prawnej dokumentacji nieruchomości wraz z archiwum",
+      "Przygotowywanie umów o dostawy, prace i usługi w imieniu Wspólnoty",
+      "Prowadzenie wykazu właścicieli lokali i ich najemców",
+      "Reprezentowanie Wspólnoty przed organami administracji rządowej i samorządowej",
+      "Przygotowanie, zwoływanie i obsługa zebrań Wspólnoty",
+      "Przygotowanie projektów uchwał i głosowanie w trybie indywidualnym",
+      "Opracowanie planów remontów i planu zarządzania nieruchomością",
+    ],
+  },
+  {
+    icon: Calculator,
+    title: "Obsługa księgowa",
+    img: lovableImage("photo-2762.jpg"),
+    imgAlt: "Biuro Dalkowski — zarządzanie wspólnotami w Piasecznie",
+    items: [
+      "Naliczanie i rozliczanie zaliczek wynikających z planu gospodarczego",
+      "Prowadzenie ewidencji przychodów i kosztów Wspólnoty",
+      "Sporządzanie rocznego sprawozdania finansowego",
+      "Obsługa rachunków bankowych Wspólnoty i terminowość płatności",
+      "Rozliczenia mediów: woda, c.o., ścieki, wywóz nieczystości",
+      "Windykacja należności w postępowaniu sądowym",
+    ],
+  },
+  {
+    icon: Wrench,
+    title: "Obsługa techniczna",
+    img: lovableImage("photo-1260.jpg"),
+    imgAlt: "Samochód firmowy Dalkowski przy obiekcie wspólnoty",
+    items: [
+      "Prowadzenie książki obiektu budowlanego zgodnie z Prawem budowlanym",
+      "Okresowe przeglądy nieruchomości i instalacji przez wyspecjalizowane organy",
+      "Nadzór nad utrzymaniem czystości pomieszczeń wspólnych i terenu",
+      "Zapewnienie dostaw mediów dla nieruchomości",
+      "Organizacja usuwania awarii i ich skutków",
+      "Konserwacje hydrauliczne: instalacje sanitarne, udrażnianie kanalizacji, mycie myjką 120 bar",
+      "Konserwacje elektryczne: przeglądy i naprawy instalacji, montaż instalacji odgromowych",
+      "Prace ogólnobudowlane: regulacja drzwi, naprawy ślusarskie, mycie pojemników na odpady",
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={TITLE}
+  description={DESC}
+  keywords="zarządzanie nieruchomościami Piaseczno, administrator wspólnoty Konstancin, zarządca nieruchomości Józefosław, obsługa wspólnoty mieszkaniowej"
+  ogType="article"
+  jsonLd={[jsonLd]}
+>
+  <section class="bg-gradient-hero">
+    <div class="container-page py-16 lg:py-24 grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <Breadcrumb current="Zarządzanie nieruchomościami" />
+        <h1 class="text-4xl sm:text-5xl font-extrabold max-w-3xl">
+          Zarządzanie nieruchomościami w Piasecznie, Warszawie i okolicach
+        </h1>
+        <p class="mt-5 text-lg text-muted-foreground max-w-3xl">
+          Podstawowym zakresem naszej działalności jest{" "}
+          <strong class="text-foreground">zarządzanie i administrowanie nieruchomościami</strong>{" "}
+          powierzonymi. Doświadczenie w tym zakresie zdobywamy od 2006 roku.
+        </p>
+        <p class="mt-4 text-muted-foreground max-w-3xl">
+          Bardzo zależy nam na całkowitym zadowoleniu naszych klientów w zakresie utrzymania
+          nieruchomości i czerpania z niej pożytków, co przyczynia się do minimalizacji kosztów
+          utrzymania części wspólnych oraz infrastruktury otaczającej Wspólnotę.
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <Img
+          src={hero}
+          alt="Nowoczesna wspólnota mieszkaniowa zarządzana przez Dalkowski"
+          priority
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          class="rounded-3xl shadow-soft w-full h-80 lg:h-[420px] object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP — referencyjne obiekty -->
+  <section class="container-page pt-16">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <span class="text-xs font-semibold text-primary uppercase tracking-wider">Referencje</span>
+      <h2 class="mt-3 text-3xl font-bold">Wspólnoty, którymi się opiekujemy</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {references.map((it) => (
+        <div class="overflow-hidden rounded-2xl border border-border bg-card shadow-card group">
+          <Img
+            src={it.src}
+            alt={it.alt}
+            sizes="(min-width: 1024px) 25vw, 50vw"
+            class="w-full h-44 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="container-page py-16 grid gap-8">
+    {sections.map((s, idx) => (
+      <article class="rounded-3xl border border-border bg-card overflow-hidden">
+        <div class="grid lg:grid-cols-12">
+          <div class:list={["lg:col-span-4", idx % 2 === 1 && "lg:order-2"]}>
+            <Img
+              src={s.img}
+              alt={s.imgAlt}
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              class="w-full h-56 lg:h-full object-cover"
+            />
+          </div>
+          <div class="lg:col-span-8 p-8 sm:p-10">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="rounded-2xl bg-primary-soft p-3">
+                <s.icon class="h-7 w-7 text-primary" />
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold">{s.title}</h2>
+            </div>
+            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+              {s.items.map((i) => (
+                <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                  <CircleCheck class="h-4 w-4 text-primary mt-0.5 shrink-0" /> {i}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <!-- CTA -->
+  <section class="container-page pb-20">
+    <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+      <div class="lg:col-span-5 rounded-3xl overflow-hidden shadow-card">
+        <Img
+          src={lovableImage("photo-7159.jpg")}
+          alt="Samochód serwisowy Dalkowski — administracja i konserwacja wspólnot"
+          class="w-full h-72 lg:h-full object-cover"
+        />
+      </div>
+      <div class="lg:col-span-7 rounded-3xl bg-gradient-brand p-10 sm:p-14 text-primary-foreground shadow-soft flex flex-col justify-center">
+        <h2 class="text-2xl sm:text-3xl font-bold">Rozważasz zmianę zarządcy?</h2>
+        <p class="mt-3 text-primary-foreground/85">
+          Umów rozmowę — z chęcią poznamy specyfikę Twojej wspólnoty i przedstawimy ofertę
+          dopasowaną do jej potrzeb.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a
+            href={PHONES.management.href}
+            class="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 text-sm font-semibold"
+          >
+            <Phone class="h-4 w-4" /> {PHONES.management.label}
+          </a>
+          <a
+            href={PHONES.office.href}
+            class="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 text-sm font-semibold"
+          >
+            <Phone class="h-4 w-4" /> {PHONES.office.label}
+          </a>
+          <a
+            href="/kontakt"
+            class="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-sm font-semibold hover:bg-primary-foreground/10"
+          >
+            Napisz do nas
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

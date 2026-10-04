@@ -1,0 +1,19 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  wide?: boolean;
+}
+
+const { eyebrow, title, wide = true } = Astro.props;
+---
+
+<section class="bg-gradient-hero">
+  <div class="container-page py-16 lg:py-24">
+    <span class="text-xs font-semibold text-primary uppercase tracking-wider">{eyebrow}</span>
+    <h1 class:list={["mt-3 text-4xl sm:text-5xl font-extrabold", wide && "max-w-3xl"]}>{title}</h1>
+    <p class="mt-5 text-lg text-muted-foreground max-w-3xl">
+      <slot />
+    </p>
+  </div>
+</section>

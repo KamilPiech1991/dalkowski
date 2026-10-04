@@ -1,0 +1,14 @@
+---
+interface Props {
+  current: string;
+}
+
+const { current } = Astro.props;
+---
+
+<nav class="text-xs text-muted-foreground mb-4" aria-label="Breadcrumb">
+  <a href="/uslugi" class="hover:text-primary">
+    Usługi
+  </a>{" "}
+  / <span class="text-foreground">{current}</span>
+</nav>

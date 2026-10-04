@@ -1,26 +1,66 @@
-# Dalkowski Digital Presence
+# Dalkowski — strona internetowa
 
-Przygotuj nową stronę internetową, która wykorzysta informacje ze stron: https://dalkowski-zarzadzanie.pl/ i https://dalkowski-technika-grzewcza.pl. manu główne będzie : home, o nas, usługi ( pod mnu: zarządzanie nieruchomościami, technika grzewcza ), galeria, kontakt. Strona nowoczesna, super przystosowana pod SEO, GEO i AEO. Treści wykorzystaj wszystkie z obecnych stron i grafiki też możesz. Jezeli będziesz potrzebował więcej treści to wygeneruj. Strona jasna z kolorami marki. Myslę że możesz zrobić ją w stylu tej: https://ecotechgroup.pl/ , w załączniku przesyłam logo do strony.
+Strona firmy Dalkowski (zarządzanie nieruchomościami, konserwacja i technika grzewcza),
+zbudowana w [Astro](https://astro.build) + Tailwind CSS 4. Generowana statycznie — wynik
+builda (`dist/`) można wrzucić na dowolny hosting (Netlify, Cloudflare Pages, Vercel, zwykły
+serwer).
 
-This project was built with [Lovable](https://lovable.dev).
+## Uruchomienie
 
-**Live app**: https://dalkowski.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/bf3d4489-09f4-4b49-b539-caebf92d5b0f).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Wymagany Node.js 22.12+.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install
+npm run dev        # serwer deweloperski: http://localhost:4321
+npm run build      # build produkcyjny do dist/
+npm run preview    # podgląd builda
+npm run check      # sprawdzenie typów i plików .astro
 ```
+
+## Struktura
+
+```
+src/
+  pages/            # każda podstrona = plik .astro (routing po nazwie pliku)
+    index.astro             → /
+    o-nas.astro             → /o-nas
+    uslugi/index.astro      → /uslugi
+    uslugi/*.astro          → /uslugi/...
+    galeria.astro           → /galeria
+    kontakt.astro           → /kontakt
+    sitemap.xml.ts, robots.txt.ts
+  layouts/BaseLayout.astro  # <head>, meta SEO/OG, JSON-LD, nagłówek i stopka
+  components/               # Header, Footer, Img, PageHero, Breadcrumb
+  data/site.ts              # telefony, e-maile, menu, sitemap, dane firmy (JSON-LD)
+  assets/                   # zdjęcia optymalizowane przez Astro (AVIF/WebP)
+  assets/lovable/           # zdjęcia przeniesione z Lovable (patrz niżej)
+  styles.css                # kolory marki i style globalne (Tailwind)
+public/                     # pliki serwowane 1:1 (np. llms.txt)
+```
+
+Dane kontaktowe i menu zmienia się w jednym miejscu: `src/data/site.ts`.
+
+## Adres strony (SEO)
+
+Canonical, `og:url`, `sitemap.xml` i `robots.txt` budowane są z adresu ustawionego w
+`astro.config.mjs`. Domyślnie to `https://dalkowski.lovable.app` — przy wdrożeniu na własną
+domenę ustaw zmienną środowiskową, np.:
+
+```sh
+SITE_URL=https://www.twoja-domena.pl npm run build
+```
+
+## Zdjęcia z Lovable
+
+Część zdjęć (logo, zdjęcia wspólnot, portret, kocioł De Dietrich) była wgrana do Lovable —
+w repo są tylko manifesty `src/assets/lovable/*.asset.json`, a pliki leżą na serwerze Lovable.
+Dopóki ich nie pobierzesz, strona linkuje do nich na `dalkowski.lovable.app`.
+
+Aby przenieść je do repo (zalecane przed wyłączeniem projektu w Lovable):
+
+```sh
+npm run assets:fetch
+git add src/assets/lovable && git commit -m "Pobierz zdjęcia z Lovable"
+```
+
+Po pobraniu Astro automatycznie zacznie je optymalizować (AVIF/WebP, responsywne rozmiary).

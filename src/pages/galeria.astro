@@ -1,0 +1,124 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Img from "@/components/Img.astro";
+import { imageUrl, lovableImage, type ImageSource } from "@/lib/images";
+import g1 from "@/assets/gallery-1.jpg";
+import g2 from "@/assets/gallery-2.jpg";
+import g3 from "@/assets/gallery-3.jpg";
+import g4 from "@/assets/gallery-4.jpg";
+import g5 from "@/assets/gallery-5.jpg";
+import g6 from "@/assets/gallery-6.jpg";
+import hero from "@/assets/hero-buildings.jpg";
+import boiler from "@/assets/heating-boiler.jpg";
+
+const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
+const DESC =
+  "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
+
+type Photo = { src: ImageSource; alt: string };
+
+const realPhotos: Photo[] = [
+  [
+    "photo-7150.jpg",
+    "Zarządzana wspólnota mieszkaniowa — elewacja budynku z balkonami i zadbaną zielenią",
+  ],
+  [
+    "photo-1000055852.jpg",
+    "Budynek zarządzanej wspólnoty mieszkaniowej z parkingiem i żywopłotem w Józefosławiu",
+  ],
+  [
+    "photo-1000055854.jpg",
+    "Osiedle zarządzane przez Dalkowski — budynek z balkonami i miejscami postojowymi",
+  ],
+  ["photo-1000055857.jpg", "Wejście główne do budynku zarządzanej wspólnoty mieszkaniowej"],
+  ["photo-1000055858.jpg", "Część wspólna osiedla — przejazd bramowy i balkony budynku wspólnoty"],
+  ["photo-1000055873.jpg", "Wspólnota Nieruchomości Wilanowska 11A z lokalami usługowymi"],
+  ["photo-1000055874.jpg", "Wspólnota Nieruchomości Planety 2 — budynek z lokalami usługowymi"],
+  [
+    "photo-1000055958.jpg",
+    "Zamknięte osiedle zarządzane przez Dalkowski — brama wjazdowa i domy szeregowe",
+  ],
+  [
+    "photo-1000055959.jpg",
+    "Osiedle z bramą automatyczną i strefą zamieszkania — wspólnota pod naszą administracją",
+  ],
+  ["photo-1000055960.jpg", "Tablica informacyjna: nieruchomością administruje firma Dalkowski"],
+  ["photo-1000055961.jpg", "Budynek wielorodzinny zarządzanej wspólnoty mieszkaniowej z balkonami"],
+  ["photo-1000055962.jpg", "Samochód Dalkowski przy budynku wspólnoty przy ul. Okulickiego 32"],
+  [
+    "photo-7159.jpg",
+    "Samochód serwisowy Dalkowski — administracja nieruchomości, księgowość, konserwacja",
+  ],
+  [
+    "photo-7165.jpg",
+    "Nowoczesny budynek wspólnoty mieszkaniowej z lokalami usługowymi w Józefosławiu",
+  ],
+  ["photo-1260.jpg", "Samochód firmy Dalkowski przy budynku przy ul. Świetlistej w Józefosławiu"],
+  [
+    "photo-1000055862.jpg",
+    "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku",
+  ],
+  [
+    "photo-1000055867.jpg",
+    "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni wspólnoty",
+  ],
+  [
+    "photo-1000055872.jpg",
+    "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku",
+  ],
+  ["photo-2762.jpg", "Biuro Dalkowski — zarządzanie wspólnotami mieszkaniowymi w Piasecznie"],
+  ["photo-2766.jpg", "Recepcja w biurowcu — siedziba firmy Dalkowski Zarządzanie Nieruchomościami"],
+  ["photo-2769.jpg", "Flota samochodów firmowych Dalkowski przed siedzibą firmy"],
+  ["photo-2773.jpg", "Budynek biurowy — siedziba firmy Dalkowski w Piasecznie"],
+].map(([name, alt]) => ({ src: lovableImage(name), alt }));
+
+const stockPhotos: Photo[] = [
+  {
+    src: lovableImage("de-dietrich-kociol.png"),
+    alt: "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni",
+  },
+  { src: g1, alt: "Osiedle mieszkaniowe — widok z lotu ptaka" },
+  { src: g2, alt: "Wejście do budynku wspólnoty z zadbaną zielenią" },
+  { src: g4, alt: "Plac zabaw na osiedlu w Józefosławiu" },
+  { src: hero, alt: "Wewnętrzny dziedziniec wspólnoty w Piasecznie" },
+  { src: g5, alt: "Elewacja budynku po termomodernizacji" },
+  { src: g3, alt: "Serwisant Dalkowski Technika Grzewcza podczas przeglądu kotła" },
+  { src: boiler, alt: "Instalacja nowego kotła gazowego" },
+  { src: g6, alt: "Nowoczesny kocioł kondensacyjny" },
+];
+
+const groups = [
+  { title: "Z naszej codziennej pracy", photos: realPhotos, size: { width: 1920, height: 1280 } },
+  { title: "Realizacje i obiekty referencyjne", photos: stockPhotos, size: {} },
+];
+---
+
+<BaseLayout title={TITLE} description={DESC} ogImage={imageUrl(hero)}>
+  <PageHero eyebrow="Galeria" title="Nasze wspólnoty i realizacje">
+    Wybrane zdjęcia z osiedli i budynków, które administrujemy, oraz przykładowe realizacje z
+    zakresu techniki grzewczej.
+  </PageHero>
+
+  <section class="container-page py-16">
+    {groups.map((g, gi) => (
+      <>
+        <h2 class:list={["text-2xl sm:text-3xl font-bold mb-8", gi > 0 && "mt-16"]}>{g.title}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {g.photos.map((it) => (
+            <figure class="group overflow-hidden rounded-2xl border border-border bg-card shadow-card">
+              <Img
+                src={it.src}
+                alt={it.alt}
+                {...g.size}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <figcaption class="p-4 text-xs text-muted-foreground">{it.alt}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </>
+    ))}
+  </section>
+</BaseLayout>
