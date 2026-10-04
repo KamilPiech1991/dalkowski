@@ -14,9 +14,9 @@ import { image } from "@/lib/images";
 const projectId = import.meta.env.SANITY_PROJECT_ID || sanityConfig.projectId;
 const dataset = import.meta.env.SANITY_DATASET || sanityConfig.dataset;
 
-export const sanityEnabled = Boolean(projectId);
+const configured = Boolean(projectId);
 
-const client: SanityClient | null = sanityEnabled
+const client: SanityClient | null = configured
   ? createClient({
       projectId,
       dataset,
@@ -26,7 +26,7 @@ const client: SanityClient | null = sanityEnabled
     })
   : null;
 
-const imageBuilder = sanityEnabled ? createImageUrlBuilder({ projectId, dataset }) : null;
+const imageBuilder = configured ? createImageUrlBuilder({ projectId, dataset }) : null;
 
 /** Zapytanie z pamięcią podręczną na czas jednego builda (te same dane na wielu stronach). */
 const cache = new Map<string, Promise<unknown>>();
@@ -34,6 +34,21 @@ function query<T>(groq: string): Promise<T> {
   if (!client) throw new Error("Sanity nie jest skonfigurowane");
   if (!cache.has(groq)) cache.set(groq, client.fetch<T>(groq));
   return cache.get(groq) as Promise<T>;
+}
+
+/**
+ * Czy treści mają pochodzić z Sanity. Dopóki dataset jest pusty (przed pierwszym importem
+ * treści — workflow „Sanity Studio” z opcją seed), strona korzysta z src/data/content.json,
+ * żeby nie opublikować pustej galerii czy cennika. Po imporcie Sanity jest jedynym źródłem.
+ */
+let enabledPromise: Promise<boolean> | undefined;
+function sanityEnabled(): Promise<boolean> {
+  if (!client) return Promise.resolve(false);
+  enabledPromise ??= query<boolean>(`defined(*[_id == "siteSettings"][0]._id)`).then((seeded) => {
+    if (!seeded) console.warn("[sanity] Dataset jest pusty — używam src/data/content.json.");
+    return seeded;
+  });
+  return enabledPromise;
 }
 
 // ---------- Ustawienia strony ----------
@@ -84,7 +99,7 @@ function withDefaults<T extends object>(defaults: T, value: Partial<T> | null | 
 }
 
 export async function getSiteSettings(): Promise<SiteSettings> {
-  if (!sanityEnabled) return toSettings(content.settings);
+  if (!(await sanityEnabled())) return toSettings(content.settings);
   const raw = await query<Partial<RawSettings> | null>(
     `*[_id == "siteSettings"][0]{phones, emails, address, openingHours, licenseNumber, nip}`,
   );
@@ -94,7 +109,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
 // ---------- Listy ----------
 
 export async function getCommunities(): Promise<string[]> {
-  if (!sanityEnabled) return content.communities;
+  if (!(await sanityEnabled())) return content.communities;
   return query<string[]>(
     `*[_type == "community" && defined(name)] | order(order asc, name asc).name`,
   );
@@ -103,7 +118,7 @@ export async function getCommunities(): Promise<string[]> {
 export type PriceItem = { name: string; price: string; note?: string };
 
 export async function getPricing(): Promise<PriceItem[]> {
-  if (!sanityEnabled) return content.pricing;
+  if (!(await sanityEnabled())) return content.pricing;
   return query<PriceItem[]>(`*[_type == "priceItem"] | order(order asc){name, price, note}`);
 }
 
@@ -142,7 +157,7 @@ function sanityPhoto(raw: RawGalleryImage): GalleryPhoto {
 }
 
 export async function getGallery(category: GalleryCategory): Promise<GalleryPhoto[]> {
-  if (!sanityEnabled) {
+  if (!(await sanityEnabled())) {
     return content.gallery
       .filter((g) => g.category === category)
       .map((g) => ({ kind: "local", alt: g.alt, src: image(g.file) }));

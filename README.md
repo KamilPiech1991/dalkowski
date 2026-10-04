@@ -97,19 +97,20 @@ Treści edytowalne w panelu: **ustawienia strony** (telefony, e-maile, adres, go
 licencja, NIP), **galeria**, **administrowane wspólnoty** i **cennik techniki grzewczej**.
 
 Strona pobiera treści z Sanity **tylko podczas budowania** — odwiedzający dostają gotowy HTML
-bez JavaScriptu. Zdjęcia z galerii serwuje CDN Sanity (automatycznie w AVIF/WebP). Dopóki
-`projectId` w `studio/sanity.project.json` jest pusty, strona korzysta z `src/data/content.json`.
+bez JavaScriptu. Zdjęcia z galerii serwuje CDN Sanity (automatycznie w AVIF/WebP). Gdy
+`projectId` w `studio/sanity.project.json` jest pusty albo dataset nie ma jeszcze treści, strona
+korzysta z `src/data/content.json`.
 
 ### Jednorazowa konfiguracja
 
-1. Załóż konto i projekt na https://www.sanity.io/manage (nazwa: _Dalkowski_, dataset:
-   `production`, widoczność: publiczny). Skopiuj **Project ID** i wpisz go w
-   `studio/sanity.project.json` (pole `projectId`).
+1. ✅ Projekt Sanity: **`7sqj57dm`**, dataset `production` (wpisany w `studio/sanity.project.json`).
+   Dataset musi być **publiczny** (sanity.io/manage → Datasets) — strona czyta treści bez tokenu.
 2. W projekcie Sanity: **API → Tokens → Add API token** (uprawnienia: _Editor_). Dodaj go w
    GitHubie jako sekret **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions).
 3. W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
-   Workflow wgra obecne treści i zdjęcia do Sanity i opublikuje panel pod
-   https://dalkowski.sanity.studio.
+   Workflow wgra obecne treści i zdjęcia do Sanity, opublikuje panel pod
+   https://dalkowski.sanity.studio i przebuduje stronę. Dopóki dataset jest pusty, strona
+   korzysta z `src/data/content.json`, więc nic nie znika w międzyczasie.
 4. Automatyczna przebudowa strony po publikacji w CMS — w Sanity: **API → Webhooks → Create
    webhook**:
    - URL: `https://api.github.com/repos/KamilPiech1991/dalkowski/dispatches`

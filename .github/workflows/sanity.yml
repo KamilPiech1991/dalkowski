@@ -11,6 +11,10 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: read
+  actions: write # uruchomienie przebudowy strony po imporcie treści
+
 jobs:
   studio:
     runs-on: ubuntu-latest
@@ -48,3 +52,8 @@ jobs:
       - name: Wdróż Studio (https://dalkowski.sanity.studio)
         if: steps.config.outputs.ready == 'true'
         run: npx sanity deploy -y
+      - name: Przebuduj stronę z treściami z Sanity
+        if: steps.config.outputs.ready == 'true' && inputs.seed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main --repo "$GITHUB_REPOSITORY"
