@@ -105,9 +105,10 @@ korzysta z `src/data/content.json`.
 
 1. ✅ Projekt Sanity: **`7sqj57dm`**, dataset `production` (wpisany w `studio/sanity.project.json`).
    Dataset musi być **publiczny** (sanity.io/manage → Datasets) — strona czyta treści bez tokenu.
-2. W projekcie Sanity: **API → Tokens → Add API token** (uprawnienia: _Editor_). Dodaj go w
-   GitHubie jako sekret **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions).
-3. W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
+2. ✅ Token Sanity z uprawnieniami _Editor_ zapisany w GitHubie jako sekret
+   **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions). Służy do importu treści
+   i wdrażania panelu. Nigdy nie wysyłaj go w wiadomościach ani nie wpisuj w kod.
+3. ✅ (wykonane 2026-10-04) W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
    Workflow wgra obecne treści i zdjęcia do Sanity, opublikuje panel pod
    https://dalkowski.sanity.studio i przebuduje stronę. Dopóki dataset jest pusty, strona
    korzysta z `src/data/content.json`, więc nic nie znika w międzyczasie.
