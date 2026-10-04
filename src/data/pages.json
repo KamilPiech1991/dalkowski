@@ -1,0 +1,417 @@
+{
+  "homePage": {
+    "seo": {
+      "title": "Dalkowski Piaseczno — Zarządzanie Nieruchomościami i Serwis Kotłów Gazowych",
+      "description": "Profesjonalne zarządzanie wspólnotami mieszkaniowymi oraz serwis i instalacja kotłów gazowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu. Doświadczenie od 2006 roku.",
+      "keywords": "zarządzanie nieruchomościami Piaseczno, administrowanie wspólnot, serwis kotłów gazowych co Piaseczno, instalacja kotłów De Dietrich, Dalkowski"
+    },
+    "hero": {
+      "badge": "Doświadczenie od 2006 roku",
+      "title": "Twoja nieruchomość w",
+      "titleHighlight": "dobrych rękach",
+      "lead": "Kompleksowe zarządzanie wspólnotami mieszkaniowymi i profesjonalny serwis kotłów gazowych centralnego ogrzewania w Piasecznie, Warszawie i okolicach.",
+      "primaryButton": "Skontaktuj się z nami",
+      "secondaryButton": "Nasze usługi",
+      "stats": [
+        { "value": "18+", "label": "lat doświadczenia" },
+        { "value": "15", "label": "obsługiwanych wspólnot" },
+        { "value": "24/7", "label": "awarie w zarządzanych wspólnotach" }
+      ],
+      "image": {
+        "image": "hero-buildings.jpg",
+        "alt": "Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie"
+      },
+      "badgeCardTitle": "Polisa OC 50 000 €",
+      "badgeCardText": "Licencja zawodowa nr 23367"
+    },
+    "pillars": {
+      "eyebrow": "Dwa filary, jedna firma",
+      "title": "Co dla Ciebie zrobimy",
+      "intro": "Od administracji budynkiem po szybki serwis kotła gazowego — wszystko w jednym miejscu.",
+      "management": {
+        "title": "Zarządzanie nieruchomościami",
+        "description": "Pełna obsługa administracyjna, księgowa i techniczna wspólnot mieszkaniowych. Administrator dostępny pod telefonem całą dobę.",
+        "points": [
+          "Obsługa administracyjna i prawna",
+          "Księgowość wspólnoty i rozliczenia mediów",
+          "Nadzór techniczny i konserwacje",
+          "Reprezentacja wspólnoty przed urzędami"
+        ]
+      },
+      "heating": {
+        "title": "Technika grzewcza",
+        "description": "Autoryzowany serwis kotłów gazowych De Dietrich — przeglądy, naprawy i instalacje kotłów gazowych. Umawiamy wizyty na dogodne godziny.",
+        "points": [
+          "Naprawy awaryjne — szybki dojazd",
+          "Coroczne przeglądy i konserwacje",
+          "Sprzedaż i montaż nowych kotłów gazowych",
+          "Gwarancja na piśmie na każdą usługę"
+        ]
+      }
+    },
+    "whyUs": {
+      "eyebrow": "Dlaczego my",
+      "title": "Lokalna firma rodzinna z misją",
+      "text": "Działamy w Piasecznie, Warszawie i okolicach od 2006 roku. Łączymy zarządzanie wspólnotami z własnym działem technicznym — dzięki temu nasze osiedla otrzymują szybką, fachową obsługę awarii i przeglądów.",
+      "image": {
+        "image": "heating-boiler.jpg",
+        "alt": "Profesjonalny serwis kotła gazowego — Dalkowski Technika Grzewcza"
+      },
+      "features": [
+        { "title": "Pełna polisa OC", "description": "Ubezpieczenie zawodowe 50 000 €" },
+        { "title": "Reakcja 24/7", "description": "Awaria? Dzwonisz — przyjeżdżamy." },
+        { "title": "Własny dział techniczny", "description": "Bez podwykonawców z drugiej ręki." },
+        {
+          "title": "Przejrzysta księgowość",
+          "description": "Roczne sprawozdania i pełna dokumentacja."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Potrzebujesz pomocy z nieruchomością lub kotłem?",
+      "text": "Zadzwoń lub napisz — odpowiemy w ciągu dnia roboczego. Awarie w zarządzanych przez nas wspólnotach obsługujemy całą dobę."
+    }
+  },
+
+  "aboutPage": {
+    "seo": {
+      "title": "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia",
+      "description": "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie i Warszawie od 2006 roku. Licencja zawodowa nr 23367.",
+      "keywords": ""
+    },
+    "hero": {
+      "eyebrow": "O nas",
+      "title": "Lokalne doświadczenie w zarządzaniu nieruchomościami od 2006 roku",
+      "lead": "Firma Dalkowski to rodzinna marka z Piaseczna, która łączy administrację wspólnotami mieszkaniowymi z autoryzowanym serwisem kotłów gazowych centralnego ogrzewania."
+    },
+    "portrait": {
+      "image": "barbara-dalkowska.jpg",
+      "alt": "Barbara Dalkowska — właścicielka firmy Dalkowski"
+    },
+    "licenseBox": {
+      "title": "Licencja zawodowa nr 23367",
+      "text": "Polisa Odpowiedzialności Cywilnej Zarządcy Nieruchomości – 50 000 € (UNIQA)."
+    },
+    "owner": {
+      "title": "Barbara Dalkowska — właścicielka",
+      "body": {
+        "_rich": [
+          "Moje doświadczenie w zarządzaniu Wspólnotą sięga 2004 roku, kiedy zostałam członkiem Zarządu Wspólnoty Mieszkaniowej „Staszica 42\" w Piasecznie — 8 budynków, łącznie 121 lokali. Doświadczenie jakie tam zdobyłam to prawdziwa szkoła zarządzania.",
+          "Budynki były w upadłości deweloperskiej, brakowało finansowania na media i utrzymanie nieruchomości. Poprzez zmianę organizacji pracy, negocjacje z dostawcami i osobiste zaangażowanie udało się uporządkować finanse wspólnoty oraz znaleźć środki na niezbędne remonty, m.in. dachów i balkonów.",
+          "Na co dzień stawiam na bezpośredni kontakt, przejrzystą sprawozdawczość i szybkie reagowanie na zgłoszenia mieszkańców. Zależy mi, żeby każdy właściciel wiedział, na co idą pieniądze wspólnoty i w jakim stanie jest jego budynek.",
+          "Uważam, że **każda nieruchomość ma odmienną specyfikę** — dlatego docelowy model administrowania zawsze wypracowuję wspólnie z mieszkańcami i Członkami Wspólnoty, których zdanie i oczekiwania są dla mnie kluczowe."
+        ]
+      }
+    },
+    "communitiesTitle": "Obecnie administrujemy",
+    "heating": {
+      "title": "Technika grzewcza",
+      "body": {
+        "_rich": [
+          "W 2020 roku rozszerzyliśmy działalność o serwis i instalację kotłów gazowych centralnego ogrzewania. Nasi specjaliści mają wieloletnie doświadczenie i autoryzację jednego z wiodących producentów — **De Dietrich**. Specjalizujemy się wyłącznie w kotłach De Dietrich — dzięki temu znamy je od podszewki."
+        ]
+      }
+    }
+  },
+
+  "servicesPage": {
+    "seo": {
+      "title": "Usługi — Zarządzanie Nieruchomościami i Technika Grzewcza | Dalkowski",
+      "description": "Pełen zakres usług firmy Dalkowski: zarządzanie wspólnotami mieszkaniowymi w Piasecznie, Warszawie i okolicach oraz serwis i instalacja kotłów gazowych centralnego ogrzewania.",
+      "keywords": ""
+    },
+    "hero": {
+      "eyebrow": "Nasze usługi",
+      "title": "Dwa obszary działalności, jeden zaufany partner",
+      "lead": "Wybierz usługę, której potrzebujesz — kompleksowa administracja wspólnoty mieszkaniowej lub profesjonalny serwis kotła gazowego centralnego ogrzewania."
+    },
+    "management": {
+      "title": "Zarządzanie nieruchomościami",
+      "description": "Obsługa administracyjna, księgowa i techniczna wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie i Józefosławiu."
+    },
+    "maintenance": {
+      "title": "Konserwacja nieruchomości",
+      "description": "Hydraulika, elektryka i drobne prace budowlane. Dla naszych klientów dostępność 24/7 przez cały tydzień."
+    },
+    "heating": {
+      "title": "Technika grzewcza",
+      "description": "Autoryzowany serwis kotłów gazowych De Dietrich. Przeglądy, naprawy i instalacje kotłów gazowych w Piasecznie i okolicach."
+    }
+  },
+
+  "managementPage": {
+    "seo": {
+      "title": "Zarządzanie Nieruchomościami Piaseczno — Wspólnoty Mieszkaniowe | Dalkowski",
+      "description": "Profesjonalne zarządzanie i administrowanie wspólnotami mieszkaniowymi w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu. Obsługa administracyjna, księgowa i techniczna. Licencja nr 23367.",
+      "keywords": "zarządzanie nieruchomościami Piaseczno, administrator wspólnoty Konstancin, zarządca nieruchomości Józefosław, obsługa wspólnoty mieszkaniowej"
+    },
+    "hero": {
+      "title": "Zarządzanie nieruchomościami w Piasecznie, Warszawie i okolicach",
+      "lead": {
+        "_rich": [
+          "Podstawowym zakresem naszej działalności jest **zarządzanie i administrowanie nieruchomościami** powierzonymi. Doświadczenie w tym zakresie zdobywamy od 2006 roku.",
+          "Bardzo zależy nam na całkowitym zadowoleniu naszych klientów w zakresie utrzymania nieruchomości i czerpania z niej pożytków, co przyczynia się do minimalizacji kosztów utrzymania części wspólnych oraz infrastruktury otaczającej Wspólnotę."
+        ]
+      },
+      "image": {
+        "image": "hero-buildings.jpg",
+        "alt": "Nowoczesna wspólnota mieszkaniowa zarządzana przez Dalkowski"
+      }
+    },
+    "references": {
+      "eyebrow": "Referencje",
+      "title": "Wspólnoty, którymi się opiekujemy",
+      "images": [
+        {
+          "image": "photo-7150.jpg",
+          "alt": "Elewacja zarządzanej wspólnoty mieszkaniowej z balkonami"
+        },
+        {
+          "image": "photo-7165.jpg",
+          "alt": "Nowoczesny budynek wspólnoty z lokalami usługowymi w Józefosławiu"
+        },
+        { "image": "gallery-1.jpg", "alt": "Osiedle mieszkaniowe — widok z góry" },
+        { "image": "gallery-4.jpg", "alt": "Plac zabaw na osiedlu w Józefosławiu" }
+      ]
+    },
+    "sections": [
+      {
+        "title": "Obsługa administracyjna",
+        "image": {
+          "image": "gallery-2.jpg",
+          "alt": "Administrator wspólnoty Dalkowski przy wejściu do budynku"
+        },
+        "points": [
+          "Znany z imienia i nazwiska administrator dostępny pod telefonem całą dobę",
+          "Prowadzenie formalno-prawnej dokumentacji nieruchomości wraz z archiwum",
+          "Przygotowywanie umów o dostawy, prace i usługi w imieniu Wspólnoty",
+          "Prowadzenie wykazu właścicieli lokali i ich najemców",
+          "Reprezentowanie Wspólnoty przed organami administracji rządowej i samorządowej",
+          "Przygotowanie, zwoływanie i obsługa zebrań Wspólnoty",
+          "Przygotowanie projektów uchwał i głosowanie w trybie indywidualnym",
+          "Opracowanie planów remontów i planu zarządzania nieruchomością"
+        ]
+      },
+      {
+        "title": "Obsługa księgowa",
+        "image": {
+          "image": "photo-2762.jpg",
+          "alt": "Biuro Dalkowski — zarządzanie wspólnotami w Piasecznie"
+        },
+        "points": [
+          "Naliczanie i rozliczanie zaliczek wynikających z planu gospodarczego",
+          "Prowadzenie ewidencji przychodów i kosztów Wspólnoty",
+          "Sporządzanie rocznego sprawozdania finansowego",
+          "Obsługa rachunków bankowych Wspólnoty i terminowość płatności",
+          "Rozliczenia mediów: woda, c.o., ścieki, wywóz nieczystości",
+          "Windykacja należności w postępowaniu sądowym"
+        ]
+      },
+      {
+        "title": "Obsługa techniczna",
+        "image": {
+          "image": "photo-1260.jpg",
+          "alt": "Samochód firmowy Dalkowski przy obiekcie wspólnoty"
+        },
+        "points": [
+          "Prowadzenie książki obiektu budowlanego zgodnie z Prawem budowlanym",
+          "Okresowe przeglądy nieruchomości i instalacji przez wyspecjalizowane organy",
+          "Nadzór nad utrzymaniem czystości pomieszczeń wspólnych i terenu",
+          "Zapewnienie dostaw mediów dla nieruchomości",
+          "Organizacja usuwania awarii i ich skutków",
+          "Konserwacje hydrauliczne: instalacje sanitarne, udrażnianie kanalizacji, mycie myjką 120 bar",
+          "Konserwacje elektryczne: przeglądy i naprawy instalacji, montaż instalacji odgromowych",
+          "Prace ogólnobudowlane: regulacja drzwi, naprawy ślusarskie, mycie pojemników na odpady"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Rozważasz zmianę zarządcy?",
+      "text": "Umów rozmowę — z chęcią poznamy specyfikę Twojej wspólnoty i przedstawimy ofertę dopasowaną do jej potrzeb.",
+      "image": {
+        "image": "photo-7159.jpg",
+        "alt": "Samochód serwisowy Dalkowski — administracja i konserwacja wspólnot"
+      }
+    }
+  },
+
+  "maintenancePage": {
+    "seo": {
+      "title": "Konserwacja Nieruchomości Piaseczno, Warszawa — Hydraulik, Elektryk, Złota Rączka 24/7 | Dalkowski",
+      "description": "Konserwacja techniczna wspólnot i budynków w Piasecznie i Warszawie: hydraulika, elektryka, drobne prace budowlane i usługi złotej rączki. Dostępność 24/7 dla klientów obsługiwanych administracyjnie.",
+      "keywords": "konserwacja nieruchomości Piaseczno, hydraulik wspólnota, elektryk Piaseczno, złota rączka, drobne prace budowlane, awarie 24/7"
+    },
+    "hero": {
+      "eyebrow": "Usługa dodatkowa",
+      "title": "Konserwacja nieruchomości — hydraulik, elektryk i złota rączka pod jednym numerem",
+      "lead": {
+        "_rich": [
+          "Poza standardową administracją wspólnoty oferujemy pełną konserwację techniczną budynku i lokali. Dla klientów, którzy wybiorą tę opcję, jesteśmy dostępni **24 godziny na dobę, 7 dni w tygodniu** — również w weekendy i święta."
+        ]
+      },
+      "badges": ["Dostępność 24/7", "Wykwalifikowana ekipa", "Własny sprzęt i materiały"],
+      "image": {
+        "image": "konserwacja-hero.jpg",
+        "alt": "Konserwator z narzędziami w budynku mieszkalnym"
+      }
+    },
+    "intro": {
+      "title": "Konserwacja to opcja dodatkowa — nie każdy zarządca ją oferuje",
+      "text": "Standardowe zarządzanie wspólnotą kończy się na organizowaniu wykonawców z zewnątrz. My idziemy dalej — jeśli klient wybierze tę opcję, przejmujemy również tę konserwację techniczną budynku i lokali. Dzięki temu drobne awarie usuwamy w ciągu godzin, a nie dni, bez czekania na dostępność firm zewnętrznych i bez pośredników w rozliczeniach."
+    },
+    "sections": [
+      {
+        "title": "Usługi hydrauliczne",
+        "intro": "Kompleksowa hydraulika w mieszkaniach i częściach wspólnych budynku — od drobnych napraw po wymianę instalacji.",
+        "image": { "image": "gallery-1.jpg", "alt": "Usługi hydrauliczne" },
+        "points": [
+          "Naprawa i wymiana baterii, spłuczek, syfonów i zaworów",
+          "Udrażnianie odpływów, pionów kanalizacyjnych i rur",
+          "Wymiana grzejników, głowic termostatycznych i odpowietrzników",
+          "Lokalizacja i usuwanie wycieków w instalacjach wodnych i c.o.",
+          "Montaż i wymiana wodomierzy oraz zaworów podpionowych"
+        ]
+      },
+      {
+        "title": "Usługi elektryczne",
+        "intro": "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm.",
+        "image": { "image": "gallery-3.jpg", "alt": "Usługi elektryczne" },
+        "points": [
+          "Naprawa i wymiana gniazdek, włączników, opraw i puszek",
+          "Wymiana bezpieczników, zabezpieczeń różnicowoprądowych i tablic",
+          "Diagnostyka zaników napięcia i zwarć w instalacji",
+          "Wymiana oświetlenia klatek schodowych na LED",
+          "Montaż czujników ruchu i oświetlenia awaryjnego"
+        ]
+      },
+      {
+        "title": "Złota rączka i drobne prace budowlane",
+        "intro": "Prace wykończeniowe i konserwacyjne w mieszkaniach, częściach wspólnych i wokół budynku.",
+        "image": { "image": "gallery-5.jpg", "alt": "Złota rączka i drobne prace budowlane" },
+        "points": [
+          "Naprawa i regulacja drzwi, zamków oraz klamek",
+          "Montaż półek, karniszy, luster, tablic informacyjnych",
+          "Naprawa balustrad, poręczy, ławek i infrastruktury osiedla",
+          "Drobne prace ślusarskie i stolarskie na zgłoszenie mieszkańca",
+          "Nie regulujemy okien"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Awaria w środku nocy? Dzwoń — odbieramy.",
+      "text": "Dla wspólnot, które wybiorą pakiet z konserwacją, uruchamiamy dyżurny numer dostępny 24/7. Pęknięta rura, brak prądu na klatce, zablokowany zamek — reagujemy od razu i informujemy zarząd o wykonanych pracach."
+    }
+  },
+
+  "heatingPage": {
+    "seo": {
+      "title": "Autoryzowany Serwis De Dietrich Piaseczno — Przeglądy, Naprawy, Montaż | Dalkowski",
+      "description": "Autoryzowany serwis kotłów gazowych De Dietrich w Piasecznie i okolicach. Przeglądy okresowe, naprawy awaryjne, instalacja i wymiana kotłów gazowych. Umawiamy się na dogodne godziny.",
+      "keywords": "autoryzowany serwis De Dietrich Piaseczno, serwis kotłów gazowych De Dietrich, przegląd kotła gazowego, naprawa kotła De Dietrich, instalacja kotła gazowego Piaseczno"
+    },
+    "hero": {
+      "title": "Autoryzowany serwis kotłów gazowych De Dietrich",
+      "lead": {
+        "_rich": [
+          "**Specjalizujemy się w kotłach De Dietrich.** Przeglądy, naprawy awaryjne oraz sprzedaż i montaż nowych urządzeń w Piasecznie i okolicach. Dla klientów indywidualnych umawiamy wizyty na dogodne godziny."
+        ]
+      },
+      "image": {
+        "image": "de-dietrich-kociol.png",
+        "alt": "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni"
+      }
+    },
+    "services": [
+      {
+        "title": "Awarie",
+        "description": "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie.",
+        "image": {
+          "image": "gallery-3.jpg",
+          "alt": "Serwisant Dalkowski podczas naprawy awaryjnej kotła gazowego De Dietrich"
+        }
+      },
+      {
+        "title": "Przeglądy i konserwacje",
+        "description": "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz.",
+        "image": {
+          "image": "heating-boiler.jpg",
+          "alt": "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich"
+        }
+      },
+      {
+        "title": "Sprzedaż i instalacja",
+        "description": "Jako autoryzowany partner De Dietrich prowadzimy sprzedaż i profesjonalny montaż kotłów gazowych tej marki. Dobieramy moc i model do potrzeb budynku oraz zapewniamy pełne wsparcie gwarancyjne.",
+        "image": {
+          "image": "gallery-6.jpg",
+          "alt": "Nowoczesny kocioł kondensacyjny De Dietrich"
+        }
+      }
+    ],
+    "authorization": {
+      "eyebrow": "Autoryzacja",
+      "title": "Autoryzowany serwis De Dietrich",
+      "text": "Jako autoryzowany partner De Dietrich znamy te kotły od podszewki. Realizujemy przeglądy, naprawy i instalacje zgodnie ze standardami producenta, zachowując gwarancję i pełną dokumentację serwisową.",
+      "brands": ["De Dietrich"]
+    },
+    "quality": {
+      "eyebrow": "Deklaracja jakości",
+      "title": "Nasze zasady",
+      "image": {
+        "image": "gallery-5.jpg",
+        "alt": "Elewacja budynku po pracach instalacyjnych — Dalkowski Technika Grzewcza"
+      },
+      "points": [
+        "Na wykonane usługi zawsze udzielamy gwarancji na piśmie",
+        "Klient zawsze może liczyć na poradę telefoniczną przy naprawie lub serwisie",
+        "Nasi serwisanci nigdy nie chodzą w brudnych butach po mieszkaniu klienta",
+        "Dotrzymujemy umów i zawsze mamy własne narzędzia",
+        "Nie boimy się wziąć udziału w programie „Usterka…”"
+      ]
+    },
+    "pricingTitle": "Cennik przykładowych usług"
+  },
+
+  "contactPage": {
+    "seo": {
+      "title": "Kontakt — Dalkowski Piaseczno | Zarządzanie i Serwis Kotłów Gazowych",
+      "description": "",
+      "keywords": ""
+    },
+    "hero": {
+      "eyebrow": "Kontakt",
+      "title": "Porozmawiajmy",
+      "lead": "Jeśli potrzebują Państwo dodatkowych wyjaśnień, służymy pomocą. Proszę dzwonić lub pisać na adres e-mail."
+    },
+    "office": {
+      "title": "Biuro — umawianie wizyt i zgłoszenia",
+      "note": "Główny numer kontaktowy do wszystkich usług — zarządzanie, konserwacja i technika grzewcza."
+    },
+    "management": {
+      "title": "Zarządzanie nieruchomościami",
+      "note": "Barbara Dalkowska — zarządca nieruchomości. Gdy numer jest zajęty, prosimy dzwonić do biura."
+    },
+    "technical": {
+      "title": "Kotły gazowe, hydraulika, elektryka",
+      "note": "Pan Roman — serwis kotłów gazowych De Dietrich, usługi hydrauliczne, elektryczne i złota rączka. Całodobowa reakcja dotyczy wspólnot, dla których pełnimy funkcję administratora i/lub konserwatora; z klientami indywidualnymi umawiamy się na dogodne godziny."
+    },
+    "form": {
+      "title": "Napisz do nas",
+      "subtitle": "Odpowiemy w ciągu dnia roboczego."
+    }
+  },
+
+  "galleryPage": {
+    "seo": {
+      "title": "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski",
+      "description": "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych",
+      "keywords": ""
+    },
+    "hero": {
+      "eyebrow": "Galeria",
+      "title": "Nasze wspólnoty i realizacje",
+      "lead": "Wybrane zdjęcia z osiedli i budynków, które administrujemy, oraz przykładowe realizacje z zakresu techniki grzewczej."
+    },
+    "workTitle": "Z naszej codziennej pracy",
+    "referencesTitle": "Realizacje i obiekty referencyjne"
+  }
+}
