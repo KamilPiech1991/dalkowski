@@ -64,6 +64,13 @@ import { image } from "@/lib/images";
 
 Astro samo przygotuje wersje AVIF/WebP w kilku rozmiarach.
 
+## Animacje
+
+Animacje (GSAP + ScrollTrigger) są w `src/scripts/animations.ts` i włącza się je atrybutami w
+HTML: `data-hero`, `data-reveal`, `data-reveal-group`, `data-reveal-image`, `data-count`
+(opis w nagłówku pliku). Nagłówki `h2` animują się same. To tylko dodatek: bez JavaScriptu
+albo przy włączonym w systemie „ograniczaniu ruchu” strona wygląda tak samo, tylko bez animacji.
+
 ## Linki wewnętrzne
 
 Strona na GitHub Pages działa w podkatalogu `/dalkowski/`, dlatego linki wewnętrzne zawsze
@@ -120,9 +127,10 @@ korzysta z `src/data/content.json` i `src/data/pages.json`.
 
 1. ✅ Projekt Sanity: **`7sqj57dm`**, dataset `production` (wpisany w `studio/sanity.project.json`).
    Dataset musi być **publiczny** (sanity.io/manage → Datasets) — strona czyta treści bez tokenu.
-2. W projekcie Sanity: **API → Tokens → Add API token** (uprawnienia: _Editor_). Dodaj go w
-   GitHubie jako sekret **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions).
-3. W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
+2. ✅ Token Sanity z uprawnieniami _Editor_ zapisany w GitHubie jako sekret
+   **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions). Służy do importu treści
+   i wdrażania panelu. Nigdy nie wysyłaj go w wiadomościach ani nie wpisuj w kod.
+3. ✅ (wykonane 2026-10-04) W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
    Workflow wgra obecne treści i zdjęcia do Sanity, opublikuje panel pod
    https://dalkowski.sanity.studio i przebuduje stronę. Dopóki dataset jest pusty, strona
    korzysta z `src/data/content.json`, więc nic nie znika w międzyczasie.

@@ -12,7 +12,11 @@ const isActive = (href: string) =>
   href === "/" ? path === link("/") : path.startsWith(link(href));
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-md">
+<header
+  data-header
+  class="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-md transition-shadow duration-300 [&.is-scrolled]:shadow-card"
+>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
   <div class="container-page flex h-24 items-center justify-between gap-6">
     <a href={link("/")} class="flex items-center gap-3" aria-label="Dalkowski — strona główna">
       <Logo class="h-14 lg:h-16 w-auto" height={64} priority />

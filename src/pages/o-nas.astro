@@ -23,12 +23,14 @@ const wspolnoty = await getCommunities();
   <section class="container-page py-16">
     <div class="grid lg:grid-cols-[400px_1fr] gap-12">
       <div>
-        <Photo
-          photo={page.portrait}
-          sizes="(min-width: 1024px) 400px, 100vw"
-          class="rounded-2xl shadow-soft w-full h-auto object-cover"
-        />
-        <div class="mt-6 rounded-2xl border border-border p-5 bg-card">
+        <div class="rounded-2xl overflow-hidden shadow-soft" data-reveal-image>
+          <Photo
+            photo={page.portrait}
+            sizes="(min-width: 1024px) 400px, 100vw"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+        <div class="mt-6 rounded-2xl border border-border p-5 bg-card" data-reveal>
           <div class="flex items-center gap-2 text-sm font-semibold">
             <Award class="h-4 w-4 text-primary" /> {page.licenseBox.title}
           </div>
@@ -40,13 +42,14 @@ const wspolnoty = await getCommunities();
         <h2 class="text-2xl sm:text-3xl font-bold">{page.owner.title}</h2>
         <div
           class="rich-text mt-4 text-muted-foreground leading-relaxed"
+          data-reveal
           set:html={page.owner.body}
         />
 
-        <h3 class="mt-10 text-xl font-bold flex items-center gap-2">
+        <h3 class="mt-10 text-xl font-bold flex items-center gap-2" data-reveal>
           <MapPin class="h-5 w-5 text-primary" /> {page.communitiesTitle}
         </h3>
-        <ul class="mt-4 grid sm:grid-cols-2 gap-2">
+        <ul class="mt-4 grid sm:grid-cols-2 gap-2" data-reveal-group>
           {wspolnoty.map((w) => (
             <li class="flex items-start gap-2 text-sm text-muted-foreground">
               <CircleCheck class="h-4 w-4 text-primary mt-0.5 shrink-0" /> {w}
@@ -54,9 +57,12 @@ const wspolnoty = await getCommunities();
           ))}
         </ul>
 
-        <h3 class="mt-10 text-xl font-bold">{page.heating.title}</h3>
+        <h3 class="mt-10 text-xl font-bold" data-reveal>
+          {page.heating.title}
+        </h3>
         <div
           class="rich-text mt-3 text-muted-foreground leading-relaxed"
+          data-reveal
           set:html={page.heating.body}
         />
       </div>

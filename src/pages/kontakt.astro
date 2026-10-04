@@ -47,7 +47,7 @@ const fieldClass =
   </PageHero>
 
   <section class="container-page py-16 grid lg:grid-cols-2 gap-10">
-    <div class="space-y-5">
+    <div class="space-y-5" data-reveal-group>
       {contacts.map((c) => (
         <div class="rounded-2xl border border-border bg-card p-6">
           <h2 class="text-lg font-bold flex items-center gap-2">
@@ -100,6 +100,7 @@ const fieldClass =
     <!-- Formularz bez JS: przeglądarka otwiera program pocztowy z wypełnioną wiadomością -->
     <form
       class="rounded-2xl border border-border bg-card p-7 h-fit"
+      data-reveal
       action={`mailto:${emails.office}?subject=${encodeURIComponent("Wiadomość ze strony dalkowski")}`}
       method="post"
       enctype="text/plain"
