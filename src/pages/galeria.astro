@@ -1,24 +1,27 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
-import GalleryPhoto from "@/components/GalleryPhoto.astro";
+import Photo from "@/components/Photo.astro";
 import { getGallery } from "@/lib/sanity";
+import { getPage } from "@/lib/pages";
 import hero from "@/assets/hero-buildings.jpg";
 
-const TITLE = "Galeria — Zarządzane Wspólnoty i Realizacje | Dalkowski";
-const DESC =
-  "Zobacz zdjęcia z zarządzanych przez nas wspólnot mieszkaniowych w Piasecznie, Warszawie, Konstancinie-Jeziornej i Józefosławiu oraz realizacje instalacji kotłów gazowych";
+const page = await getPage("galleryPage");
 
 const groups = [
-  { title: "Z naszej codziennej pracy", photos: await getGallery("praca") },
-  { title: "Realizacje i obiekty referencyjne", photos: await getGallery("realizacje") },
+  { title: page.workTitle, photos: await getGallery("praca") },
+  { title: page.referencesTitle, photos: await getGallery("realizacje") },
 ].filter((g) => g.photos.length > 0);
 ---
 
-<BaseLayout title={TITLE} description={DESC} ogImage={hero.src}>
-  <PageHero eyebrow="Galeria" title="Nasze wspólnoty i realizacje">
-    Wybrane zdjęcia z osiedli i budynków, które administrujemy, oraz przykładowe realizacje z
-    zakresu techniki grzewczej.
+<BaseLayout
+  title={page.seo.title}
+  description={page.seo.description}
+  keywords={page.seo.keywords}
+  ogImage={hero.src}
+>
+  <PageHero eyebrow={page.hero.eyebrow} title={page.hero.title}>
+    {page.hero.lead}
   </PageHero>
 
   <section class="container-page py-16">
@@ -28,7 +31,7 @@ const groups = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {g.photos.map((it) => (
             <figure class="group overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-              <GalleryPhoto
+              <Photo
                 photo={it}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500"

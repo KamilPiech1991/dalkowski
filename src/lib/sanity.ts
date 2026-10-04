@@ -30,7 +30,7 @@ const imageBuilder = configured ? createImageUrlBuilder({ projectId, dataset }) 
 
 /** Zapytanie z pamięcią podręczną na czas jednego builda (te same dane na wielu stronach). */
 const cache = new Map<string, Promise<unknown>>();
-function query<T>(groq: string): Promise<T> {
+export function query<T>(groq: string): Promise<T> {
   if (!client) throw new Error("Sanity nie jest skonfigurowane");
   if (!cache.has(groq)) cache.set(groq, client.fetch<T>(groq));
   return cache.get(groq) as Promise<T>;
@@ -42,7 +42,7 @@ function query<T>(groq: string): Promise<T> {
  * żeby nie opublikować pustej galerii czy cennika. Po imporcie Sanity jest jedynym źródłem.
  */
 let enabledPromise: Promise<boolean> | undefined;
-function sanityEnabled(): Promise<boolean> {
+export function sanityEnabled(): Promise<boolean> {
   if (!client) return Promise.resolve(false);
   enabledPromise ??= query<boolean>(`defined(*[_id == "siteSettings"][0]._id)`).then((seeded) => {
     if (!seeded) console.warn("[sanity] Dataset jest pusty — używam src/data/content.json.");
@@ -122,33 +122,37 @@ export async function getPricing(): Promise<PriceItem[]> {
   return query<PriceItem[]>(`*[_type == "priceItem"] | order(order asc){name, price, note}`);
 }
 
-// ---------- Galeria ----------
-
-export type GalleryCategory = "praca" | "realizacje";
+// ---------- Zdjęcia ----------
 
 /** Zdjęcie z Sanity (CDN) albo lokalne (src/assets, optymalizowane przez Astro). */
-export type GalleryPhoto =
+export type Photo =
   | { kind: "sanity"; alt: string; src: string; srcset: string; width: number; height: number }
   | { kind: "local"; alt: string; src: ImageMetadata };
 
-type RawGalleryImage = {
-  alt: string;
-  category: GalleryCategory;
-  image: SanityImageSource & {
-    asset?: { metadata?: { dimensions?: { width: number; height: number } } };
-  };
-};
+/** Obraz z Sanity: wystarczy referencja do assetu (`image-<id>-<szer>x<wys>-<format>`). */
+export type SanityImage = SanityImageSource & { asset?: { _ref?: string; _id?: string } };
 
 const WIDTHS = [480, 800, 1200, 1600];
 
-function sanityPhoto(raw: RawGalleryImage): GalleryPhoto {
-  const dims = raw.image.asset?.metadata?.dimensions ?? { width: 1600, height: 1200 };
+function dimensions(img: SanityImage): { width: number; height: number } {
+  const id = img.asset?._ref ?? img.asset?._id ?? "";
+  const m = id.match(/-(\d+)x(\d+)-/);
+  return m ? { width: Number(m[1]), height: Number(m[2]) } : { width: 1600, height: 1200 };
+}
+
+export function hasSanityAsset(img: unknown): img is SanityImage {
+  const asset = (img as SanityImage | null)?.asset;
+  return Boolean(asset?._ref || asset?._id);
+}
+
+export function sanityPhoto(img: SanityImage, alt: string): Photo {
+  const dims = dimensions(img);
   const url = (w: number) =>
-    imageBuilder!.image(raw.image).width(w).fit("max").auto("format").quality(72).url();
+    imageBuilder!.image(img).width(w).fit("max").auto("format").quality(72).url();
   const widths = WIDTHS.filter((w) => w < dims.width).concat(Math.min(dims.width, 1600));
   return {
     kind: "sanity",
-    alt: raw.alt,
+    alt,
     src: url(1200),
     srcset: [...new Set(widths)].map((w) => `${url(w)} ${w}w`).join(", "),
     width: dims.width,
@@ -156,16 +160,24 @@ function sanityPhoto(raw: RawGalleryImage): GalleryPhoto {
   };
 }
 
-export async function getGallery(category: GalleryCategory): Promise<GalleryPhoto[]> {
+export function localPhoto(file: string, alt: string): Photo {
+  return { kind: "local", alt, src: image(file) };
+}
+
+// ---------- Galeria ----------
+
+export type GalleryCategory = "praca" | "realizacje";
+
+type RawGalleryImage = { alt: string; category: GalleryCategory; image: SanityImage };
+
+export async function getGallery(category: GalleryCategory): Promise<Photo[]> {
   if (!(await sanityEnabled())) {
     return content.gallery
       .filter((g) => g.category === category)
-      .map((g) => ({ kind: "local", alt: g.alt, src: image(g.file) }));
+      .map((g) => localPhoto(g.file, g.alt));
   }
   const raw = await query<RawGalleryImage[]>(
-    `*[_type == "galleryImage" && defined(image.asset)] | order(order asc){
-      alt, category, image{..., asset->{_id, metadata{dimensions}}}
-    }`,
+    `*[_type == "galleryImage" && defined(image.asset)] | order(order asc){alt, category, image}`,
   );
-  return raw.filter((r) => r.category === category).map(sanityPhoto);
+  return raw.filter((r) => r.category === category).map((r) => sanityPhoto(r.image, r.alt));
 }

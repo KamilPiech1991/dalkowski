@@ -33,9 +33,11 @@ src/
     kontakt.astro           → /kontakt
     sitemap.xml.ts, robots.txt.ts, llms.txt.ts
   layouts/BaseLayout.astro  # <head>, meta SEO/OG, JSON-LD, nagłówek i stopka
-  components/               # Header, Footer, Logo, Img, PageHero, Breadcrumb
+  components/               # Header, Footer, Logo, Img, Photo, PageHero, Breadcrumb
   data/site.ts              # menu, sitemap, dane firmy (JSON-LD)
-  data/content.json         # treści edytowalne w CMS — używane, gdy Sanity nie jest podłączone
+  data/content.json         # ustawienia, galeria, wspólnoty, cennik — domyślne treści CMS
+  data/pages.json           # teksty, zdjęcia i SEO stron — domyślne treści CMS
+  lib/pages.ts              # treść strony z Sanity scalona z pages.json
   lib/sanity.ts             # pobieranie treści z Sanity podczas builda
   assets/                   # wszystkie zdjęcia i logo (Astro generuje AVIF/WebP)
   styles.css                # kolory marki i style globalne (Tailwind)
@@ -44,7 +46,8 @@ studio/                     # Sanity Studio — panel do edycji treści (osobny 
   sanity.project.json       # ID projektu Sanity (wspólne dla Studio i strony)
 ```
 
-Dane kontaktowe, galerię, listę wspólnot i cennik edytuje się w Sanity Studio. Menu jest w `src/data/site.ts`.
+Teksty i zdjęcia stron, dane kontaktowe, galerię, listę wspólnot i cennik edytuje się w Sanity
+Studio. Menu jest w `src/data/site.ts`.
 
 ### Dodawanie zdjęć
 
@@ -93,13 +96,25 @@ SITE_URL=https://www.twoja-domena.pl BASE_PATH=/ npm run build
 
 ## Sanity CMS
 
-Treści edytowalne w panelu: **ustawienia strony** (telefony, e-maile, adres, godziny pracy,
-licencja, NIP), **galeria**, **administrowane wspólnoty** i **cennik techniki grzewczej**.
+Treści edytowalne w panelu:
+
+- **Strony** — teksty, nagłówki, zdjęcia sekcji oraz SEO (meta title, description, słowa
+  kluczowe) każdej strony: strona główna, O nas, Usługi, trzy podstrony usług, Kontakt i
+  Galeria. Każda strona to jeden dokument z zakładkami „Treść” i „SEO”.
+- **Ustawienia strony** — telefony, e-maile, adres, godziny pracy, licencja, NIP.
+- **Galeria**, **administrowane wspólnoty** i **cennik techniki grzewczej**.
+
+W kodzie zostały tylko drobne etykiety interfejsu (np. „Dowiedz się więcej”, „Zgłoś awarię:”,
+okruszki nawigacji, pola formularza) i ikony.
+
+**Puste pole = treść domyślna.** Jeśli pole strony w Sanity jest puste (albo dokumentu strony
+jeszcze nie ma), strona pokazuje domyślną treść z `src/data/pages.json`. Pusty opis SEO na
+stronie Kontakt jest składany automatycznie z aktualnych telefonów i adresu.
 
 Strona pobiera treści z Sanity **tylko podczas budowania** — odwiedzający dostają gotowy HTML
 bez JavaScriptu. Zdjęcia z galerii serwuje CDN Sanity (automatycznie w AVIF/WebP). Gdy
 `projectId` w `studio/sanity.project.json` jest pusty albo dataset nie ma jeszcze treści, strona
-korzysta z `src/data/content.json`.
+korzysta z `src/data/content.json` i `src/data/pages.json`.
 
 ### Jednorazowa konfiguracja
 
@@ -115,7 +130,8 @@ korzysta z `src/data/content.json`.
 4. Automatyczna przebudowa strony po publikacji w CMS — w Sanity: **API → Webhooks → Create
    webhook**:
    - URL: `https://api.github.com/repos/KamilPiech1991/dalkowski/dispatches`
-   - Trigger on: Create, Update, Delete; Filter: `_type in ["siteSettings", "galleryImage", "community", "priceItem"]`
+   - Trigger on: Create, Update, Delete; Filter:
+     `_type in ["siteSettings", "galleryImage", "community", "priceItem", "homePage", "aboutPage", "servicesPage", "managementPage", "maintenancePage", "heatingPage", "contactPage", "galleryPage"]`
    - Projection: `{"event_type": "sanity-publish"}`
    - HTTP method: `POST`
    - HTTP headers: `Accept: application/vnd.github+json` oraz
@@ -124,6 +140,14 @@ korzysta z `src/data/content.json`.
 
 Po publikacji zmiany w Studio strona przebudowuje się sama w 2–3 minuty. Ręcznie:
 **Actions → Publikacja na GitHub Pages → Run workflow**.
+
+### Import treści stron
+
+Teksty stron trafiły do Sanity później niż ustawienia i galeria. Żeby wgrać je do panelu,
+uruchom ponownie **Actions → Sanity Studio → Run workflow** z zaznaczonym „Wgraj obecne
+treści…”. Import używa `--missing`, więc dodaje tylko brakujące dokumenty — niczego, co już
+jest w Sanity, nie nadpisze. Skrypt `studio/scripts/build-seed.mjs` bierze treści z
+`src/data/content.json` i `src/data/pages.json`, a zdjęcia z `src/assets/`.
 
 ### Praca lokalna ze Studio
 
