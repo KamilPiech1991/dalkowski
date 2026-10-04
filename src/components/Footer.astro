@@ -2,6 +2,7 @@
 import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
 import { EMAILS, PHONES } from "@/data/site";
 import Logo from "@/components/Logo.astro";
+import { link } from "@/lib/url";
 
 const year = new Date().getFullYear();
 const links = [
@@ -30,7 +31,7 @@ const links = [
       <ul class="space-y-2 text-sm">
         {links.map((l) => (
           <li>
-            <a href={l.href} class="text-muted-foreground hover:text-primary">
+            <a href={link(l.href)} class="text-muted-foreground hover:text-primary">
               {l.label}
             </a>
           </li>

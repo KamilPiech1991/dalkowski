@@ -13,8 +13,6 @@ export const EMAILS = {
   technical: "dalkowskiroman@gmail.com",
 } as const;
 
-export const DEFAULT_OG_IMAGE = "/og-image.png";
-
 export type NavItem = {
   href: string;
   label: string;

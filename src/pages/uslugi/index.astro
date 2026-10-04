@@ -1,5 +1,6 @@
 ---
 import { ArrowRight, BuildingComplex, Flame, Wrench } from "@lucide/astro";
+import { link } from "@/lib/url";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import PageHero from "@/components/PageHero.astro";
 
@@ -38,7 +39,7 @@ const services = [
   <section class="container-page py-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
     {services.map((s) => (
       <a
-        href={s.href}
+        href={link(s.href)}
         class="group rounded-3xl border border-border bg-card p-10 hover:shadow-soft hover:border-primary/30 transition-all"
       >
         <div class="rounded-2xl bg-primary-soft p-4 w-fit">

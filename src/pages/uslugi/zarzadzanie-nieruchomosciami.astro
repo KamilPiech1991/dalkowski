@@ -1,4 +1,5 @@
 ---
+import { link } from "@/lib/url";
 import { Calculator, CircleCheck, ClipboardList, Phone, Wrench } from "@lucide/astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
@@ -205,7 +206,7 @@ const sections = [
             <Phone class="h-4 w-4" /> {PHONES.office.label}
           </a>
           <a
-            href="/kontakt"
+            href={link("/kontakt")}
             class="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-sm font-semibold hover:bg-primary-foreground/10"
           >
             Napisz do nas

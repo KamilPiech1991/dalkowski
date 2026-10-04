@@ -1,4 +1,5 @@
 ---
+import { link } from "@/lib/url";
 import {
   ArrowRight,
   BuildingComplex,
@@ -80,13 +81,13 @@ const features = [
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a
-            href="/kontakt"
+            href={link("/kontakt")}
             class="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 shadow-soft"
           >
             Skontaktuj się z nami <ArrowRight class="h-4 w-4" />
           </a>
           <a
-            href="/uslugi"
+            href={link("/uslugi")}
             class="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground hover:border-primary hover:text-primary"
           >
             Nasze usługi
@@ -162,7 +163,7 @@ const features = [
             ))}
           </ul>
           <a
-            href={p.href}
+            href={link(p.href)}
             class="inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:gap-2 transition-all"
           >
             Dowiedz się więcej <ArrowRight class="h-4 w-4" />
@@ -235,7 +236,7 @@ const features = [
           {PHONES.management.label}
         </a>
         <a
-          href="/kontakt"
+          href={link("/kontakt")}
           class="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10"
         >
           Formularz kontaktowy

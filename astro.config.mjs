@@ -2,15 +2,21 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-// Docelowy adres strony — używany w canonical, og:url, sitemap.xml i robots.txt.
-// Ustaw zmienną SITE_URL przy buildzie, gdy strona trafi na własną domenę.
-const site = process.env.SITE_URL ?? "https://dalkowski.pages.dev";
+// Adres, pod którym strona jest opublikowana — używany w canonical, og:url, sitemap.xml i
+// robots.txt. Domyślnie GitHub Pages (https://kamilpiech1991.github.io/dalkowski/).
+// Po przeniesieniu na własny serwer zbuduj stronę z np.:
+//   SITE_URL=https://www.twoja-domena.pl BASE_PATH=/ npm run build
+const site = process.env.SITE_URL ?? "https://kamilpiech1991.github.io";
+const base = process.env.BASE_PATH ?? "/dalkowski";
 
 export default defineConfig({
   site,
-  trailingSlash: "never",
+  base,
+  trailingSlash: "always",
   build: {
-    format: "file",
+    // Każda podstrona to katalog z index.html (/o-nas/index.html) — działa bez dodatkowej
+    // konfiguracji na GitHub Pages, Apache, nginx i każdym innym hostingu plików.
+    format: "directory",
   },
   vite: {
     plugins: [tailwindcss()],
