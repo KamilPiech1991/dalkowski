@@ -1,0 +1,87 @@
+---
+import "@/styles.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { LOCAL_BUSINESS_JSON_LD, SITE_NAME } from "@/data/site";
+import { getImage } from "astro:assets";
+import logoSrc from "@/assets/logo-dalkowski.png";
+import { link } from "@/lib/url";
+
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogType?: "website" | "article";
+  /** Ścieżka obrazka OG (np. `zdjecie.src` albo `link("/plik.png")`). */
+  ogImage?: string;
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  keywords,
+  ogType = "website",
+  ogImage = link("/og-image.png"),
+  jsonLd = [],
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const absoluteOgImage = new URL(ogImage, Astro.site).href;
+const logoImage = await getImage({ src: logoSrc, width: 512, format: "png" });
+const logo = new URL(logoImage.src, Astro.site).href;
+const structuredData = [
+  { ...LOCAL_BUSINESS_JSON_LD, image: logo, logo, url: new URL(link("/"), Astro.site).href },
+  ...jsonLd,
+];
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#2940A6" />
+    <meta name="author" content={SITE_NAME} />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={link("/sitemap.xml")} />
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={absoluteOgImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteOgImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    />
+
+    {structuredData.map((data) => (
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(data)} />
+    ))}
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <Header />
+      <main class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

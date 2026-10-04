@@ -1,0 +1,28 @@
+---
+import { link } from "@/lib/url";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Nie znaleziono strony | Dalkowski"
+  description="Strona, której szukasz, nie istnieje lub została przeniesiona."
+  noindex
+>
+  <section class="flex min-h-[60vh] items-center justify-center px-4">
+    <div class="max-w-md text-center">
+      <h1 class="text-7xl font-bold text-primary">404</h1>
+      <h2 class="mt-4 text-xl font-semibold text-foreground">Nie znaleziono strony</h2>
+      <p class="mt-2 text-sm text-muted-foreground">
+        Strona, której szukasz, nie istnieje lub została przeniesiona.
+      </p>
+      <div class="mt-6">
+        <a
+          href={link("/")}
+          class="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90"
+        >
+          Wróć na stronę główną
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

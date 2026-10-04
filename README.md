@@ -1,26 +1,87 @@
-# Dalkowski Digital Presence
+# Dalkowski — strona internetowa
 
-Przygotuj nową stronę internetową, która wykorzysta informacje ze stron: https://dalkowski-zarzadzanie.pl/ i https://dalkowski-technika-grzewcza.pl. manu główne będzie : home, o nas, usługi ( pod mnu: zarządzanie nieruchomościami, technika grzewcza ), galeria, kontakt. Strona nowoczesna, super przystosowana pod SEO, GEO i AEO. Treści wykorzystaj wszystkie z obecnych stron i grafiki też możesz. Jezeli będziesz potrzebował więcej treści to wygeneruj. Strona jasna z kolorami marki. Myslę że możesz zrobić ją w stylu tej: https://ecotechgroup.pl/ , w załączniku przesyłam logo do strony.
+Strona firmy Dalkowski (zarządzanie nieruchomościami, konserwacja i technika grzewcza),
+zbudowana w [Astro](https://astro.build) + Tailwind CSS 4. Strona jest w pełni statyczna:
+czysty HTML i CSS, **bez JavaScriptu w przeglądarce** (menu mobilne to `<details>`, paralaksa w
+hero to animacja CSS sterowana scrollem, formularz kontaktowy to zwykły formularz `mailto:`).
 
-This project was built with [Lovable](https://lovable.dev).
+**Adres strony (tymczasowo, GitHub Pages):** https://kamilpiech1991.github.io/dalkowski/
 
-**Live app**: https://dalkowski.lovable.app
+## Uruchomienie
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/bf3d4489-09f4-4b49-b539-caebf92d5b0f).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Wymagany Node.js 22.12+.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+npm install
+npm run dev        # serwer deweloperski: http://localhost:4321
+npm run build      # build produkcyjny do dist/
+npm run preview    # podgląd builda
+npm run check      # sprawdzenie typów i plików .astro
+```
+
+## Struktura
+
+```
+src/
+  pages/            # każda podstrona = plik .astro (routing po nazwie pliku)
+    index.astro             → /
+    o-nas.astro             → /o-nas
+    uslugi/index.astro      → /uslugi
+    uslugi/*.astro          → /uslugi/...
+    galeria.astro           → /galeria
+    kontakt.astro           → /kontakt
+    sitemap.xml.ts, robots.txt.ts, llms.txt.ts
+  layouts/BaseLayout.astro  # <head>, meta SEO/OG, JSON-LD, nagłówek i stopka
+  components/               # Header, Footer, Logo, Img, PageHero, Breadcrumb
+  data/site.ts              # telefony, e-maile, menu, sitemap, dane firmy (JSON-LD)
+  assets/                   # wszystkie zdjęcia i logo (Astro generuje AVIF/WebP)
+  styles.css                # kolory marki i style globalne (Tailwind)
+public/                     # pliki serwowane 1:1 (og-image.png)
+```
+
+Dane kontaktowe i menu zmienia się w jednym miejscu: `src/data/site.ts`.
+
+### Dodawanie zdjęć
+
+Wrzuć plik do `src/assets/` i użyj go w stronie:
+
+```astro
+---
+import Img from "@/components/Img.astro";
+import { image } from "@/lib/images";
+---
+
+<Img src={image("nowe-zdjecie.jpg")} alt="Opis zdjęcia" class="rounded-2xl" />
+```
+
+Astro samo przygotuje wersje AVIF/WebP w kilku rozmiarach.
+
+## Linki wewnętrzne
+
+Strona na GitHub Pages działa w podkatalogu `/dalkowski/`, dlatego linki wewnętrzne zawsze
+buduje się helperem `link()` — wtedy działają też po przeniesieniu na własną domenę:
+
+```astro
+---
+import { link } from "@/lib/url";
+---
+
+<a href={link("/kontakt")}>Kontakt</a>
+```
+
+## Wdrożenie
+
+### GitHub Pages (obecnie)
+
+Workflow `.github/workflows/deploy.yml` buduje stronę i publikuje ją na GitHub Pages po każdym
+pushu do `main`. Jednorazowo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+### Własny serwer (docelowo)
+
+Zbuduj stronę z adresem docelowej domeny i wgraj zawartość `dist/` na serwer (np. do
+`public_html`). Każda podstrona to katalog z `index.html`, więc nie trzeba konfigurować
+przekierowań.
+
+```sh
+SITE_URL=https://www.twoja-domena.pl BASE_PATH=/ npm run build
 ```

@@ -1,0 +1,100 @@
+---
+import { Clock, Mail, MapPin, Phone } from "@lucide/astro";
+import { EMAILS, PHONES } from "@/data/site";
+import Logo from "@/components/Logo.astro";
+import { link } from "@/lib/url";
+
+const year = new Date().getFullYear();
+const links = [
+  { href: "/", label: "Strona główna" },
+  { href: "/o-nas", label: "O nas" },
+  { href: "/uslugi/zarzadzanie-nieruchomosciami", label: "Zarządzanie nieruchomościami" },
+  { href: "/uslugi/konserwacja-nieruchomosci", label: "Konserwacja nieruchomości" },
+  { href: "/uslugi/technika-grzewcza", label: "Technika grzewcza" },
+  { href: "/galeria", label: "Galeria" },
+  { href: "/kontakt", label: "Kontakt" },
+];
+---
+
+<footer class="mt-24 border-t border-border bg-secondary/60">
+  <div class="container-page py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <Logo class="h-12 w-auto mb-4" height={48} />
+      <p class="text-sm text-muted-foreground leading-relaxed">
+        Profesjonalne zarządzanie nieruchomościami oraz serwis kotłów gazowych centralnego
+        ogrzewania. Piaseczno i okolice. Działamy od 2006 roku.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Nawigacja</h3>
+      <ul class="space-y-2 text-sm">
+        {links.map((l) => (
+          <li>
+            <a href={link(l.href)} class="text-muted-foreground hover:text-primary">
+              {l.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Kontakt</h3>
+      <ul class="space-y-3 text-sm text-muted-foreground">
+        <li class="flex items-start gap-2">
+          <MapPin class="h-4 w-4 mt-0.5 text-primary" /> ul. Armii Krajowej 2, 05-500 Piaseczno
+        </li>
+        <li class="flex items-start gap-2">
+          <Phone class="h-4 w-4 mt-0.5 text-primary" />
+          <a href={PHONES.office.href} class="hover:text-primary">
+            {PHONES.office.label} (biuro)
+          </a>
+        </li>
+        <li class="flex items-start gap-2">
+          <Phone class="h-4 w-4 mt-0.5 text-primary" />
+          <a href={PHONES.management.href} class="hover:text-primary">
+            {PHONES.management.label} (zarządzanie)
+          </a>
+        </li>
+        <li class="flex items-start gap-2">
+          <Phone class="h-4 w-4 mt-0.5 text-primary" />
+          <a href={PHONES.technical.href} class="hover:text-primary">
+            {PHONES.technical.label} (technika, konserwacja)
+          </a>
+        </li>
+        {Object.values(EMAILS).map((email) => (
+          <li class="flex items-start gap-2">
+            <Mail class="h-4 w-4 mt-0.5 text-primary" />
+            <a href={`mailto:${email}`} class="hover:text-primary">
+              {email}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">
+        Godziny pracy
+      </h3>
+      <ul class="space-y-2 text-sm text-muted-foreground">
+        <li class="flex items-start gap-2">
+          <Clock class="h-4 w-4 mt-0.5 text-primary" /> Pon. – Pt. 10:00 – 17:00
+        </li>
+        <li class="pl-6">Awarie w zarządzanych wspólnotach – 24/7</li>
+        <li class="pl-6 text-xs pt-2">Licencja zawodowa nr 23367</li>
+        <li class="pl-6 text-xs">NIP 821-137-87-39</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-border">
+    <div class="container-page py-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>
+        © {year} Dalkowski – Zarządzanie Nieruchomościami & Technika Grzewcza. Wszelkie prawa
+        zastrzeżone.
+      </p>
+      <p>Piaseczno · Warszawa · Konstancin-Jeziorna · Józefosław</p>
+    </div>
+  </div>
+</footer>

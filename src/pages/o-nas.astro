@@ -1,0 +1,107 @@
+---
+import { Award, CircleCheck, MapPin } from "@lucide/astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHero from "@/components/PageHero.astro";
+import Img from "@/components/Img.astro";
+import { image } from "@/lib/images";
+
+const TITLE = "O nas — Dalkowski Piaseczno | 18+ lat doświadczenia";
+const DESC =
+  "Poznaj Barbarę Dalkowską i firmę Dalkowski — zarządzanie wspólnotami mieszkaniowymi i serwis kotłów gazowych c.o. w Piasecznie i Warszawie od 2006 roku. Licencja zawodowa nr 23367.";
+
+const portrait = image("barbara-dalkowska.jpg");
+
+const wspolnoty = [
+  "WM Brzozowy Park, ul. Ogrodowa 8, Józefosław",
+  "WM Bielawska 24, Konstancin-Jeziorna",
+  "WM Nadarzyńska 38, Piaseczno",
+  "WM Okulickiego 30, Piaseczno",
+  "WM Okulickiego 32, Piaseczno",
+  "Stowarzyszenie ul. Świetlista, Józefosław",
+  "Nieruchomości ul. Planety 2, Wilanowska 11 i 11A, Józefosław",
+  "WM Tenisowa 1, Józefosław",
+  "WM Osiedle Cynamonowe, Józefosław",
+  "WM Chyliczkowska 57A, Piaseczno",
+  "WM Osiedle Przy Miodowej, Józefosław",
+  "WM Osiedle Pod Topolami, Zamienie",
+  "WM Nieruchomości Wilanowska 8, Józefosław",
+  "WM Nieruchomości Wilanowska 15, Józefosław",
+  "WM Nieruchomości Wilanowska 4A, Józefosław",
+];
+---
+
+<BaseLayout title={TITLE} description={DESC} ogType="article">
+  <PageHero
+    eyebrow="O nas"
+    title="Lokalne doświadczenie w zarządzaniu nieruchomościami od 2006 roku"
+  >
+    Firma Dalkowski to rodzinna marka z Piaseczna, która łączy administrację wspólnotami
+    mieszkaniowymi z autoryzowanym serwisem kotłów gazowych centralnego ogrzewania.
+  </PageHero>
+
+  <section class="container-page py-16">
+    <div class="grid lg:grid-cols-[400px_1fr] gap-12">
+      <div>
+        <Img
+          src={portrait}
+          alt="Barbara Dalkowska — właścicielka firmy Dalkowski"
+          sizes="(min-width: 1024px) 400px, 100vw"
+          class="rounded-2xl shadow-soft w-full h-auto object-cover"
+        />
+        <div class="mt-6 rounded-2xl border border-border p-5 bg-card">
+          <div class="flex items-center gap-2 text-sm font-semibold">
+            <Award class="h-4 w-4 text-primary" /> Licencja zawodowa nr 23367
+          </div>
+          <p class="text-xs text-muted-foreground mt-2">
+            Polisa Odpowiedzialności Cywilnej Zarządcy Nieruchomości – 50 000 € (UNIQA).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold">Barbara Dalkowska — właścicielka</h2>
+        <p class="mt-4 text-muted-foreground leading-relaxed">
+          Moje doświadczenie w zarządzaniu Wspólnotą sięga 2004 roku, kiedy zostałam członkiem
+          Zarządu Wspólnoty Mieszkaniowej „Staszica 42" w Piasecznie — 8 budynków, łącznie 121
+          lokali. Doświadczenie jakie tam zdobyłam to prawdziwa szkoła zarządzania.
+        </p>
+        <p class="mt-4 text-muted-foreground leading-relaxed">
+          Budynki były w upadłości deweloperskiej, brakowało finansowania na media i utrzymanie
+          nieruchomości. Poprzez zmianę organizacji pracy, negocjacje z dostawcami i osobiste
+          zaangażowanie udało się uporządkować finanse wspólnoty oraz znaleźć środki na niezbędne
+          remonty, m.in. dachów i balkonów.
+        </p>
+        <p class="mt-4 text-muted-foreground leading-relaxed">
+          Na co dzień stawiam na bezpośredni kontakt, przejrzystą sprawozdawczość i szybkie
+          reagowanie na zgłoszenia mieszkańców. Zależy mi, żeby każdy właściciel wiedział, na co idą
+          pieniądze wspólnoty i w jakim stanie jest jego budynek.
+        </p>
+        <p class="mt-4 text-muted-foreground leading-relaxed">
+          Uważam, że{" "}
+          <strong class="text-foreground">każda nieruchomość ma odmienną specyfikę</strong>— dlatego
+          docelowy model administrowania zawsze wypracowuję wspólnie z mieszkańcami i Członkami
+          Wspólnoty, których zdanie i oczekiwania są dla mnie kluczowe.
+        </p>
+
+        <h3 class="mt-10 text-xl font-bold flex items-center gap-2">
+          <MapPin class="h-5 w-5 text-primary" /> Obecnie administrujemy
+        </h3>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-2">
+          {wspolnoty.map((w) => (
+            <li class="flex items-start gap-2 text-sm text-muted-foreground">
+              <CircleCheck class="h-4 w-4 text-primary mt-0.5 shrink-0" /> {w}
+            </li>
+          ))}
+        </ul>
+
+        <h3 class="mt-10 text-xl font-bold">Technika grzewcza</h3>
+        <p class="mt-3 text-muted-foreground leading-relaxed">
+          W 2020 roku rozszerzyliśmy działalność o serwis i instalację kotłów gazowych centralnego
+          ogrzewania. Nasi specjaliści mają wieloletnie doświadczenie i autoryzację jednego z
+          wiodących producentów — <strong class="text-foreground">De Dietrich</strong>.
+          Specjalizujemy się wyłącznie w kotłach De Dietrich — dzięki temu znamy je od podszewki.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
