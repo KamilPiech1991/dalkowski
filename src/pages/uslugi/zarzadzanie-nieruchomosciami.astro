@@ -4,12 +4,14 @@ import { Calculator, CircleCheck, ClipboardList, Phone, Wrench } from "@lucide/a
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Img from "@/components/Img.astro";
-import { PHONES } from "@/data/site";
+import { getSiteSettings } from "@/lib/sanity";
 import { image } from "@/lib/images";
 import hero from "@/assets/hero-buildings.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g4 from "@/assets/gallery-4.jpg";
+
+const { phones } = await getSiteSettings();
 
 const TITLE = "Zarządzanie Nieruchomościami Piaseczno — Wspólnoty Mieszkaniowe | Dalkowski";
 const DESC =
@@ -194,16 +196,16 @@ const sections = [
         </p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a
-            href={PHONES.management.href}
+            href={phones.management.href}
             class="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 text-sm font-semibold"
           >
-            <Phone class="h-4 w-4" /> {PHONES.management.label}
+            <Phone class="h-4 w-4" /> {phones.management.label}
           </a>
           <a
-            href={PHONES.office.href}
+            href={phones.office.href}
             class="inline-flex items-center gap-2 rounded-full bg-background text-primary px-6 py-3 text-sm font-semibold"
           >
-            <Phone class="h-4 w-4" /> {PHONES.office.label}
+            <Phone class="h-4 w-4" /> {phones.office.label}
           </a>
           <a
             href={link("/kontakt")}

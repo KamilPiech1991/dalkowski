@@ -21,3 +21,8 @@ pnpm-debug.log*
 !.vscode/extensions.json
 .idea
 .DS_Store
+
+# Sanity Studio
+studio/dist/
+studio/.sanity/
+studio/seed.ndjson

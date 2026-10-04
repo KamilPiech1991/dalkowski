@@ -2,7 +2,8 @@
 import "@/styles.css";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import { LOCAL_BUSINESS_JSON_LD, SITE_NAME } from "@/data/site";
+import { localBusinessJsonLd, SITE_NAME } from "@/data/site";
+import { getSiteSettings } from "@/lib/sanity";
 import { getImage } from "astro:assets";
 import logoSrc from "@/assets/logo-dalkowski.png";
 import { link } from "@/lib/url";
@@ -33,7 +34,12 @@ const absoluteOgImage = new URL(ogImage, Astro.site).href;
 const logoImage = await getImage({ src: logoSrc, width: 512, format: "png" });
 const logo = new URL(logoImage.src, Astro.site).href;
 const structuredData = [
-  { ...LOCAL_BUSINESS_JSON_LD, image: logo, logo, url: new URL(link("/"), Astro.site).href },
+  {
+    ...localBusinessJsonLd(await getSiteSettings()),
+    image: logo,
+    logo,
+    url: new URL(link("/"), Astro.site).href,
+  },
   ...jsonLd,
 ];
 ---

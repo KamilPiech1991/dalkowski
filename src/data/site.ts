@@ -1,17 +1,7 @@
+import type { SiteSettings } from "@/lib/sanity";
+
 export const SITE_NAME = "Dalkowski";
 export const BUSINESS_NAME = "Dalkowski – Zarządzanie Nieruchomościami i Technika Grzewcza";
-
-export const PHONES = {
-  office: { href: "tel:+48574988293", label: "+48 574 988 293" },
-  management: { href: "tel:+48793720760", label: "+48 793 720 760" },
-  technical: { href: "tel:+48730704502", label: "+48 730 704 502" },
-} as const;
-
-export const EMAILS = {
-  office: "adm.dalkowski@gmail.com",
-  management: "barbaradalkowska@gmail.com",
-  technical: "dalkowskiroman@gmail.com",
-} as const;
 
 export type NavItem = {
   href: string;
@@ -46,28 +36,30 @@ export const SITEMAP: { path: string; priority: string; changefreq: string }[] =
   { path: "/kontakt", priority: "0.7", changefreq: "yearly" },
 ];
 
-export const LOCAL_BUSINESS_JSON_LD = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: BUSINESS_NAME,
-  telephone: "+48574988293",
-  email: EMAILS.office,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "ul. Armii Krajowej 2",
-    addressLocality: "Piaseczno",
-    postalCode: "05-500",
-    addressCountry: "PL",
-  },
-  areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "10:00",
-      closes: "17:00",
+export function localBusinessJsonLd(s: SiteSettings) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: BUSINESS_NAME,
+    telephone: s.phones.office.href.replace("tel:", ""),
+    email: s.emails.office,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: s.address.street,
+      addressLocality: s.address.city,
+      postalCode: s.address.postalCode,
+      addressCountry: "PL",
     },
-  ],
-  founder: "Barbara Dalkowska",
-  foundingDate: "2006",
-};
+    areaServed: ["Piaseczno", "Konstancin-Jeziorna", "Józefosław", "Warszawa"],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "10:00",
+        closes: "17:00",
+      },
+    ],
+    founder: "Barbara Dalkowska",
+    foundingDate: "2006",
+  };
+}
