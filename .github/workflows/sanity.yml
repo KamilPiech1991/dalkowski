@@ -3,7 +3,7 @@ name: Sanity Studio
 on:
   push:
     branches: [main]
-    paths: [studio/**, src/data/sanity.ts]
+    paths: [studio/**]
   workflow_dispatch:
     inputs:
       seed:
@@ -25,8 +25,8 @@ jobs:
         id: config
         working-directory: .
         run: |
-          if grep -q 'SANITY_PROJECT_ID = ""' src/data/sanity.ts; then
-            echo "::notice::Brak ID projektu Sanity w src/data/sanity.ts — pomijam."
+          if grep -q '"projectId": ""' studio/sanity.project.json; then
+            echo "::notice::Brak ID projektu Sanity w studio/sanity.project.json — pomijam."
             echo "ready=false" >> "$GITHUB_OUTPUT"
           elif [ -z "$SANITY_AUTH_TOKEN" ]; then
             echo "::error::Brak sekretu SANITY_AUTH_TOKEN (Settings → Secrets and variables → Actions)."

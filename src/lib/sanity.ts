@@ -2,7 +2,7 @@ import { createClient, type SanityClient } from "@sanity/client";
 import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import type { ImageMetadata } from "astro";
 import content from "@/data/content.json";
-import { SANITY_DATASET, SANITY_PROJECT_ID } from "@/data/sanity";
+import sanityConfig from "../../studio/sanity.project.json";
 import { image } from "@/lib/images";
 
 /*
@@ -11,8 +11,8 @@ import { image } from "@/lib/images";
  * (webhook → GitHub Actions, patrz README).
  */
 
-const projectId = import.meta.env.SANITY_PROJECT_ID || SANITY_PROJECT_ID;
-const dataset = import.meta.env.SANITY_DATASET || SANITY_DATASET;
+const projectId = import.meta.env.SANITY_PROJECT_ID || sanityConfig.projectId;
+const dataset = import.meta.env.SANITY_DATASET || sanityConfig.dataset;
 
 export const sanityEnabled = Boolean(projectId);
 

@@ -36,12 +36,12 @@ src/
   components/               # Header, Footer, Logo, Img, PageHero, Breadcrumb
   data/site.ts              # menu, sitemap, dane firmy (JSON-LD)
   data/content.json         # treści edytowalne w CMS — używane, gdy Sanity nie jest podłączone
-  data/sanity.ts            # ID projektu Sanity
   lib/sanity.ts             # pobieranie treści z Sanity podczas builda
   assets/                   # wszystkie zdjęcia i logo (Astro generuje AVIF/WebP)
   styles.css                # kolory marki i style globalne (Tailwind)
 public/                     # pliki serwowane 1:1 (og-image.png)
 studio/                     # Sanity Studio — panel do edycji treści (osobny projekt npm)
+  sanity.project.json       # ID projektu Sanity (wspólne dla Studio i strony)
 ```
 
 Dane kontaktowe, galerię, listę wspólnot i cennik edytuje się w Sanity Studio. Menu jest w `src/data/site.ts`.
@@ -98,13 +98,13 @@ licencja, NIP), **galeria**, **administrowane wspólnoty** i **cennik techniki g
 
 Strona pobiera treści z Sanity **tylko podczas budowania** — odwiedzający dostają gotowy HTML
 bez JavaScriptu. Zdjęcia z galerii serwuje CDN Sanity (automatycznie w AVIF/WebP). Dopóki
-`SANITY_PROJECT_ID` w `src/data/sanity.ts` jest pusty, strona korzysta z `src/data/content.json`.
+`projectId` w `studio/sanity.project.json` jest pusty, strona korzysta z `src/data/content.json`.
 
 ### Jednorazowa konfiguracja
 
 1. Załóż konto i projekt na https://www.sanity.io/manage (nazwa: _Dalkowski_, dataset:
    `production`, widoczność: publiczny). Skopiuj **Project ID** i wpisz go w
-   `src/data/sanity.ts`.
+   `studio/sanity.project.json` (pole `projectId`).
 2. W projekcie Sanity: **API → Tokens → Add API token** (uprawnienia: _Editor_). Dodaj go w
    GitHubie jako sekret **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions).
 3. W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.

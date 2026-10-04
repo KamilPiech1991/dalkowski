@@ -1,10 +1,26 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "studio"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // Ustawienia z presetu astro/tsconfigs/strict wpisane wprost (bez "extends"), żeby plik dało
+  // się odczytać bez zainstalowanych zależności strony — czyta go też bundler Sanity Studio.
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "strict": true,
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "studio"]
 }
