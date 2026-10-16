@@ -88,7 +88,7 @@ const badgeIcons = [Clock, ShieldCheck, Wrench];
         </div>
       </div>
       <div class="rounded-3xl overflow-hidden shadow-soft" data-hero-image>
-        <Photo photo={page.hero.image} priority class="w-full h-auto" />
+        <Photo photo={page.hero.image} priority class="w-full aspect-[8/5] object-cover" />
       </div>
     </div>
   </section>
@@ -126,7 +126,7 @@ const badgeIcons = [Clock, ShieldCheck, Wrench];
           class:list={["rounded-3xl overflow-hidden shadow-soft", i % 2 === 1 && "lg:order-1"]}
           data-reveal-image
         >
-          <Photo photo={s.image} class="w-full h-auto" />
+          <Photo photo={s.image} class="w-full aspect-[3/2] object-cover" />
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ import Breadcrumb from "@/components/Breadcrumb.astro";
 import Photo from "@/components/Photo.astro";
 import { getPricing, getSiteSettings } from "@/lib/sanity";
 import { getPage } from "@/lib/pages";
-import boiler from "@/assets/heating-boiler.jpg";
+import ogPhoto from "@/assets/photo-1000055867.jpg";
 
 const { phones } = await getSiteSettings();
 const page = await getPage("heatingPage");
@@ -65,7 +65,7 @@ const cennik = await getPricing();
   description={page.seo.description}
   keywords={page.seo.keywords}
   ogType="article"
-  ogImage={boiler.src}
+  ogImage={ogPhoto.src}
   jsonLd={[jsonLd]}
 >
   <section class="bg-gradient-hero" data-hero>
