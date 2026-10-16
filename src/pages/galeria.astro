@@ -28,7 +28,7 @@ const groups = [
     {groups.map((g, gi) => (
       <>
         <h2 class:list={["text-2xl sm:text-3xl font-bold mb-8", gi > 0 && "mt-16"]}>{g.title}</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" data-reveal-group>
           {g.photos.map((it) => (
             <figure class="group overflow-hidden rounded-2xl border border-border bg-card shadow-card">
               <Photo

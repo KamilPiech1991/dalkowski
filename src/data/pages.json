@@ -54,8 +54,8 @@
       "title": "Lokalna firma rodzinna z misją",
       "text": "Działamy w Piasecznie, Warszawie i okolicach od 2006 roku. Łączymy zarządzanie wspólnotami z własnym działem technicznym — dzięki temu nasze osiedla otrzymują szybką, fachową obsługę awarii i przeglądów.",
       "image": {
-        "image": "heating-boiler.jpg",
-        "alt": "Profesjonalny serwis kotła gazowego — Dalkowski Technika Grzewcza"
+        "image": "photo-1000055862.jpg",
+        "alt": "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku"
       },
       "features": [
         { "title": "Pełna polisa OC", "description": "Ubezpieczenie zawodowe 50 000 €" },
@@ -167,8 +167,8 @@
           "alt": "Elewacja zarządzanej wspólnoty mieszkaniowej z balkonami"
         },
         {
-          "image": "photo-7165.jpg",
-          "alt": "Nowoczesny budynek wspólnoty z lokalami usługowymi w Józefosławiu"
+          "image": "photo-1000055873.jpg",
+          "alt": "Wspólnota Nieruchomości Wilanowska 11A z lokalami usługowymi"
         },
         { "image": "gallery-1.jpg", "alt": "Osiedle mieszkaniowe — widok z góry" },
         { "image": "gallery-4.jpg", "alt": "Plac zabaw na osiedlu w Józefosławiu" }
@@ -251,8 +251,8 @@
       },
       "badges": ["Dostępność 24/7", "Wykwalifikowana ekipa", "Własny sprzęt i materiały"],
       "image": {
-        "image": "konserwacja-hero.jpg",
-        "alt": "Konserwator z narzędziami w budynku mieszkalnym"
+        "image": "photo-1000055867.jpg",
+        "alt": "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni wspólnoty"
       }
     },
     "intro": {
@@ -275,7 +275,10 @@
       {
         "title": "Usługi elektryczne",
         "intro": "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm.",
-        "image": { "image": "gallery-3.jpg", "alt": "Usługi elektryczne" },
+        "image": {
+          "image": "photo-1000055862.jpg",
+          "alt": "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku"
+        },
         "points": [
           "Naprawa i wymiana gniazdek, włączników, opraw i puszek",
           "Wymiana bezpieczników, zabezpieczeń różnicowoprądowych i tablic",
@@ -326,16 +329,16 @@
         "title": "Awarie",
         "description": "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie.",
         "image": {
-          "image": "gallery-3.jpg",
-          "alt": "Serwisant Dalkowski podczas naprawy awaryjnej kotła gazowego De Dietrich"
+          "image": "photo-1000055872.jpg",
+          "alt": "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku"
         }
       },
       {
         "title": "Przeglądy i konserwacje",
         "description": "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz.",
         "image": {
-          "image": "heating-boiler.jpg",
-          "alt": "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich"
+          "image": "photo-1000055867.jpg",
+          "alt": "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni"
         }
       },
       {
