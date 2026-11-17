@@ -1,86 +1,82 @@
-// Jednorazowa zmiana treści w Sanity: zamienia wybrane zdjęcia na stronach i usuwa je z galerii.
+// Jednorazowe porządki w Sanity po usunięciu zdjęć ze strony (src/data/removed-photos.json):
+// podmienia je na stronach na zdjęcia domyślne z src/data/pages.json i usuwa z galerii.
 // Uruchamiana przez workflow „Sanity: zamiana zdjęć” (wymaga SANITY_AUTH_TOKEN z uprawnieniem
 // Editor). DRY_RUN=1 tylko wypisuje planowane zmiany.
 //
-// Stare zdjęcia rozpoznajemy po skrócie SHA-1 pliku (Sanity zapisuje go w assecie), więc
-// skrypt zmienia tylko te miejsca, w których nadal jest stare zdjęcie — jeśli ktoś podmienił
-// je już w Studio, zostaje nietknięte. Ponowne uruchomienie niczego nie psuje.
+// Strona i tak pomija usunięte zdjęcia przy budowaniu (src/lib/sanity.ts), więc ten skrypt
+// nie jest warunkiem poprawnej strony — dzięki niemu panel Studio pokazuje to samo co strona.
+// Zmienia tylko miejsca, w których nadal stoi usunięte zdjęcie (jeśli ktoś podmienił je już
+// w Studio, zostaje nietknięte), więc ponowne uruchomienie niczego nie psuje.
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+const dataDir = path.resolve(here, "../../src/data");
 const assetsDir = path.resolve(here, "../../src/assets");
+const readJson = (file) => JSON.parse(readFileSync(path.join(dataDir, file), "utf8"));
 
-/** Usunięte zdjęcia (pliki nie istnieją już w repozytorium — stąd zapisane skróty). */
-export const OLD = {
-  "heating-boiler.jpg": "620f7dc77774358e4efb6179f88fdfcc5457fdc1",
-  "gallery-3.jpg": "8642cdc69a3af3a08ef0707ae139297d4a292e1f",
-  "konserwacja-hero.jpg": "56488013998094c98f1d1739e3cbf4d2cc28578b",
-  "photo-7165.jpg": "b97cf32a5ac4b7f3643056680c13343188acc25c",
-};
+const removed = readJson("removed-photos.json").photos;
+const pages = readJson("pages.json");
 
-/** Co na którą stronę wstawić w miejsce starego zdjęcia. */
+/** Które usunięte zdjęcie na której stronie zastępuje zdjęcie domyślne z pages.json (`at`). */
 export const REPLACEMENTS = [
-  {
-    doc: "homePage",
-    from: "heating-boiler.jpg",
-    to: "photo-1000055862.jpg",
-    alt: "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku",
-  },
-  {
-    doc: "heatingPage",
-    from: "gallery-3.jpg",
-    to: "photo-1000055872.jpg",
-    alt: "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku",
-  },
-  {
-    doc: "heatingPage",
-    from: "heating-boiler.jpg",
-    to: "photo-1000055867.jpg",
-    alt: "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni",
-  },
-  {
-    doc: "maintenancePage",
-    from: "konserwacja-hero.jpg",
-    to: "photo-1000055867.jpg",
-    alt: "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni wspólnoty",
-  },
-  {
-    doc: "maintenancePage",
-    from: "gallery-3.jpg",
-    to: "photo-1000055862.jpg",
-    alt: "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku",
-  },
-  {
-    doc: "managementPage",
-    from: "photo-7165.jpg",
-    to: "photo-1000055873.jpg",
-    alt: "Wspólnota Nieruchomości Wilanowska 11A z lokalami usługowymi",
-  },
+  { doc: "homePage", from: "hero-buildings.jpg", at: "hero.image" },
+  { doc: "homePage", from: "heating-boiler.jpg", at: "whyUs.image" },
+
+  { doc: "managementPage", from: "hero-buildings.jpg", at: "hero.image" },
+  { doc: "managementPage", from: "photo-7165.jpg", at: "references.images.1" },
+  { doc: "managementPage", from: "gallery-1.jpg", at: "references.images.2" },
+  { doc: "managementPage", from: "gallery-4.jpg", at: "references.images.3" },
+  { doc: "managementPage", from: "gallery-2.jpg", at: "sections.0.image" },
+
+  { doc: "maintenancePage", from: "konserwacja-hero.jpg", at: "hero.image" },
+  { doc: "maintenancePage", from: "gallery-1.jpg", at: "sections.0.image" },
+  { doc: "maintenancePage", from: "gallery-3.jpg", at: "sections.1.image" },
+  { doc: "maintenancePage", from: "gallery-5.jpg", at: "sections.2.image" },
+
+  { doc: "heatingPage", from: "de-dietrich-kociol.png", at: "hero.image" },
+  { doc: "heatingPage", from: "gallery-3.jpg", at: "services.0.image" },
+  { doc: "heatingPage", from: "heating-boiler.jpg", at: "services.1.image" },
+  { doc: "heatingPage", from: "gallery-6.jpg", at: "services.2.image" },
+  { doc: "heatingPage", from: "gallery-5.jpg", at: "quality.image" },
 ];
 
 const isObject = (v) => typeof v === "object" && v !== null && !Array.isArray(v);
+const sha1Of = (file) => {
+  const entry = removed.find((p) => p.file === file);
+  if (!entry) throw new Error(`Brak ${file} w removed-photos.json`);
+  return entry.sha1;
+};
+const assetRef = (image) => image?.asset?._ref ?? image?.asset?._id ?? "";
+const isRemoved = (image) => removed.some((p) => assetRef(image).startsWith(`image-${p.sha1}-`));
 
-/** Wszystkie miejsca w dokumencie, gdzie stoi zdjęcie z podanym assetem (ścieżki Sanity). */
-export function findImages(value, assetId, base = "") {
+/** Zdjęcie domyślne ze strony (`pages.json`) wskazane ścieżką `at`. */
+function defaultPhoto(doc, at) {
+  const photo = at.split(".").reduce((node, key) => node?.[key], pages[doc]);
+  if (!photo?.image || !photo?.alt) throw new Error(`pages.json: brak zdjęcia ${doc} → ${at}`);
+  return photo;
+}
+
+/** Wszystkie miejsca w dokumencie, gdzie stoi zdjęcie z assetem o podanym skrócie SHA-1. */
+export function findImages(value, sha1, base = "") {
   if (Array.isArray(value)) {
     return value.flatMap((item, i) =>
-      findImages(item, assetId, `${base}[${item?._key ? `_key=="${item._key}"` : i}]`),
+      findImages(item, sha1, `${base}[${item?._key ? `_key=="${item._key}"` : i}]`),
     );
   }
   if (!isObject(value)) return [];
-  if (isObject(value.image) && value.image.asset?._ref === assetId) return [base];
+  if (isObject(value.image) && assetRef(value.image).startsWith(`image-${sha1}-`)) return [base];
   return Object.entries(value)
     .filter(([key]) => !key.startsWith("_"))
-    .flatMap(([key, v]) => findImages(v, assetId, base ? `${base}.${key}` : key));
+    .flatMap(([key, v]) => findImages(v, sha1, base ? `${base}.${key}` : key));
 }
 
 /**
  * Plan zmian (czysta funkcja — bez dostępu do sieci).
  * @param {Array<Record<string, any>>} docs strony (opublikowane i szkice) oraz zdjęcia galerii
- * @param {Record<string, string>} assetIdByFile identyfikatory assetów Sanity po nazwie pliku
+ * @param {Record<string, string>} assetIdByFile identyfikatory assetów Sanity nowych zdjęć po nazwie pliku
  */
 export function plan(docs, assetIdByFile) {
   const patches = [];
@@ -88,18 +84,17 @@ export function plan(docs, assetIdByFile) {
   for (const doc of docs) {
     const baseId = doc._id.replace(/^drafts\./, "");
     if (doc._type === "galleryImage") {
-      const old = Object.keys(OLD).find((f) => assetIdByFile[f] === doc.image?.asset?._ref);
-      if (old) deletes.push({ id: doc._id, file: old });
+      if (isRemoved(doc.image)) deletes.push({ id: doc._id });
       continue;
     }
     const set = {};
     for (const r of REPLACEMENTS.filter((r) => r.doc === baseId)) {
-      const from = assetIdByFile[r.from];
-      const to = assetIdByFile[r.to];
-      if (!from || !to) continue;
-      for (const p of findImages(doc, from)) {
+      const photo = defaultPhoto(r.doc, r.at);
+      const to = assetIdByFile[photo.image];
+      if (!to) continue;
+      for (const p of findImages(doc, sha1Of(r.from))) {
         set[`${p}.image`] = { _type: "image", asset: { _type: "reference", _ref: to } };
-        set[`${p}.alt`] = r.alt;
+        set[`${p}.alt`] = photo.alt;
       }
     }
     if (Object.keys(set).length) patches.push({ id: doc._id, rev: doc._rev, set });
@@ -129,10 +124,10 @@ async function main() {
     perspective: "raw",
   });
 
-  // Identyfikatory assetów: stare po zapisanych skrótach, nowe po skrótach plików z repo
-  // (brakujące nowe zdjęcia wgrywamy).
-  const newFiles = [...new Set(REPLACEMENTS.map((r) => r.to))];
-  const hashes = { ...OLD, ...Object.fromEntries(newFiles.map((f) => [f, sha1(f)])) };
+  // Nowe zdjęcia: jeśli ich asset już jest w Sanity (po skrócie SHA-1 pliku) — używamy go,
+  // w przeciwnym razie wgrywamy plik z src/assets.
+  const newFiles = [...new Set(REPLACEMENTS.map((r) => defaultPhoto(r.doc, r.at).image))];
+  const hashes = Object.fromEntries(newFiles.map((f) => [f, sha1(f)]));
   const found = await client.fetch(
     `*[_type == "sanity.imageAsset" && sha1hash in $h]{_id, sha1hash}`,
     { h: Object.values(hashes) },
@@ -140,19 +135,19 @@ async function main() {
   const assetIdByFile = {};
   for (const [file, hash] of Object.entries(hashes)) {
     const asset = found.find((a) => a.sha1hash === hash);
-    if (asset) assetIdByFile[file] = asset._id;
-  }
-  for (const file of newFiles) {
-    if (assetIdByFile[file]) continue;
-    if (dryRun) {
+    if (asset) {
+      assetIdByFile[file] = asset._id;
+    } else if (dryRun) {
       assetIdByFile[file] = `image-(do wgrania)-${file}`;
-      continue;
+    } else {
+      const uploaded = await client.assets.upload(
+        "image",
+        readFileSync(path.join(assetsDir, file)),
+        { filename: file },
+      );
+      assetIdByFile[file] = uploaded._id;
+      console.log(`Wgrano ${file} → ${uploaded._id}`);
     }
-    const asset = await client.assets.upload("image", readFileSync(path.join(assetsDir, file)), {
-      filename: file,
-    });
-    assetIdByFile[file] = asset._id;
-    console.log(`Wgrano ${file} → ${asset._id}`);
   }
 
   const pageIds = [...new Set(REPLACEMENTS.map((r) => r.doc))];
@@ -166,9 +161,9 @@ async function main() {
       if (field.endsWith(".image")) console.log(`${p.id}: ${field} → ${value.asset._ref}`);
     }
   }
-  for (const d of deletes) console.log(`Galeria: usuwam ${d.id} (${d.file})`);
+  for (const d of deletes) console.log(`Galeria: usuwam ${d.id}`);
   if (!patches.length && !deletes.length) {
-    console.log("Nic do zmiany — stare zdjęcia nie występują już w Sanity.");
+    console.log("Nic do zmiany — usuniętych zdjęć nie ma już w Sanity.");
     return;
   }
   if (dryRun) {

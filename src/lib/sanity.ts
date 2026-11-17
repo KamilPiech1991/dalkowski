@@ -2,6 +2,7 @@ import { createClient, type SanityClient } from "@sanity/client";
 import { createImageUrlBuilder, type SanityImageSource } from "@sanity/image-url";
 import type { ImageMetadata } from "astro";
 import content from "@/data/content.json";
+import removedPhotos from "@/data/removed-photos.json";
 import sanityConfig from "../../studio/sanity.project.json";
 import { image } from "@/lib/images";
 
@@ -140,9 +141,26 @@ function dimensions(img: SanityImage): { width: number; height: number } {
   return m ? { width: Number(m[1]), height: Number(m[2]) } : { width: 1600, height: 1200 };
 }
 
-export function hasSanityAsset(img: unknown): img is SanityImage {
+function assetId(img: unknown): string {
   const asset = (img as SanityImage | null)?.asset;
-  return Boolean(asset?._ref || asset?._id);
+  return asset?._ref ?? asset?._id ?? "";
+}
+
+/**
+ * Zdjęcia usunięte ze strony (src/data/removed-photos.json, np. wygenerowane przez AI).
+ * Identyfikator assetu w Sanity ma postać `image-<sha1 pliku>-<szer>x<wys>-<format>`, więc
+ * rozpoznajemy je bez pytania API — dzięki temu nie wrócą na stronę, nawet jeśli nadal
+ * leżą w Sanity (w polu strony albo jako zdjęcie w galerii).
+ */
+const REMOVED_PREFIXES = removedPhotos.photos.map((p) => `image-${p.sha1}-`);
+export function isRemovedPhoto(img: unknown): boolean {
+  const id = assetId(img);
+  return REMOVED_PREFIXES.some((prefix) => id.startsWith(prefix));
+}
+
+/** Czy pole ma wgrane zdjęcie z Sanity, którego wolno użyć na stronie. */
+export function hasSanityAsset(img: unknown): img is SanityImage {
+  return assetId(img) !== "" && !isRemovedPhoto(img);
 }
 
 export function sanityPhoto(img: SanityImage, alt: string): Photo {
@@ -179,5 +197,7 @@ export async function getGallery(category: GalleryCategory): Promise<Photo[]> {
   const raw = await query<RawGalleryImage[]>(
     `*[_type == "galleryImage" && defined(image.asset)] | order(order asc){alt, category, image}`,
   );
-  return raw.filter((r) => r.category === category).map((r) => sanityPhoto(r.image, r.alt));
+  return raw
+    .filter((r) => r.category === category && hasSanityAsset(r.image))
+    .map((r) => sanityPhoto(r.image, r.alt));
 }

@@ -1,0 +1,60 @@
+{
+  "_opis": "Zdjęcia usunięte ze strony. Build ignoruje je, nawet jeśli nadal są w Sanity (strona wraca do zdjęć domyślnych z src/data/pages.json, galeria je pomija). Identyfikator assetu w Sanity zaczyna się od image-<sha1>-, więc nie trzeba odpytywać API. Skrypt studio/scripts/replace-photos.mjs czyści te zdjęcia też w samym Sanity.",
+  "photos": [
+    {
+      "file": "heating-boiler.jpg",
+      "sha1": "620f7dc77774358e4efb6179f88fdfcc5457fdc1",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "gallery-3.jpg",
+      "sha1": "8642cdc69a3af3a08ef0707ae139297d4a292e1f",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "konserwacja-hero.jpg",
+      "sha1": "56488013998094c98f1d1739e3cbf4d2cc28578b",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "photo-7165.jpg",
+      "sha1": "b97cf32a5ac4b7f3643056680c13343188acc25c",
+      "reason": "usunięte na prośbę klienta"
+    },
+    {
+      "file": "hero-buildings.jpg",
+      "sha1": "2ac238d81829d9bc3cc169b5d2f2a7bfa1c12e13",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "gallery-1.jpg",
+      "sha1": "77303993ba029ce0ddc3ddd78da9bdeeb830c8a1",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "gallery-2.jpg",
+      "sha1": "b0c1c0b6689e39f753df99a4a4a15b98f0300f0a",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "gallery-4.jpg",
+      "sha1": "599e414902cdad3baff9fd813e4b8665495c7fe1",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "gallery-5.jpg",
+      "sha1": "6fb70ed3257b02e894b2472991a4e401f94c0858",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "gallery-6.jpg",
+      "sha1": "29253e973a21630626c86411554ce3a7c965cd7e",
+      "reason": "zdjęcie wygenerowane przez AI"
+    },
+    {
+      "file": "de-dietrich-kociol.png",
+      "sha1": "5adf59c3e52db5de09b1185316f5cbe7087b2de9",
+      "reason": "zdjęcie wygenerowane przez AI"
+    }
+  ]
+}

@@ -156,6 +156,19 @@ treści…”. Import używa `--missing`, więc dodaje tylko brakujące dokument
 jest w Sanity, nie nadpisze. Skrypt `studio/scripts/build-seed.mjs` bierze treści z
 `src/data/content.json` i `src/data/pages.json`, a zdjęcia z `src/assets/`.
 
+### Usuwanie zdjęć ze strony
+
+Zdjęcia, które mają zniknąć (np. wygenerowane przez AI), wpisuje się do
+`src/data/removed-photos.json` (nazwa pliku i skrót SHA-1) i usuwa z `src/assets/`. Build
+pomija je nawet wtedy, gdy nadal leżą w Sanity: pole strony wraca do zdjęcia domyślnego z
+`src/data/pages.json`, a zdjęcie z galerii po prostu się nie wyświetla. Dzięki temu wystarczy
+wdrożyć zmianę, żeby zdjęcia zniknęły ze strony.
+
+Żeby to samo było widać w panelu, uruchom **Actions → „Sanity: zamiana zdjęć” → Run
+workflow** (`studio/scripts/replace-photos.mjs`): podmieni usunięte zdjęcia na zdjęcia
+domyślne i usunie je z galerii. Zaznacz „Tylko pokaż…”, żeby najpierw zobaczyć listę zmian.
+Ponowne uruchomienie niczego nie psuje.
+
 ### Praca lokalna ze Studio
 
 ```sh

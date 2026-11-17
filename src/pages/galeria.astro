@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero.astro";
 import Photo from "@/components/Photo.astro";
 import { getGallery } from "@/lib/sanity";
 import { getPage } from "@/lib/pages";
-import hero from "@/assets/hero-buildings.jpg";
+import ogPhoto from "@/assets/photo-1000055873.jpg";
 
 const page = await getPage("galleryPage");
 
@@ -18,7 +18,7 @@ const groups = [
   title={page.seo.title}
   description={page.seo.description}
   keywords={page.seo.keywords}
-  ogImage={hero.src}
+  ogImage={ogPhoto.src}
 >
   <PageHero eyebrow={page.hero.eyebrow} title={page.hero.title}>
     {page.hero.lead}

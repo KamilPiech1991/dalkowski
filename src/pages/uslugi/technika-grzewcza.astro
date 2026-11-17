@@ -93,11 +93,12 @@ const cennik = await getPricing();
           </a>
         </div>
       </div>
-      <div data-hero-image>
+      <div data-hero-image class="lg:justify-self-end">
         <Photo
           photo={page.hero.image}
           priority
-          class="rounded-2xl shadow-soft w-full h-auto object-cover"
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          class="mx-auto h-auto max-h-[460px] w-auto max-w-full rounded-2xl shadow-soft lg:max-h-[560px]"
         />
       </div>
     </div>
