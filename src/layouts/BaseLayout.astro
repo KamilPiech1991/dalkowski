@@ -70,6 +70,20 @@ const structuredData = [
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteOgImage} />
 
+    <!-- Animacje tylko z JavaScriptem i bez „ogranicz ruch”; gdyby skrypt się nie wczytał,
+         po 3 s treść i tak się pokaże. -->
+    <script is:inline>
+      (function (d) {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        d.classList.add("anim");
+        setTimeout(function () {
+          if (!d.classList.contains("anim-ready")) d.classList.remove("anim");
+        }, 3000);
+      })(document.documentElement);
+    </script>
+    <script>
+      import "@/scripts/animations";
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

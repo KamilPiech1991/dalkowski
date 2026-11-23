@@ -21,7 +21,7 @@ const links = [
 <footer class="mt-24 border-t border-border bg-secondary/60">
   <div class="container-page py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
     <div>
-      <Logo class="h-12 w-auto mb-4" height={48} />
+      <Logo class="h-14 w-auto mb-4" height={56} />
       <p class="text-sm text-muted-foreground leading-relaxed">
         Profesjonalne zarządzanie nieruchomościami oraz serwis kotłów gazowych centralnego
         ogrzewania. Piaseczno i okolice. Działamy od 2006 roku.
@@ -97,7 +97,20 @@ const links = [
         © {year} Dalkowski – Zarządzanie Nieruchomościami & Technika Grzewcza. Wszelkie prawa
         zastrzeżone.
       </p>
-      <p>Piaseczno · Warszawa · Konstancin-Jeziorna · Józefosław</p>
+      <p class="text-center sm:text-right">
+        Piaseczno · Warszawa · Konstancin-Jeziorna · Józefosław{" "}
+        <span class="whitespace-nowrap">
+          ·{" "}
+          <a
+            href="https://dalkowski.sanity.studio"
+            rel="nofollow noopener"
+            target="_blank"
+            class="underline-offset-2 hover:text-primary hover:underline"
+          >
+            Logowanie
+          </a>
+        </span>
+      </p>
     </div>
   </div>
 </footer>

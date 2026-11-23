@@ -2,6 +2,7 @@ import pages from "@/data/pages.json";
 import { blocksToHtml, stringsToBlocks } from "@/lib/portable-text.js";
 import {
   hasSanityAsset,
+  isRemovedPhoto,
   localPhoto,
   query,
   sanityEnabled,
@@ -52,7 +53,9 @@ function resolve(def: unknown, value: unknown): unknown {
   }
   if (isImage(def)) {
     const v = isObject(value) ? value : {};
-    const alt = filled(v.alt) ? String(v.alt) : def.alt;
+    // Usunięte zdjęcie (np. AI) zastępuje domyślne — razem z jego opisem, który mówiłby co innego.
+    const removed = isRemovedPhoto(v.image);
+    const alt = filled(v.alt) && !removed ? String(v.alt) : def.alt;
     return hasSanityAsset(v.image) ? sanityPhoto(v.image, alt) : localPhoto(def.image, alt);
   }
   if (Array.isArray(def)) {

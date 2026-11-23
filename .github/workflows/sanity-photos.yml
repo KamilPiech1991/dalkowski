@@ -1,0 +1,40 @@
+name: "Sanity: zamiana zdjęć"
+
+# Jednorazowa zmiana treści w Sanity (studio/scripts/replace-photos.mjs): podmienia wybrane
+# zdjęcia na stronach i usuwa je z galerii, a potem przebudowuje stronę.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Tylko pokaż, co zostanie zmienione (nic nie zapisuj)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: write # przebudowa strony po zmianie
+
+jobs:
+  replace:
+    runs-on: ubuntu-latest
+    env:
+      SANITY_AUTH_TOKEN: ${{ secrets.SANITY_AUTH_TOKEN }}
+      DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+    defaults:
+      run:
+        working-directory: studio
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: studio/package-lock.json
+      - run: npm ci
+      - name: Zamień zdjęcia w Sanity
+        run: node scripts/replace-photos.mjs
+      - name: Przebuduj stronę
+        if: ${{ !inputs.dry_run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main --repo "$GITHUB_REPOSITORY"

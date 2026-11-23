@@ -18,8 +18,8 @@
         { "value": "24/7", "label": "awarie w zarządzanych wspólnotach" }
       ],
       "image": {
-        "image": "hero-buildings.jpg",
-        "alt": "Nowoczesne budynki mieszkalne zarządzane przez Dalkowski w Piasecznie"
+        "image": "photo-1000055873.jpg",
+        "alt": "Budynek wspólnoty mieszkaniowej z lokalami usługowymi zarządzany przez Dalkowski"
       },
       "badgeCardTitle": "Polisa OC 50 000 €",
       "badgeCardText": "Licencja zawodowa nr 23367"
@@ -54,8 +54,8 @@
       "title": "Lokalna firma rodzinna z misją",
       "text": "Działamy w Piasecznie, Warszawie i okolicach od 2006 roku. Łączymy zarządzanie wspólnotami z własnym działem technicznym — dzięki temu nasze osiedla otrzymują szybką, fachową obsługę awarii i przeglądów.",
       "image": {
-        "image": "heating-boiler.jpg",
-        "alt": "Profesjonalny serwis kotła gazowego — Dalkowski Technika Grzewcza"
+        "image": "photo-1000055862.jpg",
+        "alt": "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku"
       },
       "features": [
         { "title": "Pełna polisa OC", "description": "Ubezpieczenie zawodowe 50 000 €" },
@@ -154,8 +154,8 @@
         ]
       },
       "image": {
-        "image": "hero-buildings.jpg",
-        "alt": "Nowoczesna wspólnota mieszkaniowa zarządzana przez Dalkowski"
+        "image": "photo-1000055854.jpg",
+        "alt": "Budynek zarządzanej wspólnoty mieszkaniowej z balkonami i miejscami postojowymi"
       }
     },
     "references": {
@@ -167,19 +167,25 @@
           "alt": "Elewacja zarządzanej wspólnoty mieszkaniowej z balkonami"
         },
         {
-          "image": "photo-7165.jpg",
-          "alt": "Nowoczesny budynek wspólnoty z lokalami usługowymi w Józefosławiu"
+          "image": "photo-1000055874.jpg",
+          "alt": "Wspólnota Nieruchomości Planety 2 — budynek z lokalami usługowymi"
         },
-        { "image": "gallery-1.jpg", "alt": "Osiedle mieszkaniowe — widok z góry" },
-        { "image": "gallery-4.jpg", "alt": "Plac zabaw na osiedlu w Józefosławiu" }
+        {
+          "image": "photo-1000055958.jpg",
+          "alt": "Zamknięte osiedle zarządzane przez Dalkowski — brama wjazdowa i domy szeregowe"
+        },
+        {
+          "image": "photo-1000055852.jpg",
+          "alt": "Budynek zarządzanej wspólnoty mieszkaniowej z parkingiem i żywopłotem"
+        }
       ]
     },
     "sections": [
       {
         "title": "Obsługa administracyjna",
         "image": {
-          "image": "gallery-2.jpg",
-          "alt": "Administrator wspólnoty Dalkowski przy wejściu do budynku"
+          "image": "photo-1000055857.jpg",
+          "alt": "Wejście główne do budynku zarządzanej wspólnoty mieszkaniowej"
         },
         "points": [
           "Znany z imienia i nazwiska administrator dostępny pod telefonem całą dobę",
@@ -251,8 +257,8 @@
       },
       "badges": ["Dostępność 24/7", "Wykwalifikowana ekipa", "Własny sprzęt i materiały"],
       "image": {
-        "image": "konserwacja-hero.jpg",
-        "alt": "Konserwator z narzędziami w budynku mieszkalnym"
+        "image": "photo-1000055867.jpg",
+        "alt": "Konserwator Dalkowski podczas przeglądu instalacji w kotłowni wspólnoty"
       }
     },
     "intro": {
@@ -263,7 +269,10 @@
       {
         "title": "Usługi hydrauliczne",
         "intro": "Kompleksowa hydraulika w mieszkaniach i częściach wspólnych budynku — od drobnych napraw po wymianę instalacji.",
-        "image": { "image": "gallery-1.jpg", "alt": "Usługi hydrauliczne" },
+        "image": {
+          "image": "photo-1000055872.jpg",
+          "alt": "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku"
+        },
         "points": [
           "Naprawa i wymiana baterii, spłuczek, syfonów i zaworów",
           "Udrażnianie odpływów, pionów kanalizacyjnych i rur",
@@ -275,7 +284,10 @@
       {
         "title": "Usługi elektryczne",
         "intro": "Bezpieczne naprawy i modernizacje instalacji elektrycznych — z zachowaniem wszystkich norm.",
-        "image": { "image": "gallery-3.jpg", "alt": "Usługi elektryczne" },
+        "image": {
+          "image": "photo-1000055862.jpg",
+          "alt": "Obsługa techniczna Dalkowski — prace przy instalacji w węźle cieplnym budynku"
+        },
         "points": [
           "Naprawa i wymiana gniazdek, włączników, opraw i puszek",
           "Wymiana bezpieczników, zabezpieczeń różnicowoprądowych i tablic",
@@ -287,7 +299,10 @@
       {
         "title": "Złota rączka i drobne prace budowlane",
         "intro": "Prace wykończeniowe i konserwacyjne w mieszkaniach, częściach wspólnych i wokół budynku.",
-        "image": { "image": "gallery-5.jpg", "alt": "Złota rączka i drobne prace budowlane" },
+        "image": {
+          "image": "photo-1000055858.jpg",
+          "alt": "Część wspólna osiedla — przejazd bramowy i balkony budynku wspólnoty"
+        },
         "points": [
           "Naprawa i regulacja drzwi, zamków oraz klamek",
           "Montaż półek, karniszy, luster, tablic informacyjnych",
@@ -317,8 +332,8 @@
         ]
       },
       "image": {
-        "image": "de-dietrich-kociol.png",
-        "alt": "Kocioł gazowy kondensacyjny De Dietrich zamontowany w kuchni"
+        "image": "photo-1000055867.jpg",
+        "alt": "Serwisant Dalkowski Technika Grzewcza podczas przeglądu instalacji w kotłowni"
       }
     },
     "services": [
@@ -326,24 +341,24 @@
         "title": "Awarie",
         "description": "W przypadku awarii diagnozujemy problem i naprawiamy kocioł zgodnie z procedurami producenta. Klient zawsze otrzymuje pełną informację o diagnozie i wymienianych częściach. Każda naprawa objęta gwarancją na piśmie.",
         "image": {
-          "image": "gallery-3.jpg",
-          "alt": "Serwisant Dalkowski podczas naprawy awaryjnej kotła gazowego De Dietrich"
+          "image": "photo-1000055872.jpg",
+          "alt": "Serwis instalacji hydraulicznej — wymiana odmulacza w kotłowni budynku"
         }
       },
       {
         "title": "Przeglądy i konserwacje",
         "description": "Regularne, coroczne przeglądy to bezpieczeństwo Twojego domu i oszczędność. Regularna konserwacja to większa żywotność kotła i niższe rachunki za gaz.",
         "image": {
-          "image": "heating-boiler.jpg",
-          "alt": "Coroczny przegląd kotła gazowego centralnego ogrzewania De Dietrich"
+          "image": "photo-1000055862.jpg",
+          "alt": "Obsługa techniczna Dalkowski podczas przeglądu instalacji w węźle cieplnym budynku"
         }
       },
       {
         "title": "Sprzedaż i instalacja",
         "description": "Jako autoryzowany partner De Dietrich prowadzimy sprzedaż i profesjonalny montaż kotłów gazowych tej marki. Dobieramy moc i model do potrzeb budynku oraz zapewniamy pełne wsparcie gwarancyjne.",
         "image": {
-          "image": "gallery-6.jpg",
-          "alt": "Nowoczesny kocioł kondensacyjny De Dietrich"
+          "image": "photo-7159.jpg",
+          "alt": "Samochód serwisowy Dalkowski przy budynku wspólnoty"
         }
       }
     ],
@@ -357,8 +372,8 @@
       "eyebrow": "Deklaracja jakości",
       "title": "Nasze zasady",
       "image": {
-        "image": "gallery-5.jpg",
-        "alt": "Elewacja budynku po pracach instalacyjnych — Dalkowski Technika Grzewcza"
+        "image": "photo-2769.jpg",
+        "alt": "Flota samochodów firmowych Dalkowski przed siedzibą firmy"
       },
       "points": [
         "Na wykonane usługi zawsze udzielamy gwarancji na piśmie",

@@ -9,6 +9,7 @@
     "seed": "node scripts/build-seed.mjs && sanity dataset import seed.ndjson production --missing"
   },
   "dependencies": {
+    "@sanity/client": "^8.9.0",
     "@sanity/locale-pl-pl": "^1.2.36",
     "@sanity/vision": "^6.17.0",
     "react": "^19.3.0",

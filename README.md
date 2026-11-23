@@ -64,6 +64,13 @@ import { image } from "@/lib/images";
 
 Astro samo przygotuje wersje AVIF/WebP w kilku rozmiarach.
 
+## Animacje
+
+Animacje (GSAP + ScrollTrigger) są w `src/scripts/animations.ts` i włącza się je atrybutami w
+HTML: `data-hero`, `data-reveal`, `data-reveal-group`, `data-reveal-image`, `data-count`
+(opis w nagłówku pliku). Nagłówki `h2` animują się same. To tylko dodatek: bez JavaScriptu
+albo przy włączonym w systemie „ograniczaniu ruchu” strona wygląda tak samo, tylko bez animacji.
+
 ## Linki wewnętrzne
 
 Strona na GitHub Pages działa w podkatalogu `/dalkowski/`, dlatego linki wewnętrzne zawsze
@@ -120,9 +127,10 @@ korzysta z `src/data/content.json` i `src/data/pages.json`.
 
 1. ✅ Projekt Sanity: **`7sqj57dm`**, dataset `production` (wpisany w `studio/sanity.project.json`).
    Dataset musi być **publiczny** (sanity.io/manage → Datasets) — strona czyta treści bez tokenu.
-2. W projekcie Sanity: **API → Tokens → Add API token** (uprawnienia: _Editor_). Dodaj go w
-   GitHubie jako sekret **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions).
-3. W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
+2. ✅ Token Sanity z uprawnieniami _Editor_ zapisany w GitHubie jako sekret
+   **`SANITY_AUTH_TOKEN`** (Settings → Secrets and variables → Actions). Służy do importu treści
+   i wdrażania panelu. Nigdy nie wysyłaj go w wiadomościach ani nie wpisuj w kod.
+3. ✅ (wykonane 2026-10-04) W GitHubie: **Actions → Sanity Studio → Run workflow**, zaznacz „Wgraj obecne treści…”.
    Workflow wgra obecne treści i zdjęcia do Sanity, opublikuje panel pod
    https://dalkowski.sanity.studio i przebuduje stronę. Dopóki dataset jest pusty, strona
    korzysta z `src/data/content.json`, więc nic nie znika w międzyczasie.
@@ -147,6 +155,19 @@ uruchom ponownie **Actions → Sanity Studio → Run workflow** z zaznaczonym �
 treści…”. Import używa `--missing`, więc dodaje tylko brakujące dokumenty — niczego, co już
 jest w Sanity, nie nadpisze. Skrypt `studio/scripts/build-seed.mjs` bierze treści z
 `src/data/content.json` i `src/data/pages.json`, a zdjęcia z `src/assets/`.
+
+### Usuwanie zdjęć ze strony
+
+Zdjęcia, które mają zniknąć (np. wygenerowane przez AI), wpisuje się do
+`src/data/removed-photos.json` (nazwa pliku i skrót SHA-1) i usuwa z `src/assets/`. Build
+pomija je nawet wtedy, gdy nadal leżą w Sanity: pole strony wraca do zdjęcia domyślnego z
+`src/data/pages.json`, a zdjęcie z galerii po prostu się nie wyświetla. Dzięki temu wystarczy
+wdrożyć zmianę, żeby zdjęcia zniknęły ze strony.
+
+Żeby to samo było widać w panelu, uruchom **Actions → „Sanity: zamiana zdjęć” → Run
+workflow** (`studio/scripts/replace-photos.mjs`): podmieni usunięte zdjęcia na zdjęcia
+domyślne i usunie je z galerii. Zaznacz „Tylko pokaż…”, żeby najpierw zobaczyć listę zmian.
+Ponowne uruchomienie niczego nie psuje.
 
 ### Praca lokalna ze Studio
 
